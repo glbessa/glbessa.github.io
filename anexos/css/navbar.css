@@ -1,0 +1,13 @@
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    padding: 0 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
