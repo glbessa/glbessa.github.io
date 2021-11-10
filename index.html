@@ -3,32 +3,92 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./anexos/css/navbar.css"/>
+        <link rel="icon" type="image/x-icon" href="./anexos/imgs/logo_menor.ico"/>
         <link rel="stylesheet" href="./anexos/css/index.css"/>
-        <link rel="shortcut" type="image/x-icon" href="./anexos/imgs/favicon.ico"/>
-        <title>Inicial</title>
+        <title>Inicial | glbessa</title>
     </head>
     <body>
-        <!-- barra de navegacao do site -->
-        <nav>
-            <div class="logo">
+        <header>
+            <!-- precisa de uma imagem de fundo no cabecalho -->
+            <picture class="logo">
+                <img src="./anexos/imgs/logo.png">
+            </picture>
+            
+            <!-- fazer menu mobile 
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox"></label>
+            -->
 
-            </div>
-            <ul>
-                <li>Inicial</li>
-                <li>Blog</li>
-                <li>Projetos</li>
-                <li>Documentação</li>
-                <li>Cursos</li>
-                <li>Contato</li>
-            </ul>
-        </nav>
+            <!-- barra de navegacao do site -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="./blog/">Blog</a></li>
+                    <li><a href="./projetos/">Projetos</a></li>
+                    <li><a href="./docs/">Documentação</a></li>
+                    <li><a href="./cursos/">Cursos</a></li>
+                    <li><a href="./contato/">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <!-- conteudo da pagina inicial -->
         <main>
-            <ul>
-                <li>teste</li>
-            </ul>
+            <section class="projetos">
+                <div class="card">
+                    <p>teste</p>
+                </div>
+            </section>
+            <section class="blog">
+
+            </section>
         </main>
+
+        <!-- conteudo lateral ao conteudo principal
+        <aside>
+
+        </aside>
+        -->
+
+        <!-- rodape da pagina -->
+        <footer>
+            <picture class="logo_maior">
+                <img src="./anexos/imgs/logo.png">
+            </picture>
+            <div class="outras_paginas">
+                <p class="topico">Navegação</p>
+                <ul>
+                    <li><a href="./">Inicial</a></li>
+                    <li><a href="./blog/">Blog</a></li>
+                    <li><a href="./projetos/">Projetos</a></li>
+                    <li><a href="./docs/">Documentação</a></li>
+                    <li><a href="./cursos/">Cursos</a></li>
+                    <li><a href="./contato/">Contato</a></li>
+                </ul>
+            </div>
+            <div class="contato">
+                <p class="topico">Contato</p>
+                <p><a href="mailto:glbessa.developer@gmail.com" target="_blank">glbessa.developer@gmail.com</a></p>
+            </div>
+
+            <!--
+            <section class="info_rodape">
+                <div class="outras_paginas">
+                    <p class="topico">Navegação</p>
+                    <ul>
+                        <li><a href="./">Inicial</a></li>
+                        <li><a href="./blog/">Blog</a></li>
+                        <li><a href="./projetos/">Projetos</a></li>
+                        <li><a href="./docs/">Documentação</a></li>
+                        <li><a href="./cursos/">Cursos</a></li>
+                        <li><a href="./contato/">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="contato">
+                    <p class="topico">Contato</p>
+                    <p><a href="mailto:glbessa.developer@gmail.com" target="_blank">glbessa.developer@gmail.com</a></p>
+                </div>
+            </section>
+            -->
+        </footer>
     </body>
 </html>

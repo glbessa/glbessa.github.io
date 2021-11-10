@@ -1,3 +1,153 @@
+* {
+    font-size: 15px;
+}
+
 body {
-    background-color: darkslategrey;
+    margin: 0;
+}
+
+a, p, li {
+    text-decoration: none;
+    color: #FCFDFE;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    color: rgba(252,253,254,0.5);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    /*overflow: hidden;*/
+}
+
+/* definindo o tamanho da logo */
+.logo > img {
+    width: 150px;
+    height: 48px;
+}
+
+.logo_maior {
+    display:none;
+}
+
+.logo_maior > img {
+    width: 200px;
+    height: auto;
+    
+}
+
+/* --------------------------------*/
+
+header {
+    background-color: #3F3C4B;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.1rem;
+    padding-top: 10px;
+}
+
+/* header ul */
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.menu > li {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul a {
+    display: block;
+    padding: 0.7rem;
+}
+
+main {
+    background-color: #3F3C4B;
+    padding: 0.6em 3em;
+    min-height: 18em;
+}
+
+.card {
+    max-width: 18em;
+    border-radius: 0.3rem;
+    background-color: #54494D;
+    min-height: 25em;
+}
+
+.card_detalhado { 
+    min-height: 10em;
+}
+
+.card > p, .card > a {
+    margin: 0;
+    padding: 0.3em;
+}
+
+footer {
+    /* parametros do flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #201E1C;
+    padding: 10px 1.1rem;
+    padding-left: 3em;
+}
+
+.info_rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.info_rodape > * {
+    margin: 0 0.5em;
+}
+
+footer .topico {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.outras_paginas {
+    min-width: 30em;
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer a {
+    display: block;
+    padding: 0.4em;
+}
+
+footer li {
+    display: block;
+    padding: 0em 0.6em;
+}
+
+@media (min-width: 700px) {
+    .logo_maior {
+        display: block;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+
+    .info_rodape {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
