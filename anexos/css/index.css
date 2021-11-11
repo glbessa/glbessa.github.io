@@ -1,3 +1,6 @@
+
+/* definindo alguns atributos globais */
+
 * {
     font-size: 15px;
 }
@@ -22,14 +25,16 @@ ul {
     /*overflow: hidden;*/
 }
 
-/* definindo o tamanho da logo */
+/* -----------------------------------------------------/*
+
+/* definindo a logo ------------------------------*/
 .logo > img {
     width: 150px;
     height: 48px;
 }
 
 .logo_maior {
-    display:none;
+    display: none;
 }
 
 .logo_maior > img {
@@ -38,22 +43,90 @@ ul {
     
 }
 
-/* --------------------------------*/
+/* ---------------------------------------------------------------*/
 
-header {
-    background-color: #3F3C4B;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.1rem;
-    padding-top: 10px;
+/* codigo para o botao hamburguer que aparece
+    na versao mobile*/
+/* codigo baseado no site
+    https://willianjusten.com.br/criando-icone-menu-hamburguer-animado-com-css-puro */
+
+#check {
+    display: none;
 }
 
-/* header ul */
+#checkbtn {
+    float: right;
+    position: relative;
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    margin-top: 20px;
+}
+  
+#checkbtn::before,
+#checkbtn::after {
+    background: #000;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+  
+#checkbtn::before {
+    transform: translateY(-10px);
+}
+  
+#checkbtn::after {
+    transform: translateY(10px);
+}
+
+#check:checked ~ nav {
+    display: block;
+    top: 80px;
+    left: 0px;
+    transition:all 1s;
+}
+
+#check:checked ~ #checkbtn {
+    transform: rotate(45deg);
+}
+  
+#check:checked ~ #checkbtn::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+  
+#check:checked ~ #checkbtn::after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+/* ------------------------------------------------*/
+/* definindo o cabecalho e seus descendentes */
+
+header {
+    background-color: #452C3C;
+    min-height: 55px;
+    padding: 0 1.1rem;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+header > nav {
+    display: none;
+    width: auto;
+    height: auto;
+}
+
+/* mesma coisa que -> header ul */
 .menu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     align-content: center;
 }
@@ -63,31 +136,63 @@ header {
     justify-content: space-between;
 }
 
+.menu a {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
 ul a {
     display: block;
     padding: 0.7rem;
 }
 
+/* -------------------------------------------------- */
+/* definindo o conteudo principal e seus descendentes */
+
 main {
     background-color: #3F3C4B;
-    padding: 0.6em 3em;
-    min-height: 18em;
+    padding: 0.6em 1em;
+    min-height: 22em;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
 
 .card {
-    max-width: 18em;
-    border-radius: 0.3rem;
+    width: 20em;
+    border-radius: 0.3em;
     background-color: #54494D;
-    min-height: 25em;
+    height: 14em;
+    padding: 1em 1em;
+}
+
+.card > a {
+    width: 100%;
+    height: 14em;
+    text-align: center;
+}
+
+.card div {
+    width: 100%;
+    height: 100%;
+}
+
+.card img {
+    width: 17em;
+    max-height: em;
+    margin-bottom: 1em;
 }
 
 .card_detalhado { 
     min-height: 10em;
 }
 
-.card > p, .card > a {
+.card p {
+    font-size: 1.15em;
     margin: 0;
     padding: 0.3em;
+    text-align: center;
 }
 
 footer {
@@ -98,18 +203,7 @@ footer {
     align-items: center;
 
     background-color: #201E1C;
-    padding: 10px 1.1rem;
-    padding-left: 3em;
-}
-
-.info_rodape {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.info_rodape > * {
-    margin: 0 0.5em;
+    padding: 0.5em 1.1em;
 }
 
 footer .topico {
@@ -117,26 +211,46 @@ footer .topico {
     font-size: 1.2em;
 }
 
-.outras_paginas {
-    min-width: 30em;
-}
-
 footer ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
 
 footer a {
     display: block;
     padding: 0.4em;
+    text-align: center;
 }
 
 footer li {
     display: block;
-    padding: 0em 0.6em;
 }
 
 @media (min-width: 700px) {
+    #checkbtn {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header > nav {
+        display: block;
+        margin-right: 2em;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+
+    main {
+        padding: 0.6em 1em;
+    }
+
     .logo_maior {
         display: block;
     }
@@ -145,9 +259,12 @@ footer li {
         flex-direction: row;
     }
 
-    .info_rodape {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+    footer ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #item1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 }
