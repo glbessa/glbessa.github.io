@@ -3,61 +3,67 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="./anexos/imgs/favicon.ico"/>
-        <link rel="stylesheet" href="./anexos/css/index.css"/>
-        <title>Inicial</title>
+        <link rel="icon" type="image/x-icon" href="./../anexos/imgs/logo_menor.ico"/>
+        <link rel="stylesheet" href="./../anexos/css/style.css"/>
+        <title>Contato | glbessa</title>
     </head>
     <body>
         <header>
             <!-- precisa de uma imagem de fundo no cabecalho -->
-            <div class="logo">
-                <picture>
-
-                </picture>
-            </div>
+            <picture class="logo">
+                <img src="./../anexos/imgs/logo.png">
+            </picture>
             
-            <!-- fazer menu mobile 
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox"></label>
-            -->
+            <input id="check" type="checkbox">
+            <label for="check" id="checkbtn"></label>
 
             <!-- barra de navegacao do site -->
             <nav>
-                <ul>    
-                    <li><a href="./blog/">Blog</a></li>
-                    <li><a href="./projetos/">Projetos</a></li>
-                    <li><a href="./docs/">Documentação</a></li>
-                    <li><a href="./cursos/">Cursos</a></li>
-                    <li><a href="./contato/">Contato</a></li>
+                <ul class="menu">
+                    <li><a href="./../blog/">Blog</a></li>
+                    <li><a href="./../projetos/">Projetos</a></li>
+                    <li><a href="./../docs/">Documentação</a></li>
+                    <li><a href="./../cursos/">Cursos</a></li>
+                    <li><a href="./../contato/">Contato</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- conteudo da pagina inicial -->
         <main>
-            <div class="card">
-                <p>teste</p>
-            </div>
+            <section class="projetos">
+                <div class="card">
+                    <a href="./">
+                        <div>
+                            <picture>
+                                <img src="./../anexos/imgs/logo.png" alt="logo do site">
+                            </picture>
+                            <p>Logo do site</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section class="blog">
+
+            </section>
         </main>
 
-        <!-- rodape da pagina -->
         <footer>
-            <div class="logo">
-
-            </div>
-            <div class="outras_paginas">
-                <p>Navegação</p>
-                <ul>
-                    <li><a href="./">Inicial</a></li>
-                    <li><a href="./blog/">Blog</a></li>
-                    <li><a href="./projetos/">Projetos</a></li>
-                    <li><a href="./docs/">Documentação</a></li>
-                    <li><a href="./cursos/">Cursos</a></li>
-                    <li><a href="./contato/">Contato</a></li>
-                </ul>
-            </div>
+            <picture class="logo_maior">
+                <img src="./../anexos/imgs/logo.png">
+            </picture>
+        
+            <ul>
+                <li id="item1"><p class="topico">Navegação</p></li>
+                <li><a href="./../">Inicial</a></li>
+                <li><a href="./../blog/">Blog</a></li>
+                <li><a href="./../projetos/">Projetos</a></li>
+                <li><a href="./../docs/">Documentação</a></li>
+                <li><a href="./../cursos/">Cursos</a></li>
+                <li><a href="./../contato/">Contato</a></li>
+            </ul>
             <div class="contato">
-                <p>Contato</p>
+                <p class="topico">Contato</p>
                 <p><a href="mailto:glbessa.developer@gmail.com" target="_blank">glbessa.developer@gmail.com</a></p>
             </div>
         </footer>

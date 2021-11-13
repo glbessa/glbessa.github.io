@@ -1,8 +1,17 @@
 
-/* definindo alguns atributos globais */
+:root {
+    
+    --cor-primaria: #27A65A;
+    --cor-secundaria: #CAA4F1;
+    --cor-terciaria: #244E64;
+    --cor-letra: #E7E1D7;
+}
+
+/* ATRIBUTOS GLOBAIS */
 
 * {
     font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -11,8 +20,7 @@ body {
 
 a, p, li {
     text-decoration: none;
-    color: #FCFDFE;
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-letra);
 }
 
 a:hover {
@@ -25,9 +33,9 @@ ul {
     /*overflow: hidden;*/
 }
 
-/* -----------------------------------------------------/*
+/* ----------------------------------------------------- */
+/* LOGO ------------------------------------------------ */
 
-/* definindo a logo ------------------------------*/
 .logo > img {
     width: 150px;
     height: 48px;
@@ -46,7 +54,7 @@ ul {
 /* ---------------------------------------------------------------*/
 
 /* codigo para o botao hamburguer que aparece
-    na versao mobile*/
+    na versao mobile */
 /* codigo baseado no site
     https://willianjusten.com.br/criando-icone-menu-hamburguer-animado-com-css-puro */
 
@@ -107,10 +115,10 @@ ul {
 }
 
 /* ------------------------------------------------*/
-/* definindo o cabecalho e seus descendentes */
+/* CABECALHO */
 
 header {
-    background-color: #452C3C;
+    background-color: var(--cor-primaria);
     min-height: 55px;
     padding: 0 1.1rem;
     padding-top: 15px;
@@ -148,44 +156,72 @@ ul a {
 }
 
 /* -------------------------------------------------- */
-/* definindo o conteudo principal e seus descendentes */
+/* PRINCIPAL */
 
 main {
-    background-color: #3F3C4B;
+    background-color: var(--cor-primaria);
     padding: 0.6em 1em;
     min-height: 22em;
+    width: inherit;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
 }
 
+section {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+/* CARD */
+
 .card {
+    margin-bottom: 10px;
     width: 20em;
     border-radius: 0.3em;
-    background-color: #54494D;
+    background-color: var(--cor-secundaria);
     height: 14em;
     padding: 1em 1em;
 }
 
+.card a, .card p {
+    color: #000;
+}
+
 .card > a {
     width: 100%;
-    height: 14em;
+    height: inherit;
     text-align: center;
 }
 
-.card div {
-    width: 100%;
-    height: 100%;
+.card > a:hover .titulo {
+    color: rgba(0,0,0,0.2);
+}
+
+.card .conteudo_card {
+    width: inherit;
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .card img {
-    width: 17em;
-    max-height: em;
-    margin-bottom: 1em;
+    max-width: inherit;
+    max-height: inherit;
 }
 
-.card_detalhado { 
-    min-height: 10em;
+.card .titulo {
+    margin-top: 1em;
+    align-self: center;
+}
+
+.card .descricao {
+    display: none;
 }
 
 .card p {
@@ -193,7 +229,11 @@ main {
     margin: 0;
     padding: 0.3em;
     text-align: center;
+    font-weight: bold;
 }
+
+/* ----------------------------------------------- */
+/* RODAPE */
 
 footer {
     /* parametros do flex */
@@ -202,13 +242,14 @@ footer {
     justify-content: space-around;
     align-items: center;
 
-    background-color: #201E1C;
+    background-color: var(--cor-terciaria);
     padding: 0.5em 1.1em;
 }
 
 footer .topico {
     text-align: center;
     font-size: 1.2em;
+    font-weight: bold;
 }
 
 footer ul {
@@ -226,6 +267,9 @@ footer a {
 footer li {
     display: block;
 }
+
+/* ------------------------------------------------- */
+
 
 @media (min-width: 700px) {
     #checkbtn {
@@ -254,6 +298,67 @@ footer li {
     .logo_maior {
         display: block;
     }
+
+    section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card_detalhado { 
+        height: 10em;
+        width: inherit;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    
+    .card_detalhado .conteudo_card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        height: inherit;
+    }
+    
+    .imagem_card > a, .texto_card > a {
+        height: inherit;
+    }
+
+    .card_detalhado .imagem_card {
+        align-self: center;
+    }
+
+    .card_detalhado picture {
+        width: inherit;
+        height: inherit;
+        align-self: center  ;
+    }
+
+    .card_detalhado img {
+        align-self: center;
+    }
+    
+    .card_detalhado .texto_card {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+        height: inherit;
+    }
+
+    .card_detalhado .descricao {
+        display: block;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+    
+    .card_detalhado p {
+        text-align: left;
+    }
+
+    .card_detalhado .titulo {
+        text-align: center;
+        margin-top: 0;
+    }
+    
 
     footer {
         flex-direction: row;
