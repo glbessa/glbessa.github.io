@@ -1,13 +1,16 @@
 
 :root {
-    
-    --cor-primaria: #27A65A;
+    --cor-primaria: #2CBF50;
     --cor-secundaria: #CAA4F1;
     --cor-terciaria: #244E64;
     --cor-letra: #E7E1D7;
 }
 
 /* ATRIBUTOS GLOBAIS */
+
+html {
+    width: 100%;
+}
 
 * {
     font-size: 15px;
@@ -123,6 +126,10 @@ header {
     padding: 0 1.1rem;
     padding-top: 15px;
     padding-bottom: 10px;
+    /* posicao fixa na pagina
+    position: fixed;
+    width: 100%
+    padding: 10px; */
 }
 
 header > nav {
@@ -133,6 +140,7 @@ header > nav {
 
 /* mesma coisa que -> header ul */
 .menu {
+    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,6 +174,11 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
+}
+
+main > h2 {
+    text-align: center;
+    text-transform: capitalize;
 }
 
 section {
@@ -232,6 +245,67 @@ section {
     font-weight: bold;
 }
 
+/* POSTAGEM */
+
+.postagem {
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-color: var(--cor-secundaria);
+    border-radius: 0.6em;
+    padding: 0.4em 1em;
+}
+
+.postagem * {
+    text-align: center;
+    max-width: inherit;
+}
+
+.postagem h1 {
+    text-align: center;
+}
+
+.postagem p {
+    text-indent: 3em;
+    text-align: justify;
+    color: black;
+}
+
+.postagem figure figcaption {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.postagem figure figcaption a {
+    font-size: 13px;
+    color: black;
+}
+
+/* centralizando o video */
+.postagem video {
+    display: block;
+    margin: 0 auto;
+}
+
+/* centralizando a imagem */
+.postagem img {
+    display:block; 
+    margin: auto;
+}
+
+.postagem table {
+    margin: 0 auto;
+}
+
+.postagem table th {
+    border-bottom: black dashed 2px;
+}
+
+.postagem table td {
+    padding: 0.5em 2em;
+    border-top: black dotted 2px;
+}
+
 /* ----------------------------------------------- */
 /* RODAPE */
 
@@ -272,6 +346,10 @@ footer li {
 
 
 @media (min-width: 700px) {
+    * {
+        font-size: 16px;
+    }
+
     #checkbtn {
         display: none;
     }
@@ -359,6 +437,9 @@ footer li {
         margin-top: 0;
     }
     
+    .postagem {
+        padding: 0.4em 3em;
+    }
 
     footer {
         flex-direction: row;

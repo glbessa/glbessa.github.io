@@ -10,9 +10,11 @@
     <body>
         <header>
             <!-- precisa de uma imagem de fundo no cabecalho -->
-            <picture class="logo">
-                <img src="./anexos/imgs/logo.png">
-            </picture>
+            <a href="./">
+                <picture class="logo">
+                    <img src="./../anexos/imgs/logo.png">
+                </picture>
+            </a>
             
             <input id="check" type="checkbox">
             <label for="check" id="checkbtn"></label>
@@ -22,8 +24,6 @@
                 <ul class="menu">
                     <li><a href="./blog/">Blog</a></li>
                     <li><a href="./projetos/">Projetos</a></li>
-                    <li><a href="./docs/">Documentação</a></li>
-                    <li><a href="./cursos/">Cursos</a></li>
                     <li><a href="./contato/">Contato</a></li>
                 </ul>
             </nav>
@@ -31,9 +31,10 @@
 
         <!-- conteudo da pagina inicial -->
         <main>
-            <section class="projetos">
-                <div class="card card_detalhado">
-                    <a href="./">
+            <h2 style="text-align: center;">-- Blog --</h2>
+            <section class="blog">
+                <a href="./blog/">
+                    <article class="card">
                         <div class="conteudo_card">
                             <div class="imagem_card">
                                 <picture>
@@ -41,12 +42,12 @@
                                 </picture>
                             </div>
                             <div class="texto_card">
-                                <p class="titulo">Logo do site</p>
-                                <p class="descricao">teste</p>
+                                <p class="titulo">Publicação nova no blog! Acesse aqui.</p> 
+                                <p class="descricao"></p>
                             <div>
                         </div>
-                    </a>
-                </div>
+                    </article>
+                </a>
             </section>
             <section class="blog">
 
@@ -63,8 +64,6 @@
                 <li><a href="./">Inicial</a></li>
                 <li><a href="./blog/">Blog</a></li>
                 <li><a href="./projetos/">Projetos</a></li>
-                <li><a href="./docs/">Documentação</a></li>
-                <li><a href="./cursos/">Cursos</a></li>
                 <li><a href="./contato/">Contato</a></li>
             </ul>
             <div class="contato">

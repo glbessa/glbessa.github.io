@@ -10,9 +10,11 @@
     <body>
         <header>
             <!-- precisa de uma imagem de fundo no cabecalho -->
-            <picture class="logo">
-                <img src="./../anexos/imgs/logo.png">
-            </picture>
+            <a href="./../">
+                <picture class="logo">
+                    <img src="./../anexos/imgs/logo.png">
+                </picture>
+            </a>
             
             <input id="check" type="checkbox">
             <label for="check" id="checkbtn"></label>
@@ -22,8 +24,6 @@
                 <ul class="menu">
                     <li><a href="./../blog/">Blog</a></li>
                     <li><a href="./../projetos/">Projetos</a></li>
-                    <li><a href="./../docs/">Documentação</a></li>
-                    <li><a href="./../cursos/">Cursos</a></li>
                     <li><a href="./../contato/">Contato</a></li>
                 </ul>
             </nav>
@@ -31,21 +31,23 @@
 
         <!-- conteudo da pagina inicial -->
         <main>
-            <div class="card">
-                <a href="./">
-                    <div class="conteudo_card">
-                        <div class="imagem_card">
-                            <picture>
-                                <img src="./../anexos/imgs/logo.png" alt="logo do site">
-                            </picture>
+            <section>
+                <a href="./2021/11/primeira-postagem-do-blog.html">
+                    <article class="card">
+                        <div class="conteudo_card">
+                            <div class="imagem_card">
+                                <picture>
+                                    <img src="./../anexos/imgs/logo.png" alt="logo do site">
+                                </picture>
+                            </div>
+                            <div class="texto_card">
+                                <p class="titulo">Primeira postagem do Blog! &#127881 &#127881</p> <!-- emoji de festa -->
+                                <p class="descricao"></p>
+                            <div>
                         </div>
-                        <div class="texto_card">
-                            <p class="titulo">Algoritmos em Python: Algoritmo de busca linear (linear search)</p>
-                            <p class="descricao"></p>
-                        <div>
-                    </div>
+                    </article>
                 </a>
-            </div>
+            </section>
         </main>
 
         <footer>
@@ -58,8 +60,6 @@
                 <li><a href="./../">Inicial</a></li>
                 <li><a href="./../blog/">Blog</a></li>
                 <li><a href="./../projetos/">Projetos</a></li>
-                <li><a href="./../docs/">Documentação</a></li>
-                <li><a href="./../cursos/">Cursos</a></li>
                 <li><a href="./../contato/">Contato</a></li>
             </ul>
             <div class="contato">
