@@ -1,0 +1,36 @@
+baseURL = 'https://glbessa.github.io/'
+languageCode = 'en'
+title = 'gabriellb'
+
+theme = 'nightfall'
+
+DefaultContentLanguage = 'pt-br'
+
+[params]
+author = 'gabriellb'
+user = 'hello'
+hostname = 'glbessa.github.io'
+
+[[params.social]]
+key = 0
+name = "github"
+url = "https://github.com/glbessa"
+
+[[params.social]]
+key = 1
+name = "email"
+url = "mailto:gabrielleitebessa@gmail.com"
+
+[menu]
+    [[menu.header]]
+        name = "about"
+        weight = 0
+        url = "/about"
+    [[menu.header]]
+        name = "portifolio"
+        weight = 1
+        url = "/portifolio"
+    [[menu.header]]
+        name = "posts"
+        weight = 2
+        url = "/posts"
