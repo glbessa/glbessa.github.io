@@ -141,3 +141,5 @@ Figura 5 por [U-Net creators](https://lmb.informatik.uni-freiburg.de/people/ronn
 [Dropout in Neural Networks](https://towardsdatascience.com/dropout-in-neural-networks-47a162d621d9)
 
 [C4W2L04 Why ResNets Work](https://www.youtube.com/watch?v=RYth6EbBUqM)
+
+[Funções de ativação: definição, características, e quando usar cada uma](https://iaexpert.academy/2020/05/25/funcoes-de-ativacao-definicao-caracteristicas-e-quando-usar-cada-uma/?doing_wp_cron=1690209521.0830559730529785156250)
