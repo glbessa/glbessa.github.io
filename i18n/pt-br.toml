@@ -27,7 +27,7 @@
   other = "categorias"
 
 [and]
-  other = "e"
+  other = "and"
 
 [powered_by]
   other = "Built with"

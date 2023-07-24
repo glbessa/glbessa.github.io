@@ -7,8 +7,8 @@ theme = 'nightfall'
 DefaultContentLanguage = 'pt-br'
 
 [params]
-author = 'gabriellb'
-user = 'hello'
+author = 'Gabriel Leite Bessa'
+user = 'gabriel'
 hostname = 'glbessa.github.io'
 
 [[params.social]]
@@ -18,12 +18,17 @@ url = "https://github.com/glbessa"
 
 [[params.social]]
 key = 1
+name = "linkedin"
+url = "https://www.linkedin.com/in/gabrielleitebessa/"
+
+[[params.social]]
+key = 1
 name = "email"
 url = "mailto:gabrielleitebessa@gmail.com"
 
 [menu]
     [[menu.header]]
-        name = "about"
+        name = "sobre"
         weight = 0
         url = "/about"
     [[menu.header]]

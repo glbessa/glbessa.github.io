@@ -13,7 +13,7 @@
       <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://glbessa.github.io/posts/unet_architecture/</guid>
-      <description></description>
+      <description>Introdução O desenvolvimento de redes neurais profundas cresceu muito nos últimos anos graças ao aumento da quantidade de dados disponíveis, ao aumento do poder computacional e os obstáculos que as técnicas de machine learning clássica começaram a enfrentar, chegando a um limite no aprendizado com essas técnicas. Isso passou a ter um papel essêncial em tarefas de visão computacional com a criação das redes neurais convolucionais, que diferente das feed-forward neural networks, fazem o uso de filtros convolucionais para o aprendizado de características em imagens.</description>
     </item>
     
   </channel>
