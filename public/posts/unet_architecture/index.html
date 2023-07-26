@@ -13,7 +13,7 @@ Arquitetura U-Net | Gabriel Leite Bessa
 
 
 <link rel="canonical" href="https://glbessa.github.io/posts/unet_architecture/" >
-<link href="/sass/main.min.a8be33730f01e46b6e968a84ed6b211a9d1286d34f7e143c012da9c14cd56400.css" rel="stylesheet">
+<link href="/sass/main.min.284961f1d3356bfc648aec8a436af36b9340a3e9d5813e229441b7288d3f1bb2.css" rel="stylesheet">
 
 
 
@@ -86,14 +86,25 @@ Arquitetura U-Net | Gabriel Leite Bessa
         </dl>
     </section>
     
-    <div>
-        <h1 id="introdução">Introdução</h1>
+    <section class="postContents">
+        <h2>Conteúdos</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#arquitetura-u-net">Arquitetura U-Net</a></li>
+    <li><a href="#implementação-da-u-net-com-tensorflow">Implementação da U-Net com Tensorflow</a></li>
+    <li><a href="#referências">Referências</a></li>
+  </ul>
+</nav>
+    </section>
+    <div class="postContent">
+        <h2 id="introdução">Introdução</h2>
 <p>O desenvolvimento de redes neurais profundas cresceu muito nos últimos anos graças ao aumento da quantidade de dados disponíveis, ao aumento do poder computacional e os obstáculos que as técnicas de machine learning clássica começaram a enfrentar, chegando a um limite no aprendizado com essas técnicas. Isso passou  a ter um papel essêncial em tarefas de visão computacional com a criação das redes neurais convolucionais, que diferente das feed-forward neural networks, fazem o uso de filtros convolucionais para o aprendizado de características em imagens. Com isso, redes totalmente convolucionais começaram a surgir também, nas quais todas as partes da rede são compostas por camadas de convolução, sendo a U-Net uma dessas redes.</p>
 <p>A seguir são apresentados alguns exemplos de tarefas de visão computacional:</p>
-<center><figure><img src="/imgs/different_types_of_computer_vision_tasks.webp" height="400" width="600" alt="Figura 1: Exemplos de tarefas de visão computacional."/><figcaption>Figura 1: Exemplos de tarefas de visão computacional.</figcaption></figure></center>
-<h1 id="arquitetura-u-net">Arquitetura U-Net</h1>
+<center><figure><img src="/imgs/different_types_of_computer_vision_tasks.webp" height="" width="" alt="Figura 1: Exemplos de tarefas de visão computacional."/><figcaption>Figura 1: Exemplos de tarefas de visão computacional.</figcaption></figure></center>
+<h2 id="arquitetura-u-net">Arquitetura U-Net</h2>
 <p>A U-Net é uma rede neural convolucional criada para segmentação de imagens com foco em imagens biomédicas, sendo baseada em uma rede totalmente convolucional e optimizada para trabalhar com um dataset de treinamento pequeno obtendo ainda sim bons resultados. A ideia principal da rede é ter camadas de contração e após ter camadas de expansão para que assim consiga realizar o trabalho de segmentação das imagens, sendo a primeira parte também chamada de decoder e a segunda parte de encoder.</p>
-<center><figure><img src="/imgs/encoder_decoder_with_skip_connections.webp" height="250" width="400" alt="Figura 2: Encoder e decoder com skip connections."/><figcaption>Figura 2: Encoder e decoder com skip connections.</figcaption></figure></center>
+<center><figure><img src="/imgs/encoder_decoder_with_skip_connections.webp" height="" width="" alt="Figura 2: Encoder e decoder com skip connections."/><figcaption>Figura 2: Encoder e decoder com skip connections.</figcaption></figure></center>
 <p>A camada de contração realiza a extração das características da imagem, aumentando o número de canais após cada camada. Essa parte realiza duas convoluções com filtros 3x3 e função de ativação ReLU, no artigo original da U-Net essas convoluções não apresentam nenhum preenchimento (padding), entretanto isso acaba por reduzir o tamanho das máscaras de saída, e muitas vezes não é seguido em outras implementações. Após essas duas camadas de convolução existe uma camada de <em>max-pooling</em> com filtro 2x2, que faz a redução da resolução da imagem pela metade. Ao final existe ainda uma camada de <em>dropout</em> de 30% de probabilidade.</p>
 <center>
     <div style="background-color: #696564; margin: 2%; border-radius: 5px; padding: 1px;">
@@ -102,7 +113,7 @@ Arquitetura U-Net | Gabriel Leite Bessa
         </p>
     </div>
 </center>
-<center><figure><img src="/imgs/dropout.png" height="200" width="300" alt="Figura 3: Camada de dropout"/><figcaption>Figura 3: Camada de dropout</figcaption></figure></center>
+<center><figure><img src="/imgs/dropout.png" height="" width="" alt="Figura 3: Camada de dropout"/><figcaption>Figura 3: Camada de dropout</figcaption></figure></center>
 <center>
     <div style="background-color: #696564; margin: 2%; border-radius: 5px; padding: 1px;">
         <p style="font-size: 15px;">
@@ -110,12 +121,12 @@ Arquitetura U-Net | Gabriel Leite Bessa
         </p>
     </div>
 </center>
-<center><figure><img src="/imgs/relu.jpg" height="200" width="300" alt="Figura 4: Função de ativação ReLU"/><figcaption>Figura 4: Função de ativação ReLU</figcaption></figure></center>
+<center><figure><img src="/imgs/relu.jpg" height="" width="" alt="Figura 4: Função de ativação ReLU"/><figcaption>Figura 4: Função de ativação ReLU</figcaption></figure></center>
 <p>Já camada de expansão realiza a o vínculo dessas características com informações espaciais da imagem. Sendo composta por uma camada de convolução upsample com stride igual a 2, uma camada de concatenação, que é usada para as skip connections, uma camada de <em>dropout</em> de 30% e duas camadas de convolução com filtro 3x3 e função de ativação ReLU.</p>
 <p>As camadas de contração e expansão são ligadas por skip connections que são essênciais em redes neurais com muitas camadas, pois elas passam para camadas posteriores o contexto anterior e melhoram o aprendizado, sendo muito melhor a convergência de redes que a utilizam.</p>
 <p>Ao final da rede existe uma camada de convolução com filtro 1x1 e função de ativação <em>softmax</em> que realiza a classificação dos pixels da imagem. Sendo a mesma operação que uma camada de feed-forward dense.</p>
-<center><figure><img src="/imgs/u-net-architecture.png" height="400" width="600" alt="Figura 5: Arquitetura da rede U-Net."/><figcaption>Figura 5: Arquitetura da rede U-Net.</figcaption></figure></center>
-<h1 id="implementação-da-u-net-com-tensorflow">Implementação da U-Net com Tensorflow</h1>
+<center><figure><img src="/imgs/u-net-architecture.png" height="" width="" alt="Figura 5: Arquitetura da rede U-Net."/><figcaption>Figura 5: Arquitetura da rede U-Net.</figcaption></figure></center>
+<h2 id="implementação-da-u-net-com-tensorflow">Implementação da U-Net com Tensorflow</h2>
 <p>A seguir é demostrada um exemplo de implementação da rede U-Net utilizando Tensorflow. No exemplo os block de contração e expansão foram definidos em duas funções, <em>downsample_block</em> e <em>upsample_block</em> respectivamente.</p>
 <pre tabindex="0"><code>def downsample_block(x, n_filters, n_channels=1):
     x = layers.Conv2D(n_filters, n_channels, strides = 1, padding = &quot;same&quot;, activation = &quot;relu&quot;)(x)
@@ -171,7 +182,7 @@ Arquitetura U-Net | Gabriel Leite Bessa
     unet_model = tf.keras.Model(inputs, outputs, name=&quot;U-Net&quot;)
 
     return unet_model
-</code></pre><h1 id="referências">Referências</h1>
+</code></pre><h2 id="referências">Referências</h2>
 <p>Figura 1 por <a href="%22https://towardsdatascience.com/understanding-u-net-61276b10f360%22">Minh Tran</a></p>
 <p>Figura 2 por <a href="%22https://towardsdatascience.com/understanding-u-net-61276b10f360%22">Minh Tran</a></p>
 <p>Figura 3 por <a href="https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf">Nitish</a></p>
@@ -188,6 +199,7 @@ Arquitetura U-Net | Gabriel Leite Bessa
 <p><a href="https://www.deeplearningbook.com.br/introducao-as-redes-neurais-convolucionais/">Introdução às Redes Neurais Convolucionais</a></p>
 <p><a href="https://towardsdatascience.com/dropout-in-neural-networks-47a162d621d9">Dropout in Neural Networks</a></p>
 <p><a href="https://www.youtube.com/watch?v=RYth6EbBUqM">C4W2L04 Why ResNets Work</a></p>
+<p><a href="https://iaexpert.academy/2020/05/25/funcoes-de-ativacao-definicao-caracteristicas-e-quando-usar-cada-uma/?doing_wp_cron=1690209521.0830559730529785156250">Funções de ativação: definição, características, e quando usar cada uma</a></p>
 
     </div>
 </div>
