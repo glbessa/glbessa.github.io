@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+Funções Lambda | Gabriel Leite Bessa
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="generator" content="Hugo 0.92.2" />
+
+
+<link rel="canonical" href="https://glbessa.github.io/posts/lambda_functions/" >
+<link href="/sass/main.min.284961f1d3356bfc648aec8a436af36b9340a3e9d5813e229441b7288d3f1bb2.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a href="https://glbessa.github.io/">
+                <span class="terminal">gabriel@glbessa.github.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="https://glbessa.github.io/portifolio" title="" >
+                        ~/portifolio</a>
+                </li>
+                
+                <li>
+                    <a href="https://glbessa.github.io/posts" title="" >
+                        ~/posts</a>
+                </li>
+                
+                <li>
+                    <a href="https://glbessa.github.io/about" title="" >
+                        ~/sobre</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Funções Lambda</h1>
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/clp/">#clp</a><span></span>
+    <a href="/tags/programa%C3%A7%C3%A3o/">#programação</a><span></span>
+    <a href="/tags/fun%C3%A7%C3%B5es/">#funções</a></dd>
+            
+            
+            
+                
+<dt>categorias</dt>
+<dd><span></span>
+    <a href="/categories/programa%C3%A7%C3%A3o/">programação</a></dd>
+            
+            
+                <dt>publicado em</dt>
+                
+                <dd><time datetime="2023-07-27">July 27, 2023</time></dd>
+            
+            
+                <dt>tempo de leitura</dt>
+                <dd>3 minutos</dd>
+            
+        </dl>
+    </section>
+    
+    <section class="postContents">
+        <h2>Conteúdos</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#descrição-funcional">Descrição funcional</a></li>
+    <li><a href="#funções-lambda-em-rust">Funções lambda em Rust</a></li>
+    <li><a href="#funções-lambda-em-haskell">Funções lambda em Haskell</a></li>
+    <li><a href="#aspectos-de-expressividade">Aspectos de expressividade</a></li>
+    <li><a href="#referências">Referências</a></li>
+  </ul>
+</nav>
+    </section>
+    <div class="postContent">
+        <h2 id="introdução">Introdução</h2>
+<p>Funções lambda, também chamadas de funções anônimas, são funções que não possuem um nome atrelado em sua definição e são muito utilizadas para expressar operações simples nas quais não é necessário fazer a definição completa de uma função.</p>
+<p>Elas se originaram a partir do <em>cálculo lambda</em> criado por Alonzo Church, sendo este um sistema formal para expressar computação se baseando em funções anônimas equivalente as máquinas de Turing. Podem ser separadas em duas categorias que são as tipadas e não tipadas. Ainda é possível especificar qual o tipo de redução será usada, existindo três tipos:</p>
+<ul>
+<li>
+<p>Conversão alfa: permite a mudança de nomes vinculados a variáveis.</p>
+</li>
+<li>
+<p>Redução beta: ocorre a aplicação das funções a seus argumentos.</p>
+</li>
+<li>
+<p>Redução eta: expressa a ideia de extensionalidade.</p>
+</li>
+</ul>
+<p>Nas linguagens de programação, as funções lambda não tipadas serviram de inspiração e foram implementadas com as linguagens funcionais iniciando por Lisp em 1958.</p>
+<h2 id="descrição-funcional">Descrição funcional</h2>
+<p>As funções anônimas possuem uma sintaxe concisa e direta, sendo boas por conseguirem expressar facilmente que operação estão realizando.</p>
+<p>Exemplo de funções lambda em Lisp:</p>
+<pre tabindex="0"><code>(print ((lambda (x y) (* x y)) 6 4))
+</code></pre><p>Saída do exemplo acima:</p>
+<pre tabindex="0"><code>24
+</code></pre><h2 id="funções-lambda-em-rust">Funções lambda em Rust</h2>
+<p>As funções lambda em Rust são closures, que são funções anônimas que conseguem capturar as varíaveis no escopo aonde elas foram definidas. Elas são definidas por meio de <code>|&lt;PARAMETROS&gt;| &lt;IMPLEMENTAÇÃO&gt;</code>. Elas também podem ser usadas em conjunto com iteradores e serem aplicadas para elementos de estruturas de dados.</p>
+<p>Exemplo de função lambda em Rust que faz a soma de 1 em todos os elementos de um vetor:</p>
+<pre tabindex="0"><code>let v: Vec&lt;usize&gt; = vec![1, 2, 3, 4, 5];
+    
+let v2: Vec&lt;usize&gt; = v.into_iter().map(|x| x + 1).collect();
+    
+println!(&quot;{:?}&quot;, v2);
+</code></pre><p>Saída do exemplo acima:</p>
+<pre tabindex="0"><code>[2, 3, 4, 5, 6]
+</code></pre><h2 id="funções-lambda-em-haskell">Funções lambda em Haskell</h2>
+<p>Sendo Haskell uma linguagem puramente funcional a presença das funções lambda nele não poderiam faltar. Tendo derivado a ideia de funções anônimas a partir do <em>cálculo lambda</em>.</p>
+<p>Elas são definidas utilizando o \ (contra-barra) seguido dos parâmetros da função e o operador -&gt; (seta) para então a implementação, para aplicarmos essa função a determinados parâmetros basta especifica-los após a definição da função do lado de fora dos parênteses. A avaliação dessas funções é feito com o uso da <em>redução beta</em> que faz a substituição do valor do parâmetro em cada ocorrência dele.</p>
+<p>A seguir é apresentado a sintaxe:</p>
+<pre tabindex="0"><code>ghci&gt; (\&lt;PARAMETROS SEPARADOS POR ESPAÇO&gt; -&gt; &lt;IMPLEMENTAÇÃO&gt;) &lt;PARAMENTROS A SEREM APLICADOS&gt;
+</code></pre><p>Exemplo de função lambda em Haskell:</p>
+<pre tabindex="0"><code>ghci&gt; (\x y -&gt; x * y) 2 6
+</code></pre><p>Saída do comando acima:</p>
+<pre tabindex="0"><code>12
+</code></pre><h2 id="aspectos-de-expressividade">Aspectos de expressividade</h2>
+<p>A possibilidade de uso de funções lambda na maioria das linguagens de programação modernas é um ponto positivo visto que esta é uma forma concisa e simples de se definir e fazer o uso de funções, além do mais, seu uso sobre iteradores se faz bem presente.</p>
+<h2 id="referências">Referências</h2>
+<p>Sebesta, Robert W. &ldquo;Conceitos de Linguagens de Programação&rdquo;, 10º edição.</p>
+<p><a href="https://en.wikipedia.org/wiki/Lambda_calculus">https://en.wikipedia.org/wiki/Lambda_calculus</a></p>
+<p><a href="https://plato.stanford.edu/entries/lambda-calculus/">https://plato.stanford.edu/entries/lambda-calculus/</a></p>
+<p><a href="https://towardsdatascience.com/lambda-functions-with-practical-examples-in-python-45934f3653a8">https://towardsdatascience.com/lambda-functions-with-practical-examples-in-python-45934f3653a8</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Anonymous_function">https://en.wikipedia.org/wiki/Anonymous_function</a></p>
+<p><a href="https://medium.com/@luijar/understanding-lambda-expressions-4fb7ed216bc5">https://medium.com/@luijar/understanding-lambda-expressions-4fb7ed216bc5</a></p>
+<p><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Anonymous-Functions.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Anonymous-Functions.html</a></p>
+<p><a href="https://www.geeksforgeeks.org/lambda-functions-in-lisp/">https://www.geeksforgeeks.org/lambda-functions-in-lisp/</a></p>
+<p><a href="https://www.tutorialspoint.com/lisp/lisp_lambda_functions.htm">https://www.tutorialspoint.com/lisp/lisp_lambda_functions.htm</a></p>
+<p><a href="https://wiki.haskell.org/Anonymous_function">https://wiki.haskell.org/Anonymous_function</a></p>
+<p><a href="https://www.haskell.org/tutorial/functions.html">https://www.haskell.org/tutorial/functions.html</a></p>
+<p><a href="https://wiki.haskell.org/Lambda_abstraction">https://wiki.haskell.org/Lambda_abstraction</a></p>
+<p><a href="https://wiki.haskell.org/Beta_reduction">https://wiki.haskell.org/Beta_reduction</a></p>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>
+            © 2023 Gabriel Leite Bessa, Built with
+            <a href="https://gohugo.io" class="footerLink">Hugo</a> and
+            <a href="https://github.com/LordMathis/hugo-theme-nightfall" class="footerLink">Nightfall</a> theme
+        </span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>
