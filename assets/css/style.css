@@ -1,3 +1,7 @@
+:root {
+    --menu-height: 60px;
+}
+
 @font-face {
     font-family: silkscreen;
     src: url(../fonts/Silkscreen/Silkscreen-Regular.ttf);
@@ -11,18 +15,8 @@
 
 body {
     margin: 0;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-}
-
-h2 {
-    text-align: center;
+    padding: 0;
+    background-color: #111;
 }
 
 ul {
@@ -39,7 +33,21 @@ a {
     color: #000;
 }
 
-.logotitle {
+canvas {
+    position: absolute;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #999;
+    margin: 0;
+}
+
+.logo-title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -47,21 +55,123 @@ a {
     margin: 10px;
 }
 
-.logotitle h1 {
+.logo-title h1 {
     margin-left: 10px;
-    font-family: silkscreen;
     font-size: 40px;
     text-align: center;
 }
 
+#btnMenu {
+    float: right;
+}
+
 menu {
+    position: fixed;
+    height: var(--menu-height);
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+menu * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.aboutMenu {
+    width: 33%;
+    background-color: aqua;
+}
+
+.portifolioMenu {
+    width: 33%;
+    background-color: azure;
+}
+
+.contactMenu {
+    width: 34%;
+    background-color: blue;
+}
+
+.english-site {
+    background-color: aquamarine;
+}
+
+.english-site img {
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px;
 }
 
-#btnMenu {
-    float: right;
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.portifolioContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.portifolioCard {
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    background-color: #999;
+    border-radius: 10px;
+}
+
+.portifolioCard h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.portifolioCard p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.contact {
+    backdrop-filter: blur(3px);
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactContainer .contactCard {
+    margin: 10px;
+}
+
+.contactCard img {
+    height: 50px;
+    width: 50px;
+}
+
+footer {
+    background-color: #999;
+    margin-bottom: var(--menu-height);
 }
