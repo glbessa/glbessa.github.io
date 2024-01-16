@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../assets/imgs/logo.png">
-        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/globals.css">
+        <link rel="stylesheet" href="../assets/css/index.css">
+        <link rel="stylesheet" href="../assets/css/portifolio.css">
+        <link rel="stylesheet" href="../assets/css/contacts.css">
 
         <!-- Google Icons -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -14,60 +17,98 @@
         <title>Gabriel Leite Bessa</title>
     </head>
     <body>
-        <canvas id="myCanvas"></canvas>
         <header>
-            <div class="logo-title">
-                <!-- Colocar uma image de fundo com codigos e afins -->
-                <img src="../assets/imgs/menu.svg" alt="Logo">
-            </div>
+            <h1>Gabriel Leite Bessa</h1>
         </header>
         <main>
             <article class="about">
-                <img src="" alt="Gabriel's Image">
-                <h2>Sobre mim</h2>
-                <p>Olá, eu me chamo Gabriel Leite Bessa e sou atualmente estou estudando Ciência da Computação na Universidade Federal de Pelotas!</p>
+                <!--<img src="" alt="Gabriel's Image">-->
+                <h2 id="about">Sobre mim</h2>
+                <p>Olá, eu me chamo Gabriel Leite Bessa e este é meu site pessoal para apresentação e portifólio. 
+                    Atualmente no 6º semestre de Ciência da Computação na Universidade Federal de Pelotas!</p>
             </article>
+            <hr class="divider">
             <article class="portifolio">
-                <h2>Portifólio</h2>
+                <h2 id="portifolio">Portifólio</h2>
                 <div class="portifolioContainer">
-                    <div class="portifolioCard">
-                        <h3>titulo</h3>
-                        <p>descrição</p>
-                    </div>
-                    <div class="portifolioCard">
-                        <h3>titulo</h3>
-                        <p>descrição</p>
-                    </div>
+                    <a href="https://github.com/glbessa/DeepRAD" class="portifolioCard">
+                        <h3>DeepRAD</h3>
+                        <p>Projeto desenvolvido na UFPel que tem como objetivo a detecção de características em raios-x odontológicos por meio de técnicas de inteligência artificial.</p>
+                    </a>
+                    <a href="https://github.com/glbessa/confortimetro_klimaa" class="portifolioCard">
+                        <h3>Confortímetro Klimaa</h3>
+                        <p>Projeto desenvolvido na UFPel que busca auxiliar no desenvolvimento do prédio inteligente da universidade com baixo emissão de carbono.</p>
+                    </a>
+                    <a href="https://github.com/glbessa/PampaOS" class="portifolioCard">
+                        <h3>Simulador PampaSim</h3>
+                        <p>Projeto desenvolvido na UFPel para o projeto e implementação de um simulador completo e funcional para a disciplina de sistemas operacionais.</p>
+                    </a>
+                    <!--
+                    <a href="https://github.com/glbessa/Battleship" class="portifolioCard">
+                        <h3>Batalha Naval</h3>
+                        <p>Jogo de batalha naval online.</p>
+                    </a>
+                    <a href="https://github.com/glbessa/MiniECommerce" class="portifolioCard">
+                        <h3>Mini e-commerce</h3>
+                        <p></p>
+                    </a>
+                    <a href="https://github.com/glbessa/GestaoComercio" class="portifolioCard">
+                        <h3>Gestão de Comércio</h3>
+                        <p></p>
+                    </a>
+                    -->
+                    <a href="https://github.com/glbessa/amigo_secreto" class="portifolioCard">
+                        <h3>Sorteador de Amigo Secreto</h3>
+                        <p></p>
+                    </a>
+                    <a href="https://github.com/glbessa/Z808-Feijoada" class="portifolioCard">
+                        <h3>Z808-Feijoada</h3>
+                        <p>Projeto desenvolvido em grupo no contexto da disciplina de Programação de Sistemas e no qual foi desenvolvida máquina virtual, carregador, ligador, montador e preprocessador para a arquitetura hipotética Z808.</p>
+                    </a>
+                    <a href="https://github.com/glbessa/ASCIIArtGenerator" class="portifolioCard">
+                        <h3>Gerador de arte ASCII</h3>
+                        <p>Criação de uma arte em texto ASCII a partir de uma imagem.</p>
+                    </a>
+                    <a href="https://github.com/glbessa/campus_explorer" class="portifolioCard">
+                        <h3>Campus Explorer</h3>
+                        <p></p>
+                    </a>
                 </div>
             </article>
+            <hr class="divider">
             <article class="resume">
-                <h2>Currículo</h2>
-                <a href="../assets/documents/resume.pdf" download="true"><img src="" alt="Resume Icon"></a>
+                <h2 id="resume">Currículo</h2>
+                <div>
+                    <h3>Currículo em português:</h3>
+                    <object data="../assets/documents/resume.pdf" type="application/pdf" width="350px" height="400px">
+                        <p>Não foi possível carregar a visualização... Tente baixar <a href="../assets/documents/resume.pdf" download="true">aqui</a>.</p>
+                    </object>
+                </div>
+                <div>
+                    <h3>Resume in English:</h3>
+                    <object data="../assets/documents/resume.pdf" type="application/pdf" width="350px" height="400px">
+                        <p>Não foi possível carregar a visualização... Tente baixar <a href="../assets/documents/resume.pdf" download="true">aqui</a>.</p>
+                    </object>
+                </div>
+                
             </article>
-            <article class="contact">
-                <h2>Contatos</h2>
+            <hr class="divider">
+            <article class="contacts">
+                <h2 id="contacts">Contatos</h2>
                 
                 <div class="contactContainer">
-                    <div class="contactCard">
-                        <a target="_blank" href="mailto:gabrielleitebessa@gmail.com">
-                            <img src="../assets/imgs/gicons-mail.svg" alt="Email">
-                        </a>
-                    </div>
-                    <div class="contactCard">
-                        <a target="_blank" href="https://www.linkedin.com/in/gabrielleitebessa/">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />
-                        </a>
-                    </div>
-                    <div class="contactCard">
-                        <a target="_blank" href="https://github.com/glbessa">                  
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
-                        </a>
-                    </div>
-                    <div class="contactCard">
-                        <a target="_blank" href="https://github.com/glbessa">
-                            <img src="../assets/imgs/instagram.svg" alt="Instagram">
-                        </a>
-                    </div>
+                    <a target="_blank" href="mailto:gabrielleitebessa@gmail.com" class="contactCard">
+                        <img src="../assets/imgs/gicons-mail.svg" alt="Email">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/gabrielleitebessa/" class="contactCard">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" />
+                    </a>
+                    <a target="_blank" href="https://github.com/glbessa" class="contactCard">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
+                    </a>
+                    <a target="_blank" href="https://github.com/glbessa" class="contactCard">
+                        <img src="../assets/imgs/instagram.svg" alt="Instagram">
+                    </a>
                 </div>
             </article>
         </main>
@@ -75,17 +116,18 @@
             
         </footer>
         <menu id="menu">
-            <div class="aboutMenu">
-                <p>A</p>
-            </div>
-            <div class="portifolioMenu">
-                <p>P</p>
-            </div>
-            <div class="contactMenu">
-                <p>C</p>
-            </div>
+            <a href="#about">
+                Sobre mim
+            </a>
+            <a href="#portifolio" class="portifolioMenu">
+                Portifólio
+            </a>
+            <a href="#resume" class="resumeMenu">
+                Currículo
+            </a>
+            <a href="#contacts">
+                Contatos
+            </a>
         </menu>
-        <script src="../assets/js/script.js"></script>
-        <script src="../assets/js/ball-traveler.js"></script>
     </body>
 </html>

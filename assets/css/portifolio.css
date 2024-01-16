@@ -1,0 +1,29 @@
+.portifolioContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portifolioContainer > * {
+    margin: 10px;
+}
+
+.portifolioCard {
+    padding: 10px;
+    width: 200px;
+    height: 250px;
+    background-color: var(--card-color);
+    border-radius: 10px;
+}
+
+.portifolioCard h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.portifolioCard p {
+    font-size: 15px;
+    text-align: center;
+}

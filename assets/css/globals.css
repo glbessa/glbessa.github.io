@@ -1,0 +1,71 @@
+:root {
+    --menu-height: 60px;
+    --color-primary: #3D3B40;
+    --color-secundary: #525CEB;
+    --color-accent: #BFCFE7;
+    --card-color: #999;
+    --font-color: #F8EDFF;
+}
+
+.themeDark {
+    --color-primary: #333;
+    --color-secondary: #666;
+    --color-accent: white;
+    --font-color: #eee;
+}
+
+.themeLight {
+    --color-primary: white;
+    --color-secondary: white;
+    --color-accent: white;
+    --font-color: white;
+}
+
+@font-face {
+    font-family: silkscreen;
+    src: url(../fonts/Silkscreen/Silkscreen-Regular.ttf);
+}
+
+@font-face {
+    font-family: silkscreen;
+    src: url(../fonts/Silkscreen/Silkscreen-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: playlist-script;
+    src: url(../fonts/PlaylistFF/Playlist\ Script.otf);
+    font-variant-caps: normal;
+}
+
+@font-face {
+    font-family: playlist-script;
+    src: url(../fonts/PlaylistFF/Playlist\ Caps.otf);
+    font-variant-caps: all-petite-caps;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.divider {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 100%;
+}

@@ -1,0 +1,95 @@
+body {
+    background-color: var(--color-primary);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin: 0;
+    padding: 0 10%;
+    background-image: url('../imgs/chris-ried-ieic5Tq8YMk-unsplash.jpg');
+    background-repeat:  no-repeat;
+    background-size: cover;
+    height: 250px;
+    background-position: center;
+    
+    color: var(--font-color);
+    font-family: playlist-script;
+    font-size: 40px;
+    text-align: center;
+}
+
+menu {
+    position: fixed;
+    height: var(--menu-height);
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*justify-content: space-evenly;*/
+    justify-content: center;
+}
+
+menu > * {
+    width: 25%;
+    /*border-radius: 50px;*/
+    background-color: var(--color-secundary);
+    transition: 0.5s;
+}
+
+menu > *:hover {
+    background-color: var(--color-accent);
+}
+
+menu * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    color: var(--font-color);
+}
+/*
+.portifolioMenu {
+    border-left: 1px solid white;
+}
+
+.resumeMenu {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: var(--color-primary);
+    color: var(--font-color);
+}
+
+main a {
+    color: var(--font-color);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    margin: 20px 0;
+}
+
+footer {
+    margin-bottom: var(--menu-height);
+}
