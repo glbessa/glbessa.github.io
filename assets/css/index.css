@@ -57,16 +57,7 @@ menu * {
 
     color: var(--font-color);
 }
-/*
-.portifolioMenu {
-    border-left: 1px solid white;
-}
 
-.resumeMenu {
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-}
-*/
 main {
     display: flex;
     flex-direction: column;
