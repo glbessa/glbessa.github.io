@@ -1,0 +1,15 @@
+main {
+    margin: 0 3%;
+}
+
+.portifolioContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portifolioContainer > * {
+    margin: 10px;
+}
