@@ -2,8 +2,6 @@ baseURL = 'https://glbessa.github.io/'
 languageCode = 'en'
 title = 'gabriellb'
 
-theme = 'nightfall'
-
 DefaultContentLanguage = 'pt-br'
 
 [params]
