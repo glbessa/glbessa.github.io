@@ -3,6 +3,8 @@ title: 'Arquitetura U-Net'
 author: 'Gabriel Leite Bessa'
 tags: ['posts', 'deep_learning', 'computer_vision', 'ai']
 date: '2023-07-21'
+card_image_url: '/blog/unet_architecture/img/u-net-architecture.png'
+description: 'Postagem sobre a arquitetura UNet'
 ---
 
 ## Introdução

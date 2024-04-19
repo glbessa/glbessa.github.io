@@ -1,0 +1,19 @@
+{{ define "head" }}
+    <link rel="stylesheet" href="/css/list.css">
+{{end}}
+{{ define "title" }}{{.Title}}{{end}}
+{{ define "main" }}
+    <ul>
+        {{ range .Pages }}
+        <li>
+            <a href="{{ .Permalink }}" class="card" style="width: 18rem;">
+                <img src="{{ .Params.card_image_url }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ .Title }}</h5>
+                    <p class="card-text">{{ .Description }}</p>
+                </div>
+            </a>
+        </li>
+        {{end}}
+    </ul>
+{{end}}

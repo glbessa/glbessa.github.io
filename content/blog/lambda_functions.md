@@ -4,6 +4,8 @@ author: "Gabriel Leite Bessa"
 date: 2023-07-27T20:15:58-03:00
 tags: ["clp", "programação", "funções"]
 categories: ["programação"]
+card_image_url: '/blog/lambda_functions/img/lambda_function_card.png'
+description: 'Postagem sobre funções anônimas em programação'
 ---
 
 ## Introdução
