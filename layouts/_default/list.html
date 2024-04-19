@@ -11,6 +11,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ .Title }}</h5>
                     <p class="card-text">{{ .Description }}</p>
+                    <p class="card-date">{{ if .Date }}{{ time.Format "2 Jan 2006" .Date }}{{ else }}{{end}}</p>
                 </div>
             </a>
         </li>
