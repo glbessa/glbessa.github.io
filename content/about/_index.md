@@ -1,5 +1,4 @@
 ---
-title: "About me"
+title: 'Sobre mim'
 author: 'glbessa'
-home: true
 ---

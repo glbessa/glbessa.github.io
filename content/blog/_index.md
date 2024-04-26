@@ -1,3 +1,3 @@
 ---
-blog: true
+title: 'Blog'
 ---
