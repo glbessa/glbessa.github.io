@@ -39,10 +39,10 @@ icon = "fa fa-envelope fa-2x"
 weight = 4
 url = "mailto:gabrielleitebessa@gmail.com"
 
-[[languages.pt-br.menu.main]]
-name = "Sobre"
-weight = 1
-url = "about/"
+#[[languages.pt-br.menu.main]]
+#name = "Sobre"
+#weight = 1
+#url = "about/"
 
 [[languages.pt-br.menu.main]]
 name = "Blog"

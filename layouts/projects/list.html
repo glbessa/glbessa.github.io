@@ -6,6 +6,15 @@
     {{- i18n (lower .Title) | default .Title | title }} · {{ .Site.Title -}}
 {{ end }}
 {{ define "content" }}
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        .links * {
+            margin: 0px 5px;
+        }
+    </style>
     <section class="container list">
         <header>    
             <h1 class="title">
@@ -20,9 +29,9 @@
         </header>
         {{ .Content }}
         <section class="articles">
-            {{ range sort .Paginator.Pages .Params.id }}
+            {{ range sort .Paginator.Pages ".Params.order" }}
             <article>
-                <a href="{{ .Params.github_url }}" class="article-wrapper">
+                <div class="article-wrapper">
                   <figure>
                     <img src="{{ .Params.card_img_url }}" alt="" />
                   </figure>
@@ -31,20 +40,13 @@
                     <p>
                       {{ .Description }}
                     </p>
-                  </div>
-                </a>
-            </article>
-            <!--
-                <li class="card">
-                    <img src="https://via.placeholder.com/300" alt="Placeholder Image">
-                    <div class="card-content">
-                        <div class="card-title">{{ .Title }}</div>
-                        <div class="card-description">{{ .Description }}</div>
+                    <div class="links">
+                        {{ if .Params.github_url }}<a target="_blank" href="{{ .Params.github_url }}" class="fa-brands fa-github"></a>{{ end }}
+                        {{ if .Params.website_url }}<a target="_blank" href="{{ .Params.website_url }}" class="fa-solid fa-globe"></a>{{ end }}
                     </div>
-                    <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-                    <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-                </li>
-            -->
+                  </div>
+                </div>
+            </article>
             {{ end }}
         </section>
         {{ partial "pagination.html" . }}
