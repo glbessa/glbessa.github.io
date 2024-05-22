@@ -1,5 +1,4 @@
 ---
-title: "gabriellb webpage"
-author: 'gabriellb'
-home: true
+title: "glbessa website"
+author: 'glbessa'
 ---

@@ -1,0 +1,22 @@
+# some information about you
+name: "Gabriel Leite Bessa"
+nickname: "glbessa"
+image: "img/profile.png"
+
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Olá, eu sou"
+
+# give your contact information. they will be used in the footer
+contactInfo:
+  email: "gabrielleitebessa@gmail.com"
+  phone: "+55 53 984655136"
+  github:
+    icon: github
+    url: "https://github.com/glbessa"
+    text: "glbessa no GitHub"
+
+# a summary of what you do
+summary:
+- Desenvolvedor de software
+- Pythonista
+- Adoro projetos com IA e visão computacional
