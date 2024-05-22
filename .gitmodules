@@ -4,6 +4,3 @@
 [submodule "themes/hugo-profile"]
 	path = themes/hugo-profile
 	url = https://github.com/gurusabarish/hugo-profile.git
-[submodule "themes/hugo-toha"]
-	path = themes/hugo-toha
-	url = https://github.com/hugo-toha/toha.git

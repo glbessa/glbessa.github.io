@@ -3,7 +3,7 @@ title: 'Arquitetura U-Net'
 author: 'Gabriel Leite Bessa'
 tags: ['posts', 'deep_learning', 'computer_vision', 'ai']
 date: '2023-07-21'
-card_image_url: '/blog/unet_architecture/img/u-net-architecture.png'
+hero: '/posts/unet_architecture/img/u-net-architecture.png'
 description: 'Postagem sobre a arquitetura UNet'
 ---
 
@@ -13,23 +13,23 @@ O desenvolvimento de redes neurais profundas cresceu muito nos últimos anos gra
 
 A seguir são apresentados alguns exemplos de tarefas de visão computacional:
 
-{{< image "/imgs/different_types_of_computer_vision_tasks.webp" "Figura 1: Exemplos de tarefas de visão computacional." >}}
+{{< image "/posts/unet_architecture/img/different_types_of_computer_vision_tasks.webp" "Figura 1: Exemplos de tarefas de visão computacional." >}}
 
 ## Arquitetura U-Net
 
 A U-Net é uma rede neural convolucional criada para segmentação de imagens com foco em imagens biomédicas, sendo baseada em uma rede totalmente convolucional e optimizada para trabalhar com um dataset de treinamento pequeno obtendo ainda sim bons resultados. A ideia principal da rede é ter camadas de contração e após ter camadas de expansão para que assim consiga realizar o trabalho de segmentação das imagens, sendo a primeira parte também chamada de decoder e a segunda parte de encoder.
 
-{{< image "/imgs/encoder_decoder_with_skip_connections.webp" "Figura 2: Encoder e decoder com skip connections." >}}
+{{< image "/posts/unet_architecture/img/encoder_decoder_with_skip_connections.webp" "Figura 2: Encoder e decoder com skip connections." >}}
 
 A camada de contração realiza a extração das características da imagem, aumentando o número de canais após cada camada. Essa parte realiza duas convoluções com filtros 3x3 e função de ativação ReLU, no artigo original da U-Net essas convoluções não apresentam nenhum preenchimento (padding), entretanto isso acaba por reduzir o tamanho das máscaras de saída, e muitas vezes não é seguido em outras implementações. Após essas duas camadas de convolução existe uma camada de *max-pooling* com filtro 2x2, que faz a redução da resolução da imagem pela metade. Ao final existe ainda uma camada de *dropout* de 30% de probabilidade.
 
 {{< note "Dropout: a camada de dropout é responsável por reduzir o overfitting e melhorar a generalização no dataset de teste eliminando alguns neurônios com determinada probabilidade" >}}
 
-{{< image "/imgs/dropout.png" "Figura 3: Camada de dropout" >}}
+{{< image "/posts/unet_architecture/img/dropout.png" "Figura 3: Camada de dropout" >}}
 
 {{< note "Função de ativação: A função de ativação é responsável por tornar a rede capaz de modelar funções não lineares." >}}
 
-{{< image "/imgs/relu.jpg" "Figura 4: Função de ativação ReLU" >}}
+{{< image "/posts/unet_architecture/img/relu.jpg" "Figura 4: Função de ativação ReLU" >}}
 
 Já camada de expansão realiza a o vínculo dessas características com informações espaciais da imagem. Sendo composta por uma camada de convolução upsample com stride igual a 2, uma camada de concatenação, que é usada para as skip connections, uma camada de *dropout* de 30% e duas camadas de convolução com filtro 3x3 e função de ativação ReLU.
 
@@ -37,13 +37,13 @@ As camadas de contração e expansão são ligadas por skip connections que são
 
 Ao final da rede existe uma camada de convolução com filtro 1x1 e função de ativação *softmax* que realiza a classificação dos pixels da imagem. Sendo a mesma operação que uma camada de feed-forward dense. 
 
-{{< image "/imgs/u-net-architecture.png" "Figura 5: Arquitetura da rede U-Net." >}}
+{{< image "/posts/unet_architecture/img/u-net-architecture.png" "Figura 5: Arquitetura da rede U-Net." >}}
 
 ## Implementação da U-Net com Tensorflow
 
 A seguir é demostrada um exemplo de implementação da rede U-Net utilizando Tensorflow. No exemplo os block de contração e expansão foram definidos em duas funções, *downsample_block* e *upsample_block* respectivamente.
 
-```
+```python
 def downsample_block(x, n_filters, n_channels=1):
     x = layers.Conv2D(n_filters, n_channels, strides = 1, padding = "same", activation = "relu")(x)
     x = layers.Conv2D(n_filters, n_channels, strides = 1, padding = "same", activation = "relu")(x)
@@ -53,7 +53,7 @@ def downsample_block(x, n_filters, n_channels=1):
     return f, p
 ```
 
-```
+```python
 def upsample_block(x, conv_features, n_filters, n_channels=1):
     x = layers.Conv2DTranspose(n_filters, n_channels, strides=2, padding="same")(x)
     x = layers.concatenate([x, conv_features])
@@ -67,7 +67,7 @@ def upsample_block(x, conv_features, n_filters, n_channels=1):
 Ao final é feito o uso dessas funções e a construção da rede em si:
 
 
-```
+```python
 def build_unet_model(shape:tuple, n_classes:int):
     inputs = layers.Input(shape=shape)
     n_channels = shape[-1]
