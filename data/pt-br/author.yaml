@@ -14,6 +14,10 @@ contactInfo:
     icon: github
     url: "https://github.com/glbessa"
     text: "glbessa no GitHub"
+  linkedin:
+    icon: linkedin
+    url: "https://www.linkedin.com/in/gabrielleitebessa/"
+    text: "glbessa no LinkedIn"
 
 # a summary of what you do
 summary:

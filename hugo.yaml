@@ -1,7 +1,7 @@
 
 baseURL: https://glbessa.dev.br
 languageCode: en-us
-title: glbessa website
+title: glbessa
 
 assetDir: static
 
@@ -29,12 +29,12 @@ languages:
   en:
     languageCode: en
     languageName: English
-    title: "glbessa website"
+    title: "glbessa"
     weight: 2
   pt-br:
     languageCode: pt-br
     languageName: Português Brasileiro
-    title: "glbessa website"
+    title: "glbessa"
     weight: 1
 
 # default language for the content
@@ -118,8 +118,8 @@ params:
     comment:
       enable: false
       services:
-        disqus:
-          shortName: toha-example-site
+         disqus:
+           shortName: toha-example-site
         # valine:
         #   appId: HTV6askWxVo3vOxlqjjaq2hd-MsYXbMMI
         #   appKey: pVrT3C85KGIuk27t07eh6bUC
@@ -279,18 +279,18 @@ params:
     enable: true
     # You can provide your custom footer template using this option.
     # Put your template in "layouts/partials" folder of your repo.
-    template: footer.html
+    #template: footer.html
     # Show/hide navigation in the footer. Default is "true".
     navigation:
-      enable: false
+      enable: true
       # show custom menus in the footer
       customMenus: true
     # Show/hide "Contact Me" section in the footer. Default is "true".
     contactMe:
-      enable: false
+      enable: true
     # Show/hide credentials section in the footer. Default is "true".
     credentials:
-      enable: false
+      enable: true
 
     # Show/hide newsletter section in the footer. Default is "true".
     # Currently, it supports "mailchimp".
