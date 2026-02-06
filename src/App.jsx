@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Posts from './pages/Posts';
 import Projects from './pages/Projects';
 import PostDetail from './pages/PostDetail';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/posts/:slug" element={<PostDetail type="posts" />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<PostDetail type="projects" />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
     </Router>

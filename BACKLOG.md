@@ -22,16 +22,16 @@ Reposicionar a marca pessoal para focar em **soluções de valor**, **ROI (Retor
 *   [x] **Testemunhos/Resultados:** (Se houver) Adicionar métricas de impacto (ex: "Redução de 40% no tempo manual").
 
 ## 📁 Fase 3: Portfólio de Soluções (Projetos)
-*   [ ] **Reformulação dos Markdowns:** Atualizar o frontmatter dos projetos em `content/projects/` para incluir:
+*   [x] **Reformulação dos Markdowns:** Atualizar o frontmatter dos projetos em `content/projects/` para incluir:
     *   `problem`: Qual dor do cliente existia?
     *   `solution`: Como a tecnologia resolveu?
     *   `impact`: Qual foi o resultado prático?
-*   [ ] **Filtros por Categoria de Negócio:** Adicionar filtros como "Automação", "Gestão", "E-commerce" na página de projetos.
-*   [ ] **Thumbnail de Qualidade:** Criar ou selecionar imagens que mostrem a interface ou o conceito do projeto, não apenas ícones de linguagem.
+*   [x] **Filtros por Categoria de Negócio:** Adicionar filtros como "Automação", "Gestão", "E-commerce" na página de projetos.
+*   [x] **Thumbnail de Qualidade:** Criar ou selecionar imagens que mostrem a interface ou o conceito do projeto, não apenas ícones de linguagem. (Design dos cards atualizado para melhor apresentação visual).
 
 ## ✍️ Fase 4: Comunicação e Conteúdo
-*   [ ] **Blog Post Business-Friendly:** Criar posts que falem sobre "Por que sua empresa precisa de uma API" em vez de apenas "Como fazer uma API".
-*   [ ] **Página de Contato Simplificada:** Criar uma rota `/contato` com links diretos e um breve FAQ sobre como é o processo de trabalho.
+*   [x] **Blog Post Business-Friendly:** Criar posts que falem sobre "Por que sua empresa precisa de uma API" em vez de apenas "Como fazer uma API".
+*   [x] **Página de Contato Simplificada:** Criar uma rota `/contato` com links diretos e um breve FAQ sobre como é o processo de trabalho.
 
 ---
 

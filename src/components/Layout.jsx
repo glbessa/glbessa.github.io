@@ -54,6 +54,12 @@ const Layout = ({ children }) => {
               >
                 Projetos
               </Link>
+              <Link 
+                to="/contact" 
+                className={`${isActive('/contact') ? 'text-blue-600 font-semibold' : 'text-slate-600 hover:text-blue-600'} transition-colors`}
+              >
+                Contato
+              </Link>
             </div>
           </div>
 
@@ -81,6 +87,13 @@ const Layout = ({ children }) => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Projetos
+                </Link>
+                <Link 
+                  to="/contact" 
+                  className={`px-3 py-2 rounded-md ${isActive('/contact') ? 'bg-blue-50 text-blue-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contato
                 </Link>
               </div>
             </div>

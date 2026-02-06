@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tls on glbessa</title>
+    <link>http://localhost:1313/tags/tls/</link>
+    <description>Recent content in Tls on glbessa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 12 May 2024 21:08:35 -0300</lastBuildDate><atom:link href="http://localhost:1313/tags/tls/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Utilizando o Github Pages com um Domínio Próprio: Parte 3</title>
+      <link>http://localhost:1313/posts/utilizando_o_github_pages_com_um_dominio_proprio_parte_3/</link>
+      <pubDate>Sun, 12 May 2024 21:08:35 -0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/utilizando_o_github_pages_com_um_dominio_proprio_parte_3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utilizando o Github Pages com um Domínio Próprio: Parte 2</title>
+      <link>http://localhost:1313/posts/utilizando_o_github_pages_com_um_dominio_proprio_parte_2/</link>
+      <pubDate>Sun, 12 May 2024 21:08:31 -0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/utilizando_o_github_pages_com_um_dominio_proprio_parte_2/</guid>
+      <description>Olá a todos!
+Nessa postagem continuarei a demonstrar</description>
+    </item>
+    
+    <item>
+      <title>Utilizando o Github Pages com um Domínio Próprio: Parte 1</title>
+      <link>http://localhost:1313/posts/utilizando_o_github_pages_com_um_dominio_proprio_parte_1/</link>
+      <pubDate>Sun, 12 May 2024 20:32:10 -0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/utilizando_o_github_pages_com_um_dominio_proprio_parte_1/</guid>
+      <description>Olá a todos!
+Nesse post irei demonstrar como fazer deploy do site no Github Pages, comprar um domínio, transferir ele para a CloudFlare, configurar ele no Github Pages e utilizar o certificado TLS/SSL da CloudFlare.
+Iniciando com Github Pages Primeiramente precisamos criar um site que pode ser algo bem simples por enquanto. Lembrando que é necessário que ter uma conta no Github já. O Github disponibiliza para todos os usuários criarem um repositório especial com o nome &amp;lt;username&amp;gt;.</description>
+    </item>
+    
+    
+  </channel>
+</rss>

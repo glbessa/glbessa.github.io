@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ai on glbessa</title>
+    <link>http://localhost:1313/tags/ai/</link>
+    <description>Recent content in Ai on glbessa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Arquitetura U-Net</title>
+      <link>http://localhost:1313/posts/unet_architecture/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/unet_architecture/</guid>
+      <description>Introdução O desenvolvimento de redes neurais profundas cresceu muito nos últimos anos graças ao aumento da quantidade de dados disponíveis, ao aumento do poder computacional e os obstáculos que as técnicas de machine learning clássica começaram a enfrentar, chegando a um limite no aprendizado com essas técnicas. Isso passou a ter um papel essêncial em tarefas de visão computacional com a criação das redes neurais convolucionais, que diferente das feed-forward neural networks, fazem o uso de filtros convolucionais para o aprendizado de características em imagens.</description>
+    </item>
+    
+    
+  </channel>
+</rss>
