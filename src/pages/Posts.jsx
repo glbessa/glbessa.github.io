@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getPosts } from '../lib/content';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts().then(setPosts);
+    // Import all post metadata dynamically from the generated pages
+    const modules = import.meta.glob('./posts/*.jsx', { eager: true });
+    
+    // Convert to array of { ...metadata }
+    const loadedPosts = Object.values(modules).map(module => module.metadata);
+    
+    // Sort by date desc
+    loadedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    setPosts(loadedPosts);
   }, []);
 
   return (

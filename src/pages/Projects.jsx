@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProjects } from '../lib/content';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -8,11 +7,18 @@ const Projects = () => {
   const [categories, setCategories] = useState(['Todos']);
 
   useEffect(() => {
-    getProjects().then(data => {
-      setProjects(data);
-      const uniqueCategories = ['Todos', ...new Set(data.map(p => p.category).filter(Boolean))];
-      setCategories(uniqueCategories);
-    });
+    // Import all project metadata dynamically from the generated pages
+    const modules = import.meta.glob('./projects/*.jsx', { eager: true });
+    
+    // Convert to array of { ...metadata }
+    const loadedProjects = Object.values(modules).map(module => module.metadata);
+    
+    // Sort by order asc
+    loadedProjects.sort((a, b) => (a.order || 0) - (b.order || 0));
+    
+    setProjects(loadedProjects);
+    const uniqueCategories = ['Todos', ...new Set(loadedProjects.map(p => p.category).filter(Boolean))];
+    setCategories(uniqueCategories);
   }, []);
 
   const filteredProjects = filter === 'Todos' 
