@@ -1,62 +1,50 @@
 import matter from 'gray-matter';
 
-// Import all markdown files from the content directory
-const postsGlob = import.meta.glob('/content/posts/*.md', { query: '?raw', import: 'default' });
-const projectsGlob = import.meta.glob('/content/projects/*.md', { query: '?raw', import: 'default' });
+// Eagerly import all markdown files at build time
+const postsRaw = import.meta.glob('/content/posts/*.md', { eager: true, query: '?raw', import: 'default' });
+const projectsRaw = import.meta.glob('/content/projects/*.md', { eager: true, query: '?raw', import: 'default' });
 
 /**
- * Helper to fetch and parse markdown files
+ * Helper to parse markdown content
  */
-async function loadContent(glob) {
-  const content = [];
-  for (const path in glob) {
-    const raw = await glob[path]();
+function parseContent(rawMap) {
+  return Object.keys(rawMap).map(path => {
+    const raw = rawMap[path];
     const { data, content: markdown } = matter(raw);
     
-    // Extract slug from path
-    // Path format: /content/posts/filename.md
     const filename = path.split('/').pop().replace('.md', '');
     
     // Preprocess Hugo shortcodes
     let processedMarkdown = markdown;
-    
-    // Replace image shortcode: {{< image "src" "alt" >}} -> ![alt](src)
     processedMarkdown = processedMarkdown.replace(/{{< image "([^"]+)" "([^"]+)" >}}/g, '![$2]($1)');
-    
-    // Replace note shortcode: {{< note "text" >}} -> > 💡 **Note:** text
     processedMarkdown = processedMarkdown.replace(/{{< note "([^"]+)" >}}/g, '> 💡 **Note:** $1');
-    
-    // Replace reference shortcode: {{< reference "url" >}} -> [url](url)
     processedMarkdown = processedMarkdown.replace(/{{< reference "([^"]+)" >}}/g, '[$1]($1)');
 
-    content.push({
+    return {
       slug: filename,
       ...data,
       content: processedMarkdown,
       path
-    });
-  }
-  return content;
+    };
+  });
 }
 
+// Pre-process all content once
+const allPosts = parseContent(postsRaw).sort((a, b) => new Date(b.date) - new Date(a.date));
+const allProjects = parseContent(projectsRaw).sort((a, b) => (a.order || 0) - (b.order || 0));
+
 export async function getPosts() {
-  const posts = await loadContent(postsGlob);
-  // Sort by date descending
-  return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  return allPosts;
 }
 
 export async function getProjects() {
-  const projects = await loadContent(projectsGlob);
-  // Sort by order or date
-  return projects.sort((a, b) => (a.order || 0) - (b.order || 0));
+  return allProjects;
 }
 
 export async function getPostBySlug(slug) {
-  const posts = await getPosts();
-  return posts.find(p => p.slug === slug);
+  return allPosts.find(p => p.slug === slug);
 }
 
 export async function getProjectBySlug(slug) {
-  const projects = await getProjects();
-  return projects.find(p => p.slug === slug);
+  return allProjects.find(p => p.slug === slug);
 }
