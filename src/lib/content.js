@@ -1,4 +1,51 @@
-import matter from 'gray-matter';
+/**
+ * Simple browser-compatible frontmatter parser
+ */
+function parseFrontMatter(raw) {
+  const regex = /^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/;
+  const match = raw.match(regex);
+  
+  if (!match) return { data: {}, content: raw };
+  
+  const yaml = match[1];
+  const content = match[2];
+  const data = {};
+  
+  // Basic YAML key-value parser
+  yaml.split('\n').forEach(line => {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex > -1) {
+      const key = line.slice(0, colonIndex).trim();
+      let value = line.slice(colonIndex + 1).trim();
+      
+      // Handle simple strings with quotes
+      if (value.startsWith('"') && value.endsWith('"')) {
+        value = value.slice(1, -1);
+      } else if (value.startsWith("'") && value.endsWith("'")) {
+        value = value.slice(1, -1);
+      }
+      
+      // Handle arrays like ["A", "B"]
+      if (value.startsWith('[') && value.endsWith(']')) {
+        try {
+          value = JSON.parse(value.replace(/'/g, '"'));
+        } catch (e) {
+          // If not valid JSON array, keep as string or try simpler split
+          value = value.slice(1, -1).split(',').map(v => v.trim().replace(/^["']|["']$/g, ''));
+        }
+      }
+      
+      // Handle numeric values
+      if (!isNaN(value) && value !== '') {
+        value = Number(value);
+      }
+      
+      data[key] = value;
+    }
+  });
+  
+  return { data, content };
+}
 
 // Eagerly import all markdown files at build time
 const postsRaw = import.meta.glob('/content/posts/*.md', { eager: true, query: '?raw', import: 'default' });
@@ -10,7 +57,7 @@ const projectsRaw = import.meta.glob('/content/projects/*.md', { eager: true, qu
 function parseContent(rawMap) {
   return Object.keys(rawMap).map(path => {
     const raw = rawMap[path];
-    const { data, content: markdown } = matter(raw);
+    const { data, content: markdown } = parseFrontMatter(raw);
     
     const filename = path.split('/').pop().replace('.md', '');
     
