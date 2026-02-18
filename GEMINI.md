@@ -1,20 +1,31 @@
-# Gemini CLI Refactor
+# Portfolio & Landing Page - glbessa.dev
 
-Este projeto foi refatorado de **Hugo** para **Vite + React** utilizando o Gemini CLI.
+Este projeto é uma **Landing Page de Alta Conversão** desenvolvida para apresentar serviços de consultoria tecnológica e desenvolvimento de software (SaaS, IA e Infraestrutura).
 
-## Mudanças Realizadas
+## Principais Características
 
-1.  **Migração de Framework:** O projeto agora utiliza React 18 com Vite para um desenvolvimento mais rápido e moderno.
-2.  **Transformação de Conteúdo:** O conteúdo original em Markdown foi migrado para componentes React estáticos e os dados de configuração (YAML) foram consolidados em constantes globais (`src/data/index.js`). A pasta `data/` original foi removida.
-3.  **Interface:** Implementada uma nova UI responsiva utilizando `react-bootstrap`.
-4.  **Roteamento:** Navegação via `react-router-dom` para Home, Posts e Projetos.
+1.  **Arquitetura Baseada em Dados:** Todo o conteúdo dinâmico (textos, links, projetos e FAQs) é centralizado em `src/data/index.js`, permitindo atualizações rápidas sem mexer na estrutura dos componentes.
+2.  **Design Premium e Moderno:**
+    -   **Bento Grid:** Utilizado para apresentar serviços de forma clara e visualmente atraente.
+    -   **Glassmorphism:** Estética Dark Mode com elementos de vidro e desfoque de fundo.
+    -   **Micro-animações:** Feedback visual fluído e transições suaves utilizando Framer Motion.
+3.  **Foco em Conversão:** Layout otimizado para transformar visitantes em leads, com chamadas para ação (CTAs) estratégicas e seções de prova social (logotipos de empresas).
+4.  **Performance SPA:** Aplicação Single Page Application (SPA) ultra rápida com carregamento dinâmico de rotas para posts e projetos.
 
 ## Tecnologias
 
-- **Frontend:** React, Vite
-- **Estilização:** Bootstrap 5, Sass
-- **Conteúdo:** Gray-matter (frontmatter), React-markdown
-- **Build:** Vite
+- **Core:** React 18, Vite
+- **CSS:** TailwindCSS
+- **Animações:** Framer Motion
+- **Ícones:** Lucide React
+- **Markdown:** React-markdown (para suporte a conteúdos estáticos)
+- **Roteamento:** React Router DOM
+
+## Estrutura de Pastas
+
+- `src/components/`: Componentes modulares e reutilizáveis (Navbar, Bento Grids, Footer).
+- `src/data/`: Central de dados e configurações do site.
+- `src/pages/`: Páginas principais e templates de rotas dinâmicas.
 
 ## Comandos Disponíveis
 
