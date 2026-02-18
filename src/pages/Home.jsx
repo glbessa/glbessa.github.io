@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ServicesBento from '../components/ServicesBento';
 import TechStack from '../components/TechStack';
+import About from '../components/About';
 import Contact from './Contact';
 
 import { getData } from '../data';
@@ -14,7 +15,8 @@ const Home = () => {
       <div className="relative z-10 bg-slate-950">
         <TechStack />
         <ServicesBento />
-        
+        <About />
+
         {/* Social Proof / Trust */}
         <CompanyMarquee />
 
