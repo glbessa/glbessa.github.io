@@ -1,8 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Mail, Linkedin, ChevronDown } from 'lucide-react';
 
 const Contact = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqs = [
     {
       question: "Como funciona o processo de desenvolvimento?",
@@ -50,7 +52,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">E-mail</p>
-              <p className="text-lg font-bold text-slate-200 group-hover:text-blue-400 transition-colors">gabrielleitebessa@gmail.com</p>
+              <p className="text-lg font-bold text-slate-200 group-hover:text-blue-400 transition-colors break-all">gabrielleitebessa@gmail.com</p>
             </div>
           </a>
 
@@ -71,18 +73,39 @@ const Contact = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-slate-900/30 p-8 rounded-3xl space-y-8 border border-white/5 backdrop-blur-sm">
+        <div className="bg-slate-900/30 p-8 pb-24 md:pb-8 rounded-3xl space-y-8 border border-white/5 backdrop-blur-sm">
           <h2 className="text-2xl font-bold text-slate-200">Perguntas Frequentes</h2>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="space-y-2 group">
-                <h3 className="font-bold text-slate-300 group-hover:text-blue-400 transition-colors flex items-center gap-2">
-                  <ChevronDown className="w-4 h-4 text-slate-500" />
+              <div 
+                key={index} 
+                className="group cursor-pointer"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                <h3 className="font-bold text-slate-300 group-hover:text-blue-400 transition-colors flex items-center gap-2 select-none">
+                  <motion.div
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ChevronDown className="w-4 h-4 text-slate-500" />
+                  </motion.div>
                   {faq.question}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed pl-6 border-l border-slate-800 ml-2">
-                  {faq.answer}
-                </p>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-slate-500 text-sm leading-relaxed pl-6 border-l border-slate-800 ml-2 mt-2 pb-2">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>

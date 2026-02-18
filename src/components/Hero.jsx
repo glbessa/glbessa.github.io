@@ -4,7 +4,7 @@ import { ArrowRight, Terminal, Code, Cpu } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-slate-950">
         <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
@@ -23,10 +23,10 @@ const Hero = () => {
               transition={{ duration: 0.5 }}
             >
               <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-                Full-Stack Developer & Cloud Architect
+                Tech Partner for Startups & Scale-ups
               </span>
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-slate-100">
-                Transformo dados em <span className="text-gradient">decisões</span> e infraestrutura em <span className="text-gradient">escala</span>.
+                Sua visão de negócio, transformada em <span className="text-gradient">tecnologia proprietária</span>.
               </h1>
             </motion.div>
             
@@ -36,7 +36,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed"
             >
-              Especilista em criar soluções SaaS de alta performance, data pipelines robustos e automação de infraestrutura. Do MVP ao Enterprise.
+              Ajudando fundadores a lançar MVPs, escalar produtos e transformar tecnologia em ativo estratégico. Do zero ao exit.
             </motion.p>
 
             <motion.div 
@@ -77,29 +77,29 @@ const Hero = () => {
                     <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
                   </div>
-                  <div className="mx-auto text-xs font-mono text-slate-500">deploy-pipeline.yaml</div>
+                  <div className="mx-auto text-xs font-mono text-slate-500">growth-engine.ts</div>
                 </div>
                 <div className="p-6 font-mono text-sm space-y-4 overflow-hidden">
                   <div className="flex gap-2">
                     <span className="text-pink-500">const</span>
-                    <span className="text-blue-400">future</span>
+                    <span className="text-blue-400">valuation</span>
                     <span className="text-slate-400">=</span>
                     <span className="text-yellow-300">await</span>
-                    <span className="text-blue-400">build</span>
+                    <span className="text-blue-400">scaleUP</span>
                     <span className="text-slate-400">({'{'}</span>
                   </div>
                   <div className="pl-4 space-y-2">
                     <div className="flex gap-2">
-                      <span className="text-blue-300">scalable</span>:
-                      <span className="text-emerald-400">true</span>,
+                      <span className="text-blue-300">product</span>:
+                      <span className="text-orange-400">'validated'</span>,
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-blue-300">infrastructure</span>:
-                      <span className="text-orange-400">'managed'</span>,
+                      <span className="text-blue-300">churn</span>:
+                      <span className="text-orange-400">'0%'</span>,
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-blue-300">latency</span>:
-                      <span className="text-orange-400">'minimal'</span>,
+                      <span className="text-blue-300">growth</span>:
+                      <span className="text-orange-400">'exponential'</span>,
                     </div>
                   </div>
                   <div className="text-slate-400">{'}'});</div>
@@ -107,11 +107,11 @@ const Hero = () => {
                   <div className="pt-4 flex gap-4 border-t border-white/5 mt-4">
                      <div className="flex items-center gap-2 text-slate-500">
                         <Terminal className="w-4 h-4" />
-                        <span>Build Success</span>
+                        <span>MRR Increased</span>
                      </div>
                      <div className="flex items-center gap-2 text-emerald-500">
                         <Cpu className="w-4 h-4" />
-                        <span>14ms</span>
+                        <span>+120%</span>
                      </div>
                   </div>
                 </div>

@@ -16,7 +16,7 @@ const Home = () => {
         {/* Social Proof / Trust Placeholder */}
         <section className="py-20 bg-slate-900/50 border-y border-white/5">
            <div className="container mx-auto px-6 text-center">
-             <h3 className="text-xl text-slate-400 mb-8">Empresas que confiam na minha arquitetura</h3>
+             <h3 className="text-xl text-slate-400 mb-8">Empresas que escalaram com minha tecnologia</h3>
              <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
                {/* Replace with actual logos or generic trust indicators */}
                <div className="text-2xl font-bold font-mono text-white">TECH<span className="text-blue-500">CORP</span></div>
@@ -30,8 +30,8 @@ const Home = () => {
         <section id="projects" className="py-24 container mx-auto px-6">
            <div className="flex flex-col md:flex-row justify-between items-end mb-12">
              <div>
-               <h2 className="text-3xl font-bold text-slate-100 mb-2">Projetos em Destaque</h2>
-               <p className="text-slate-400">Cases reais de transformação digital.</p>
+               <h2 className="text-3xl font-bold text-slate-100 mb-2">Ventures & Cases de Sucesso</h2>
+               <p className="text-slate-400">De MVPs a Exits: o impacto da tecnologia no mundo real.</p>
              </div>
              <a href="#" className="text-blue-400 hover:text-white transition-colors flex items-center gap-2 mt-4 md:mt-0">
                Ver todos os projetos &rarr;
@@ -78,7 +78,7 @@ const Home = () => {
              </div>
              {/* Using existing Contact component but we might need to style it if it's not dark mode ready. 
                  For now, wrapping it. */}
-             <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800">
+             <div className="bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-800">
                 <Contact />
              </div>
           </div>

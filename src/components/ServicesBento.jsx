@@ -45,39 +45,39 @@ const ServicesBento = () => {
             Soluções para <span className="text-gradient">Escalar</span>
           </h2>
           <p className="text-slate-400 text-lg">
-            Engenharia de software focada em resultados. Desenvolvo sistemas que resolvem problemas reais e impulsionam o crescimento.
+            Engenharia de software focada em valuation. Desenvolvo ativos tecnológicos que resolvem problemas reais e aumentam o valor da sua empresa.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-max">
           {/* Main Service - Development */}
           <Card 
-            title="Desenvolvimento de Sistemas"
-            description="Transformo ideias complexas em software robusto e escalável. Do MVP ao produto final, com foco em performance e experiência do usuário."
+            title="Plataformas & Produtos Digitais"
+            description="Transformo sua ideia em propriedade intelectual. Software exclusivo, feito sob medida para o seu modelo de negócio, do MVP ao Scale-up."
             icon={Layout}
             className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-slate-900 to-slate-900/50"
             delay={0}
-            tags={['React', 'Node.js', 'SaaS', 'Web 3']}
+            tags={['SaaS', 'Marketplaces', 'Mobile Apps', 'Web 3']}
           />
 
           {/* Service - Data */}
           <Card 
-            title="Inteligência de Dados"
-            description="Pipelines de dados e dashboards que transformam números brutos em insights acionáveis."
+            title="Dashboards & BI"
+            description="Visualização clara de KPIs e métricas de crescimento. Tome decisões baseadas em dados, não em palpites."
             icon={Database}
             className="md:col-span-1"
             delay={0.2}
-            tags={['Python', 'ETL', 'Analytics', 'AI']}
+            tags={['Analytics', 'KPIs', 'Metabase', 'AI Insights']}
           />
 
           {/* Service - Infrastructure */}
           <Card 
-            title="Infraestrutura & DevOps"
-            description="Arquitetura cloud segura, automação de CI/CD e otimização de custos em escala."
+            title="Escalabilidade & Segurança"
+            description="Infraestrutura pronta para receber milhares de usuários. Durma tranquilo sabendo que seu produto está seguro e online."
             icon={Server}
             className="md:col-span-1"
             delay={0.4}
-            tags={['AWS', 'Docker', 'Kubernetes', 'Terraform']}
+            tags={['Cloud AWS', 'Automação', 'Cybersecurity', '24/7']}
           />
         </div>
       </div>
