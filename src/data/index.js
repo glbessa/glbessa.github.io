@@ -1,7 +1,8 @@
 export const SITE_DATA = {
   "pt-br": {
     "site": {
-      "description": "Site pessoal de glbessa.",
+      "title": "Gabriel Bessa | Consultoria Tecnológica & Desenvolvimento SaaS",
+      "description": "Consultoria tecnológica e desenvolvimento de software especializado em SaaS, IA e Infraestrutura Cloud.",
       "copyright": "© 2024 Copyright."
     },
     "author": {

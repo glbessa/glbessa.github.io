@@ -8,7 +8,7 @@ const PostDetailLayout = ({ data, type }) => {
   // Simple SEO title update
   React.useEffect(() => {
     if (data.title) {
-        document.title = `${data.title} | Gabriel Leite Bessa`;
+        document.title = `${data.title} | Gabriel Bessa`;
     }
   }, [data.title]);
 
