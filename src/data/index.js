@@ -51,6 +51,23 @@ export const SITE_DATA = {
         "url": "https://www.instagram.com/gabrielleitebessa"
       }
     ],
+    "companies": [
+      {
+        "name": "Primeira Mesa",
+        "url": "https://site.primeiramesa.com.br/",
+        "logo": "/img/companies/primeiramesa.png"
+      },
+      {
+        "name": "Cluster",
+        "url": "https://soucluster.com.br",
+        "logo": "/img/companies/cluster.svg"
+      },
+      {
+        "name": "Everleads",
+        "url": "https://everleads.com.br/",
+        "logo": "/img/companies/everleads.svg"
+      }
+    ],
     "projectsSection": {
       "section": {
         "name": "Projetos",

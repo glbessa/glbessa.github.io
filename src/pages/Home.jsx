@@ -4,6 +4,8 @@ import ServicesBento from '../components/ServicesBento';
 import TechStack from '../components/TechStack';
 import Contact from './Contact';
 
+import { getData } from '../data';
+import CompanyMarquee from '../components/CompanyMarquee';
 
 const Home = () => {
   return (
@@ -13,18 +15,8 @@ const Home = () => {
         <TechStack />
         <ServicesBento />
         
-        {/* Social Proof / Trust Placeholder */}
-        <section className="py-20 bg-slate-900/50 border-y border-white/5">
-           <div className="container mx-auto px-6 text-center">
-             <h3 className="text-xl text-slate-400 mb-8">Empresas que escalaram com minha tecnologia</h3>
-             <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
-               {/* Replace with actual logos or generic trust indicators */}
-               <div className="text-2xl font-bold font-mono text-white">TECH<span className="text-blue-500">CORP</span></div>
-               <div className="text-2xl font-bold font-mono text-white">DATA<span className="text-emerald-500">FLOW</span></div>
-               <div className="text-2xl font-bold font-mono text-white">CLOUD<span className="text-purple-500">SCALE</span></div>
-             </div>
-           </div>
-        </section>
+        {/* Social Proof / Trust */}
+        <CompanyMarquee />
 
 
 
