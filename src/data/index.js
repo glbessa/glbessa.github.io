@@ -3,7 +3,22 @@ export const SITE_DATA = {
     "site": {
       "title": "Gabriel Bessa | Consultoria Tecnológica & Desenvolvimento SaaS",
       "description": "Consultoria tecnológica e desenvolvimento de software especializado em SaaS, IA e Infraestrutura Cloud.",
-      "copyright": "© 2024 Copyright."
+      "copyright": "© 2024 Copyright.",
+      "url": "https://glbessa.dev",
+      "pages": {
+        "contact": {
+            "title": "Contato",
+            "description": "Entre em contato comigo para falar sobre seu projeto. Especialista em SaaS, IA e Infraestrutura Cloud."
+        },
+        "projects": {
+            "title": "Projetos",
+            "description": "Portfólio de projetos em desenvolvimento de software, inteligência artificial e infraestrutura."
+        },
+        "posts": {
+           "title": "Artigos",
+           "description": "Artigos e novidades sobre tecnologia, desenvolvimento de software e carreira."
+        }
+      }
     },
     "author": {
       "name": "Gabriel Leite Bessa",

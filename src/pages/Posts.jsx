@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { getData } from '../data';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
+  const data = getData();
+  const seo = data.site.pages.posts;
 
   useEffect(() => {
     // Import all post metadata dynamically from the generated pages
@@ -19,6 +23,11 @@ const Posts = () => {
 
   return (
     <div>
+      <SEO 
+        title={seo.title} 
+        description={seo.description}
+        url={`${data.site.url}/posts`}
+      />
       <h2 className="text-3xl font-bold mb-6 pb-2 border-b border-slate-200">Artigos Recentes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (

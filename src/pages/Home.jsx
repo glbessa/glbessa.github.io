@@ -8,9 +8,18 @@ import Contact from './Contact';
 import { getData } from '../data';
 import CompanyMarquee from '../components/CompanyMarquee';
 
+import SEO from '../components/SEO';
+
 const Home = () => {
+  const data = getData();
+
   return (
     <div className="bg-slate-950">
+      <SEO 
+        title={data.site.title} 
+        description={data.site.description}
+        url={data.site.url}
+      />
       <Hero />
       <div className="relative z-10 bg-slate-950">
         <TechStack />

@@ -1,19 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MarkdownRenderer from './MarkdownRenderer';
+import SEO from './SEO';
 
 const PostDetailLayout = ({ data, type }) => {
   if (!data) return <div className="text-center py-20 text-slate-500 font-medium">Carregando conteúdo...</div>;
 
-  // Simple SEO title update
-  React.useEffect(() => {
-    if (data.title) {
-        document.title = `${data.title} | Gabriel Bessa`;
-    }
-  }, [data.title]);
+  const pageUrl = `/${type === 'posts' ? 'posts' : 'projects'}/${data.slug}`;
 
   return (
-    <div className="max-w-4xl mx-auto py-12">
+    <>
+      <SEO 
+        title={data.title} 
+        description={data.description} 
+        image={data.hero}
+        url={pageUrl}
+        type="article"
+      />
+      <div className="max-w-4xl mx-auto py-12">
       <Link 
         to={type === 'posts' ? '/posts' : '/projects'} 
         className="text-blue-600 hover:text-blue-800 font-bold mb-8 inline-flex items-center gap-2 group transition-all"
@@ -124,6 +128,7 @@ const PostDetailLayout = ({ data, type }) => {
          </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { getData } from '../data';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('Todos');
   const [categories, setCategories] = useState(['Todos']);
+
+  const data = getData();
+  const seo = data.site.pages.projects;
 
   useEffect(() => {
     // Import all project metadata dynamically from the generated pages
@@ -27,6 +32,11 @@ const Projects = () => {
 
   return (
     <div className="space-y-12 py-8">
+      <SEO 
+        title={seo.title}
+        description={seo.description}
+        url={`${data.site.url}/projects`}
+      />
       <div className="space-y-4">
         <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Soluções e Projetos</h2>
         <p className="text-slate-600 max-w-3xl text-lg">
