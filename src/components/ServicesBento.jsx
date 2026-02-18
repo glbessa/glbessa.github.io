@@ -81,31 +81,6 @@ const ServicesBento = () => {
             tags={['Cloud AWS', 'Automação', 'Cybersecurity', '24/7']}
           />
         </div>
-
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex flex-col items-center p-8 rounded-3xl bg-slate-900/50 border border-slate-800 backdrop-blur-sm">
-            <h3 className="text-xl font-bold text-slate-200 mb-2">Não encontrou o que busca?</h3>
-            <p className="text-slate-400 mb-6 max-w-md">
-              Cada negócio é único. Vamos conversar sobre sua necessidade específica e desenhar a solução ideal.
-            </p>
-            <a 
-              href={`https://wa.me/${getData().author.contactInfo.whatsapp.number}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/20"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Falar com Consultor
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
