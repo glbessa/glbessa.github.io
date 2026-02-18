@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getData } from '../data';
 import { Menu, X, Code2, Github, Linkedin, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,6 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const data = getData();
+  const { contactInfo } = data.author;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +20,6 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Serviços', href: '#services' },
-    { name: 'Projetos', href: '#projects' },
     { name: 'Stack', href: '#stack' },
     { name: 'Sobre', href: '#about' },
   ];
@@ -48,15 +50,15 @@ const Navbar = () => {
             </div>
             <div className="h-6 w-px bg-white/10"></div>
             <div className="flex gap-4">
-              <a href="https://github.com/glbessa" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+              <a href={contactInfo.github.url} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com/in/glbessa" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+              <a href={contactInfo.linkedin.url} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
             <a 
-              href="https://wa.me/5553984655136" 
+              href={`https://wa.me/${contactInfo.whatsapp.number}`} 
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/20"
@@ -97,11 +99,11 @@ const Navbar = () => {
               ))}
               <hr className="border-white/5" />
               <div className="flex gap-4 pt-2">
-                <a href="https://github.com/glbessa" className="text-slate-400 hover:text-white"><Github className="w-5 h-5" /></a>
-                <a href="https://linkedin.com/in/glbessa" className="text-slate-400 hover:text-white"><Linkedin className="w-5 h-5" /></a>
+                <a href={contactInfo.github.url} className="text-slate-400 hover:text-white"><Github className="w-5 h-5" /></a>
+                <a href={contactInfo.linkedin.url} className="text-slate-400 hover:text-white"><Linkedin className="w-5 h-5" /></a>
               </div>
               <a 
-                href="https://wa.me/5553984655136"
+                href={`https://wa.me/${contactInfo.whatsapp.number}`}
                 className="block w-full text-center py-3 bg-blue-600 rounded-lg font-semibold text-white"
               >
                 Solicitar Orçamento

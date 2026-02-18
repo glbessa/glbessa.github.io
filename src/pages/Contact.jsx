@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
+import { getData } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Mail, Linkedin, ChevronDown } from 'lucide-react';
 
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "Como funciona o processo de desenvolvimento?",
-      answer: "Trabalho de forma ágil. Começamos com uma reunião de alinhamento para entender suas dores, definimos o escopo do MVP ou solução, e realizamos entregas incrementais com feedback constante."
-    },
-    {
-      question: "Você atende empresas de qualquer tamanho?",
-      answer: "Meu foco principal são Startups que precisam validar ideias rápido e pequenas empresas que buscam automatizar processos para escalar."
-    },
-    {
-      question: "Qual o prazo médio para um MVP?",
-      answer: "Depende da complexidade, mas geralmente entre 4 a 8 semanas para uma versão funcional e estável."
-    }
-  ];
+  const data = getData();
+  const { contactInfo } = data.author;
+  const { faqs } = data;
 
   return (
     <div className="max-w-5xl mx-auto space-y-16">
@@ -29,7 +19,7 @@ const Contact = () => {
           <h3 className="text-xl font-bold text-slate-200 border-l-4 border-blue-500 pl-4">Canais Diretos</h3>
           
           <a 
-            href={`https://wa.me/${['55', '53', '984655', '136'].join('')}?text=${encodeURIComponent('Olá! Vim pelo seu site e gostaria de tirar algumas dúvidas.')}`} 
+            href={`https://wa.me/${contactInfo.whatsapp.number}?text=${encodeURIComponent(contactInfo.whatsapp.message)}`} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center p-6 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all group hover:bg-slate-900"
@@ -39,12 +29,12 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">WhatsApp</p>
-              <p className="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">Conversar agora</p>
+              <p className="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">{contactInfo.whatsapp.displayText}</p>
             </div>
           </a>
 
           <a 
-            href="mailto:gabrielleitebessa@gmail.com" 
+            href={`mailto:${contactInfo.email}`} 
             className="flex items-center p-6 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all group hover:bg-slate-900"
           >
             <div className="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
@@ -52,12 +42,12 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">E-mail</p>
-              <p className="text-lg font-bold text-slate-200 group-hover:text-blue-400 transition-colors break-all">gabrielleitebessa@gmail.com</p>
+              <p className="text-lg font-bold text-slate-200 group-hover:text-blue-400 transition-colors break-all">{contactInfo.email}</p>
             </div>
           </a>
 
           <a 
-            href="https://www.linkedin.com/in/gabrielleitebessa/" 
+            href={contactInfo.linkedin.url} 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center p-6 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all group hover:bg-slate-900"

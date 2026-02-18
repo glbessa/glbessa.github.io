@@ -12,15 +12,20 @@ export const SITE_DATA = {
       "contactInfo": {
         "email": "gabrielleitebessa@gmail.com",
         "phone": "+55 53 984655136",
+        "whatsapp": {
+          "number": "5553984655136",
+          "message": "Olá! Vim pelo seu site e gostaria de tirar algumas dúvidas.",
+          "displayText": "Conversar agora"
+        },
         "github": {
           "icon": "github",
           "url": "https://github.com/glbessa",
-          "text": "glbessa no GitHub"
+          "text": "glbessa"
         },
         "linkedin": {
           "icon": "linkedin",
           "url": "https://www.linkedin.com/in/gabrielleitebessa/",
-          "text": "glbessa no LinkedIn"
+          "text": "gabrielleitebessa"
         }
       },
       "summary": [
@@ -134,6 +139,35 @@ export const SITE_DATA = {
           "summary": "Aplicativo para controle de pesagens de gado e integração com balança eletrônica.",
           "tags": ["hobby", "flutter"]
         }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "Como funciona o processo de desenvolvimento?",
+        "answer": "Trabalho de forma ágil. Começamos com uma reunião de alinhamento para entender suas dores, definimos o escopo do MVP ou solução, e realizamos entregas incrementais com feedback constante."
+      },
+      {
+        "question": "Você atende empresas de qualquer tamanho?",
+        "answer": "Meu foco principal são Startups que precisam validar ideias rápido e pequenas empresas que buscam automatizar processos para escalar."
+      },
+      {
+        "question": "Qual o prazo médio para um MVP?",
+        "answer": "Depende da complexidade, mas geralmente entre 4 a 8 semanas para uma versão funcional e estável."
+      }
+    ],
+    "footer": {
+      "description": "Engenharia de software estratégica para negócios que buscam alta performance.",
+      "services": [
+        { "label": "Desenvolvimento SaaS", "url": "#services" },
+        { "label": "Data Pipelines", "url": "#services" },
+        { "label": "DevOps & Cloud", "url": "#services" },
+        { "label": "Automação com IA", "url": "#services" }
+      ],
+      "company": [
+        { "label": "Sobre", "url": "#about" },
+        { "label": "Projetos", "url": "#projects" },
+        { "label": "Stack", "url": "#stack" },
+        { "label": "Contato", "url": "#contact" }
       ]
     }
   },
