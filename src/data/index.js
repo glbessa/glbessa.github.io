@@ -10,7 +10,7 @@ export const SITE_DATA = {
       "image": "img/profile.png",
       "greeting": "Olá, eu sou",
       "contactInfo": {
-        "email": "gabrielleitebessa@gmail.com",
+        "email": "contato@glbessa.dev",
         "phone": "+55 53 984655136",
         "whatsapp": {
           "number": "5553984655136",

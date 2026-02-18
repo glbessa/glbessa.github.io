@@ -48,7 +48,7 @@ const TechStack = () => {
 // Re-implementing with Framer Motion for guaranteed smoothness without custom tailwind config
 const TechStackMarquee = () => {
   return (
-    <section className="py-20 bg-slate-950 border-y border-white/5 relative z-10">
+    <section id="stack" className="py-20 bg-slate-950 border-y border-white/5 relative z-10">
        <div className="container mx-auto px-6 mb-10 text-center">
         <p className="text-sm font-semibold tracking-wider text-slate-500 uppercase">
           Powering Scalable Solutions With

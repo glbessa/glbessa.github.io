@@ -52,11 +52,12 @@ const Hero = () => {
                 Solicitar Diagnóstico
                 <ArrowRight className="w-5 h-5" />
               </a>
+
               <a 
-                href="#projects" 
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold backdrop-blur-sm border border-white/10 transition-all"
+                href="#services" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-xl font-bold transition-all hover:bg-slate-800/50"
               >
-                Ver Projetos
+                Conhecer Soluções
               </a>
             </motion.div>
           </div>
