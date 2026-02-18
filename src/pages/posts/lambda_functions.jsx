@@ -77,13 +77,13 @@ Elas são definidas utilizando o \ (contra-barra) seguido dos parâmetros da fun
 A seguir é apresentado a sintaxe:
 
 \`\`\`
-ghci> (\<PARAMETROS SEPARADOS POR ESPAÇO> -> <IMPLEMENTAÇÃO>) <PARAMENTROS A SEREM APLICADOS>
+ghci> (\\\\<PARAMETROS SEPARADOS POR ESPAÇO> -> <IMPLEMENTAÇÃO>) <PARAMENTROS A SEREM APLICADOS>
 \`\`\`
 
 Exemplo de função lambda em Haskell:
 
 \`\`\`
-ghci> (\x y -> x * y) 2 6
+ghci> (\\\\x y -> x * y) 2 6
 \`\`\`
 
 Saída do comando acima:

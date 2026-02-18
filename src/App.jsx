@@ -2,9 +2,6 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Posts from './pages/Posts';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
 
 // Load static pages modules (lazy loaded for code splitting)
 const postPages = import.meta.glob('./pages/posts/*.jsx');
@@ -25,9 +22,6 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
           
           {/* Generated Post Routes */}
           {Object.entries(postPages).map(([path, importer]) => {
