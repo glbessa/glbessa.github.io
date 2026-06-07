@@ -4,22 +4,22 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && npm run generate-sitemap",
+    "dev": "astro dev",
+    "build": "astro build && node scripts/generate-sitemap.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "astro preview",
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "astro": "^5.16.6",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.1",
     "lucide-react": "^0.574.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet-async": "^2.0.5",
     "react-markdown": "^9.0.1",
-    "react-router-dom": "^6.22.3",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "tailwind-merge": "^3.4.1"
@@ -28,7 +28,6 @@
     "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
-    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.24",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.0",
@@ -38,5 +37,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "vite": "^5.1.6"
-  }
+  },
+  "packageManager": "pnpm@11.5.0+sha1.ad234b7bc8b8eaa7a8bd076a512cabc21f3f7305"
 }

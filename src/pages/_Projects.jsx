@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { getData } from '../data';
 
@@ -13,7 +12,7 @@ const Projects = () => {
 
   useEffect(() => {
     // Import all project metadata dynamically from the generated pages
-    const modules = import.meta.glob('./projects/*.jsx', { eager: true });
+    const modules = import.meta.glob('./projects/_*.jsx', { eager: true });
     
     // Convert to array of { ...metadata }
     const loadedProjects = Object.values(modules).map(module => module.metadata);
@@ -72,9 +71,9 @@ const Projects = () => {
               </div>
               
               <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                <Link to={`/projects/${project.slug}`}>
+                <a href={`/projects/${project.slug}`}>
                   {project.title}
-                </Link>
+                </a>
               </h3>
 
               <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
@@ -97,12 +96,12 @@ const Projects = () => {
               </div>
 
               <div className="flex gap-4 pt-6 mt-auto">
-                <Link 
-                  to={`/projects/${project.slug}`} 
+                <a
+                  href={`/projects/${project.slug}`}
                   className="flex-1 text-center bg-slate-900 text-white px-4 py-2.5 rounded-xl text-sm font-bold hover:bg-slate-800 transition-colors"
                 >
                   Caso de Estudo
-                </Link>
+                </a>
                 {project.github_url && (
                   <a 
                     href={project.github_url} 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { getData } from '../data';
 
@@ -10,7 +9,7 @@ const Posts = () => {
 
   useEffect(() => {
     // Import all post metadata dynamically from the generated pages
-    const modules = import.meta.glob('./posts/*.jsx', { eager: true });
+    const modules = import.meta.glob('./posts/_*.jsx', { eager: true });
     
     // Convert to array of { ...metadata }
     const loadedPosts = Object.values(modules).map(module => module.metadata);
@@ -41,9 +40,9 @@ const Posts = () => {
             )}
             <div className="p-5 flex flex-col flex-grow">
               <h3 className="text-xl font-bold mb-2">
-                <Link to={`/posts/${post.slug}`} className="text-slate-900 hover:text-blue-600 transition-colors">
+                <a href={`/posts/${post.slug}`} className="text-slate-900 hover:text-blue-600 transition-colors">
                   {post.title}
-                </Link>
+                </a>
               </h3>
               <div className="flex flex-wrap gap-2 mb-3">
                 {post.tags && post.tags.map(tag => (
@@ -58,9 +57,9 @@ const Posts = () => {
               <p className="text-slate-600 text-sm line-clamp-3 mb-4 flex-grow">
                 {post.description || post.summary}
               </p>
-              <Link to={`/posts/${post.slug}`} className="text-blue-600 font-medium text-sm hover:underline mt-auto">
+              <a href={`/posts/${post.slug}`} className="text-blue-600 font-medium text-sm hover:underline mt-auto">
                 Ler mais &rarr;
-              </Link>
+              </a>
             </div>
           </div>
         ))}

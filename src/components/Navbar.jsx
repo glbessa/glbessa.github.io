@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../data';
-import { Menu, X, Code2, Github, Linkedin, MessageSquare } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Menu, X, Code2, Github, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -28,12 +27,12 @@ const Navbar = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <div className="p-2 bg-blue-600/10 rounded-lg group-hover:bg-blue-600/20 transition-colors">
               <Code2 className="w-6 h-6 text-blue-400" />
             </div>
             <span className="font-bold text-xl tracking-tight">glbessa<span className="text-blue-400">.dev</span></span>
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">

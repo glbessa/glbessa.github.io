@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Home from './_Home.jsx';
+import { getData } from '../data';
+
+const data = getData();
+---
+
+<BaseLayout title={data.site.title} description={data.site.description} url="/">
+  <Home client:load />
+</BaseLayout>

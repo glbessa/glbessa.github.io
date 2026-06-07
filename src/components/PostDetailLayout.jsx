@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MarkdownRenderer from './MarkdownRenderer';
 import SEO from './SEO';
 
@@ -18,13 +17,13 @@ const PostDetailLayout = ({ data, type }) => {
         type="article"
       />
       <div className="max-w-4xl mx-auto py-12">
-      <Link 
-        to={type === 'posts' ? '/posts' : '/projects'} 
+      <a
+        href={type === 'posts' ? '/posts' : '/projects'}
         className="text-blue-600 hover:text-blue-800 font-bold mb-8 inline-flex items-center gap-2 group transition-all"
       >
         <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
         Voltar para {type === 'posts' ? 'Artigos' : 'Projetos'}
-      </Link>
+      </a>
       
       <header className="mb-12 space-y-6">
         <div className="space-y-2">

@@ -21,7 +21,7 @@ function getSlugs(subDir) {
   
   return fs.readdirSync(dirPath)
     .filter(file => file.endsWith('.jsx'))
-    .map(file => file.replace('.jsx', ''));
+    .map(file => file.replace(/^_/, '').replace('.jsx', ''));
 }
 
 function generateSitemap() {

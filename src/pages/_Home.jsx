@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import ServicesBento from '../components/ServicesBento';
 import TechStack from '../components/TechStack';
 import About from '../components/About';
-import Contact from './Contact';
+import Contact from './_Contact';
 
 import { getData } from '../data';
 import CompanyMarquee from '../components/CompanyMarquee';

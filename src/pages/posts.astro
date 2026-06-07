@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Posts from './_Posts.jsx';
+import { getData } from '../data';
+
+const data = getData();
+const seo = data.site.pages.posts;
+---
+
+<BaseLayout title={seo.title} description={seo.description} url="/posts">
+  <section class="bg-slate-50 px-6 pb-24 pt-32 text-slate-900">
+    <div class="container mx-auto">
+      <Posts client:load />
+    </div>
+  </section>
+</BaseLayout>

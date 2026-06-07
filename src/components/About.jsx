@@ -8,8 +8,7 @@ import {
   Globe, 
   Clapperboard, 
   Terminal, 
-  GraduationCap, 
-  Briefcase, 
+  GraduationCap,
   Rocket 
 } from 'lucide-react';
 

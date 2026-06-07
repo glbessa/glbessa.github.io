@@ -10,9 +10,10 @@ const MarkdownRenderer = ({ content }) => {
         rehypePlugins={[rehypeRaw]} 
         remarkPlugins={[remarkGfm]}
         components={{
-          img: ({node, ...props}) => (
-            <img {...props} className="img-fluid rounded my-3 mx-auto" style={{maxHeight: '500px'}} />
-          )
+          img: ({node, ...props}) => {
+            void node;
+            return <img {...props} className="img-fluid rounded my-3 mx-auto" style={{maxHeight: '500px'}} />;
+          }
         }}
       >
         {content}

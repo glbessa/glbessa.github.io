@@ -1,6 +1,6 @@
 import React from 'react';
 import { getData } from '../data';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const data = getData();

@@ -1,0 +1,64 @@
+---
+import '../index.css';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
+
+const {
+  title = 'Gabriel Bessa | Consultoria Tecnológica & Desenvolvimento SaaS',
+  description = 'Consultoria tecnológica e desenvolvimento de software especializado em SaaS, IA e Infraestrutura Cloud.',
+  url = Astro.url.pathname,
+  image,
+  type = 'website',
+} = Astro.props;
+
+const siteUrl = 'https://glbessa.dev';
+const gtmId = 'GTM-WQCXF5CG';
+const canonicalUrl = new URL(url, siteUrl).toString();
+const imageUrl = image ? new URL(image, siteUrl).toString() : undefined;
+const fullTitle = title.includes('|') ? title : `${title} | Gabriel Bessa`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    <script is:inline define:vars={{ gtmId }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',gtmId);
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30">
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+    <div class="flex min-h-screen flex-col">
+      <Navbar client:load />
+      <main class="flex-grow">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

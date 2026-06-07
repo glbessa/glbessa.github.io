@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Database, Layout, Server, ArrowUpRight, MessageCircle } from 'lucide-react';
-import { getData } from '../data';
+import { Database, Layout, Server, ArrowUpRight } from 'lucide-react';
 
 const Card = ({ title, description, icon: Icon, className, delay, tags }) => (
   <motion.div 
