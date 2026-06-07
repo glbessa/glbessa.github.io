@@ -16,7 +16,7 @@ const Contact = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Methods */}
         <div className="space-y-6">
-          <h3 className="text-xl font-bold text-slate-200 border-l-4 border-blue-500 pl-4">Canais Diretos</h3>
+          <h3 className="text-xl font-bold text-slate-200 border-l-4 border-blue-500 pl-4">Canais de diagnóstico</h3>
           
           <a 
             href={`https://wa.me/${contactInfo.whatsapp.number}?text=${encodeURIComponent(contactInfo.whatsapp.message)}`} 

@@ -23,10 +23,10 @@ const Hero = () => {
               transition={{ duration: 0.5 }}
             >
               <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-                Tech Partner for Startups & Scale-ups
+                Consultoria em Software, IA e Cloud para Empresas
               </span>
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-slate-100">
-                Sua visão de negócio, transformada em <span className="text-gradient">tecnologia proprietária</span>.
+                Engenharia de software para transformar operações em <span className="text-gradient">vantagem competitiva</span>.
               </h1>
             </motion.div>
             
@@ -36,7 +36,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed"
             >
-              Ajudando fundadores a lançar MVPs, escalar produtos e transformar tecnologia em ativo estratégico. Do zero ao exit.
+              Desenvolvemos produtos digitais, automações inteligentes e infraestrutura cloud para empresas que precisam ganhar eficiência, reduzir risco técnico e escalar com previsibilidade.
             </motion.p>
 
             <motion.div 
@@ -49,7 +49,7 @@ const Hero = () => {
                 href="#contact" 
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-blue-500/25"
               >
-                Solicitar Diagnóstico
+                Solicitar diagnóstico técnico
                 <ArrowRight className="w-5 h-5" />
               </a>
 
@@ -57,7 +57,7 @@ const Hero = () => {
                 href="#services" 
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-xl font-bold transition-all hover:bg-slate-800/50"
               >
-                Conhecer Soluções
+                Conhecer soluções
               </a>
             </motion.div>
           </div>
@@ -78,29 +78,30 @@ const Hero = () => {
                     <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
                   </div>
-                  <div className="mx-auto text-xs font-mono text-slate-500">growth-engine.ts</div>
+                  <div className="mx-auto text-xs font-mono text-slate-500">operational-engine.ts</div>
                 </div>
                 <div className="p-6 font-mono text-sm space-y-4 overflow-hidden">
                   <div className="flex gap-2">
                     <span className="text-pink-500">const</span>
-                    <span className="text-blue-400">valuation</span>
+                    <span className="text-blue-400">operation</span>
                     <span className="text-slate-400">=</span>
                     <span className="text-yellow-300">await</span>
-                    <span className="text-blue-400">scaleUP</span>
+                    <span className="text-blue-400 sm:hidden">opsEngine</span>
+                    <span className="text-blue-400 hidden sm:inline">operationalEngine</span>
                     <span className="text-slate-400">({'{'}</span>
                   </div>
                   <div className="pl-4 space-y-2">
                     <div className="flex gap-2">
-                      <span className="text-blue-300">product</span>:
-                      <span className="text-orange-400">'validated'</span>,
+                      <span className="text-blue-300">processes</span>:
+                      <span className="text-orange-400">'automated'</span>,
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-blue-300">churn</span>:
-                      <span className="text-orange-400">'0%'</span>,
+                      <span className="text-blue-300">cloud</span>:
+                      <span className="text-orange-400">'reliable'</span>,
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-blue-300">growth</span>:
-                      <span className="text-orange-400">'exponential'</span>,
+                      <span className="text-blue-300">data</span>:
+                      <span className="text-orange-400">'actionable'</span>,
                     </div>
                   </div>
                   <div className="text-slate-400">{'}'});</div>
@@ -108,11 +109,11 @@ const Hero = () => {
                   <div className="pt-4 flex gap-4 border-t border-white/5 mt-4">
                      <div className="flex items-center gap-2 text-slate-500">
                         <Terminal className="w-4 h-4" />
-                        <span>MRR Increased</span>
+                        <span>Risco técnico reduzido</span>
                      </div>
                      <div className="flex items-center gap-2 text-emerald-500">
                         <Cpu className="w-4 h-4" />
-                        <span>+120%</span>
+                        <span>Operação escalável</span>
                      </div>
                   </div>
                 </div>

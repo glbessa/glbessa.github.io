@@ -1,14 +1,14 @@
 export const SITE_DATA = {
   "pt-br": {
     "site": {
-      "title": "Gabriel Bessa | Consultoria Tecnológica & Desenvolvimento SaaS",
-      "description": "Consultoria tecnológica e desenvolvimento de software especializado em SaaS, IA e Infraestrutura Cloud.",
+      "title": "Consultoria em Software, IA e Cloud para Empresas | glbessa.dev",
+      "description": "Consultoria em engenharia de software para empresas. Desenvolvimento de produtos digitais, automações com IA, dados e infraestrutura cloud com foco em eficiência e escala.",
       "copyright": "© 2024 Copyright.",
       "url": "https://glbessa.dev",
       "pages": {
         "contact": {
             "title": "Contato",
-            "description": "Entre em contato comigo para falar sobre seu projeto. Especialista em SaaS, IA e Infraestrutura Cloud."
+            "description": "Agende um diagnóstico técnico para mapear oportunidades de automação, produto, dados ou infraestrutura para sua empresa."
         },
         "projects": {
             "title": "Projetos",
@@ -30,8 +30,8 @@ export const SITE_DATA = {
         "phone": "+55 53 984655136",
         "whatsapp": {
           "number": "5553984655136",
-          "message": "Olá! Vim pelo seu site e gostaria de tirar algumas dúvidas.",
-          "displayText": "Conversar agora"
+          "message": "Olá! Vim pelo site e gostaria de conversar sobre um diagnóstico técnico para minha empresa.",
+          "displayText": "Iniciar diagnóstico"
         },
         "github": {
           "icon": "github",
@@ -84,6 +84,34 @@ export const SITE_DATA = {
         "logo": "/img/companies/everleads.svg"
       }
     ],
+    "servicesSection": {
+      "title": "Soluções técnicas para operações em crescimento",
+      "highlight": "operações em crescimento",
+      "description": "Atuamos no desenho, desenvolvimento e sustentação de sistemas que conectam produto, dados e infraestrutura para gerar eficiência operacional e crescimento sustentável.",
+      "services": [
+        {
+          "title": "Produtos Digitais e Plataformas SaaS",
+          "description": "Desenvolvimento de plataformas web, aplicativos e sistemas internos sob medida, com arquitetura preparada para evolução, integrações e crescimento de usuários.",
+          "icon": "layout",
+          "visual": "product",
+          "tags": ["SaaS", "Sistemas Web", "Aplicativos", "Integrações"]
+        },
+        {
+          "title": "Automação, Dados e Inteligência Operacional",
+          "description": "Automatizamos fluxos, integramos ferramentas e estruturamos dashboards para transformar dados dispersos em decisões, alertas e processos acionáveis.",
+          "icon": "database",
+          "visual": "data",
+          "tags": ["BI", "IA", "Pipelines", "Automações"]
+        },
+        {
+          "title": "Cloud, DevOps e Confiabilidade",
+          "description": "Implantamos infraestrutura cloud, conteinerização, monitoramento e pipelines de deploy para reduzir indisponibilidade, retrabalho e risco técnico.",
+          "icon": "server",
+          "visual": "cloud",
+          "tags": ["Cloud", "Docker", "CI/CD", "Observabilidade"]
+        }
+      ]
+    },
     "projectsSection": {
       "section": {
         "name": "Projetos",
@@ -176,28 +204,28 @@ export const SITE_DATA = {
     },
     "faqs": [
       {
-        "question": "Como funciona o processo de desenvolvimento?",
-        "answer": "Trabalho de forma ágil. Começamos com uma reunião de alinhamento para entender suas dores, definimos o escopo do MVP ou solução, e realizamos entregas incrementais com feedback constante."
+        "question": "Como funciona o diagnóstico técnico?",
+        "answer": "Começamos entendendo os objetivos do negócio, os gargalos operacionais e o estado atual dos sistemas. A partir disso, priorizamos oportunidades e definimos um plano de execução com escopo, riscos e próximos passos."
       },
       {
-        "question": "Você atende empresas de qualquer tamanho?",
-        "answer": "Meu foco principal são Startups que precisam validar ideias rápido e pequenas empresas que buscam automatizar processos para escalar."
+        "question": "Que tipos de empresa podem contratar?",
+        "answer": "Atendemos empresas que precisam desenvolver produtos digitais, automatizar processos, integrar sistemas, estruturar dados ou melhorar sua infraestrutura cloud."
       },
       {
-        "question": "Qual o prazo médio para um MVP?",
-        "answer": "Depende da complexidade, mas geralmente entre 4 a 8 semanas para uma versão funcional e estável."
+        "question": "Vocês desenvolvem apenas MVPs?",
+        "answer": "Não. Podemos atuar desde a validação e construção de MVPs até a evolução de sistemas existentes, integrações, automações e infraestrutura para operações em crescimento."
       }
     ],
     "footer": {
-      "description": "Engenharia de software estratégica para negócios que buscam alta performance.",
+      "description": "Consultoria em engenharia de software para empresas que precisam transformar tecnologia em eficiência, confiabilidade e escala.",
       "services": [
-        { "label": "Desenvolvimento SaaS", "url": "#services" },
-        { "label": "Data Pipelines", "url": "#services" },
-        { "label": "DevOps & Cloud", "url": "#services" },
-        { "label": "Automação com IA", "url": "#services" }
+        { "label": "Produtos digitais", "url": "#services" },
+        { "label": "Automação e dados", "url": "#services" },
+        { "label": "Cloud e DevOps", "url": "#services" },
+        { "label": "IA aplicada", "url": "#services" }
       ],
       "company": [
-        { "label": "Sobre", "url": "#about" },
+        { "label": "Método", "url": "#about" },
         { "label": "Projetos", "url": "#projects" },
         { "label": "Stack", "url": "#stack" },
         { "label": "Contato", "url": "#contact" }

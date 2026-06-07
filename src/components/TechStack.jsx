@@ -21,7 +21,7 @@ const TechStackMarquee = () => {
     <section id="stack" className="py-20 bg-slate-950 border-y border-white/5 relative z-10">
        <div className="container mx-auto px-6 mb-10 text-center">
         <p className="text-sm font-semibold tracking-wider text-slate-500 uppercase">
-          Powering Scalable Solutions With
+          Stack moderna para produtos escaláveis
         </p>
       </div>
 

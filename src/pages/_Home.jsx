@@ -33,8 +33,8 @@ const Home = () => {
         <section id="contact" className="py-24 bg-gradient-to-b from-slate-950 to-slate-900">
           <div className="container mx-auto px-6 max-w-4xl">
              <div className="text-center mb-16">
-               <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Transforme ideias em ativos de <span className="text-blue-500">alto valor</span>.</h2>
-               <p className="text-slate-400 text-lg max-w-2xl mx-auto">Agende uma consultoria estratégica e descubra como escalar seu negócio com tecnologia proprietária.</p>
+               <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Vamos identificar onde tecnologia pode gerar mais <span className="text-blue-500">impacto na sua operação</span>.</h2>
+               <p className="text-slate-400 text-lg max-w-2xl mx-auto">Agende um diagnóstico técnico para mapear oportunidades de automação, produto, dados ou infraestrutura e entender quais iniciativas devem ser priorizadas.</p>
              </div>
              {/* Using existing Contact component but we might need to style it if it's not dark mode ready. 
                  For now, wrapping it. */}

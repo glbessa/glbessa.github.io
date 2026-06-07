@@ -12,7 +12,7 @@ const CompanyMarquee = () => {
     <section className="py-16 bg-slate-900/30 border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 text-center mb-10">
         <h3 className="text-xl text-slate-400 font-light tracking-wide">
-          Empresas que <span className="text-slate-200 font-medium">escalaram</span> com minha tecnologia
+          Empresas e produtos apoiados por <span className="text-slate-200 font-medium">nossa engenharia</span>
         </h3>
       </div>
       

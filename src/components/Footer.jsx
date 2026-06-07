@@ -57,7 +57,7 @@ const Footer = () => {
 
         <div className="border-t border-white/5 pt-8 text-center">
           <p className="text-slate-600 text-sm">
-            © {new Date().getFullYear()} {author.name}. Todos os direitos reservados.
+            © {new Date().getFullYear()} glbessa.dev. Todos os direitos reservados.
           </p>
         </div>
       </div>

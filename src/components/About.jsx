@@ -1,66 +1,64 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Code2, 
-  Handshake, 
-  MessageSquare, 
-  Lightbulb, 
-  Globe, 
-  Clapperboard, 
-  Terminal, 
-  GraduationCap,
-  Rocket 
+import {
+  ClipboardCheck,
+  Network,
+  Rocket,
+  Gauge,
+  Search,
+  ShieldCheck,
+  MessageSquare,
 } from 'lucide-react';
 
-const timelineItems = [
+const deliverySteps = [
   {
-    period: '~15 anos',
-    title: 'Primeiro Código',
-    description: 'Comecei explorando desenvolvimento de aplicativos com C#. A curiosidade por tecnologia virou obsessão.',
-    icon: Terminal,
+    period: '01',
+    title: 'Diagnóstico técnico',
+    description: 'Mapeamos operação, sistemas, riscos e prioridades para identificar onde tecnologia gera mais impacto.',
+    icon: Search,
   },
   {
-    period: 'Ensino Médio',
-    title: 'Python & Web',
-    description: 'Mergulhei em Python para criar sistemas de OCR, web scraping e aplicações web. Aprendi que código resolve problemas reais.',
-    icon: Code2,
+    period: '02',
+    title: 'Arquitetura da solução',
+    description: 'Definimos escopo, integrações, dados e infraestrutura com foco em evolução, manutenção e segurança.',
+    icon: Network,
   },
   {
-    period: 'UFPel',
-    title: 'Ciência da Computação',
-    description: 'Formação sólida em fundamentos e projetos de pesquisa tecnologicamente desafiadores. Aqui a teoria encontrou a prática.',
-    icon: GraduationCap,
+    period: '03',
+    title: 'Implantação orientada a valor',
+    description: 'Desenvolvemos e colocamos em produção produtos, automações e pipelines com entregas incrementais.',
+    icon: Rocket,
   },
   {
-    period: 'Mercado',
-    title: 'De Estagiário a Especialista',
-    description: 'Cresci no mercado de trabalho enquanto desenvolvia minhas próprias startups. Aprendi que negócio e tecnologia são inseparáveis.',
-    icon: Rocket, // Changed from Briefcase to Rocket based on "Startups" focus
+    period: '04',
+    title: 'Evolução e confiabilidade',
+    description: 'Acompanhamos indicadores técnicos, estabilidade e próximos ciclos para sustentar crescimento com previsibilidade.',
+    icon: Gauge,
   },
 ];
 
 const pillars = [
   {
-    icon: Handshake,
-    title: 'Parceiro, não fornecedor',
-    description: 'Pego as dores do seu negócio para mim e busco a solução mais rápida, econômica e sustentável. Seu problema é meu problema.',
+    icon: ClipboardCheck,
+    title: 'Diagnóstico antes da execução',
+    description: 'Antes de desenvolver, entendemos operação, riscos, restrições e prioridades. Isso evita soluções caras para problemas mal definidos.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Arquitetura orientada a crescimento',
+    description: 'Projetamos sistemas com base em manutenção, integração, segurança e evolução, para que a tecnologia acompanhe o negócio.',
   },
   {
     icon: MessageSquare,
-    title: 'Clareza acima de tudo',
-    description: 'Sem jargão técnico desnecessário. Você sempre sabe o que está sendo feito, por quê e qual o impacto para o seu negócio.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Tecnologia como meio',
-    description: 'Não construo código pelo código. Cada linha existe para resolver um problema real e gerar valor mensurável.',
+    title: 'Comunicação clara com decisores',
+    description: 'Traduzimos decisões técnicas em impacto de negócio, mantendo escopo, prioridades e trade-offs visíveis ao longo do projeto.',
   },
 ];
 
-const interests = [
-  { icon: Globe, label: 'Explorar lugares e experiências' },
-  { icon: Clapperboard, label: 'Filmes e séries' },
-  { icon: Code2, label: 'Construir startups' },
+const outcomes = [
+  'Escopo técnico claro',
+  'Risco operacional reduzido',
+  'Sistemas preparados para evoluir',
 ];
 
 const containerVariants = {
@@ -94,18 +92,18 @@ const About = () => {
           className="text-center max-w-2xl mx-auto mb-20"
         >
           <span className="inline-block text-xs font-mono tracking-widest text-blue-400 uppercase mb-4 px-3 py-1 rounded-full border border-blue-400/20 bg-blue-400/5">
-            Sobre mim
+            Método de trabalho
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-100 mb-6">
-            Tecnologia que{' '}
-            <span className="text-gradient">resolve problemas</span>
+            Execução técnica com{' '}
+            <span className="text-gradient">visão de negócio</span>
           </h2>
           <p className="text-slate-400 text-lg leading-relaxed">
-            Sou engenheiro de software com trajetória que vai da curiosidade adolescente até o mercado — sempre com um pé no empreendedorismo.
+            Combinamos engenharia de software, entendimento de produto e critério operacional para entregar soluções que fazem sentido para o negócio, para o usuário e para a evolução futura do sistema.
           </p>
         </motion.div>
 
-        {/* Timeline */}
+        {/* Delivery Method */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -114,7 +112,7 @@ const About = () => {
           className="mb-24"
         >
           <h3 className="text-sm font-mono tracking-widest text-slate-500 uppercase text-center mb-12">
-            A Jornada
+            Da estratégia à operação
           </h3>
           <div className="relative">
             {/* Vertical line - continuous */}
@@ -124,7 +122,7 @@ const About = () => {
             <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-slate-800 md:hidden" />
 
             <div className="space-y-12 md:space-y-0">
-              {timelineItems.map((item, index) => {
+              {deliverySteps.map((item, index) => {
                 const isLeft = index % 2 === 0;
                 const Icon = item.icon;
                 return (
@@ -139,16 +137,16 @@ const About = () => {
                     <div className={`w-full md:w-5/12 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
                       <div className="group relative p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all hover:shadow-xl hover:shadow-blue-900/10 z-10">
                         {/* Horizontal Connector Line for Desktop */}
-                        <div 
+                        <div
                           className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-8 h-0.5 bg-slate-800 group-hover:bg-slate-600 transition-colors ${
                             isLeft ? '-right-9' : '-left-9'
-                          }`} 
+                          }`}
                         />
                         {/* Horizontal Connector Line for Mobile */}
-                        <div 
+                        <div
                            className="md:hidden absolute top-8 -left-10 w-8 h-0.5 bg-slate-800 group-hover:bg-slate-600 transition-colors"
                         />
-                        
+
                         <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">{item.period}</span>
                         <h4 className="text-lg font-bold text-slate-100 mt-1 mb-2">{item.title}</h4>
                         <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
@@ -180,7 +178,7 @@ const About = () => {
           className="mb-20"
         >
           <h3 className="text-sm font-mono tracking-widest text-slate-500 uppercase text-center mb-12">
-            Como trabalho
+            Como estruturamos projetos
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((pillar) => {
@@ -202,7 +200,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Personal touch */}
+        {/* Technical governance */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -210,17 +208,17 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="rounded-3xl bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 p-8 md:p-12 text-center"
         >
-          <p className="text-slate-400 text-sm font-mono tracking-widest uppercase mb-4">Fora do código</p>
-          <p className="text-slate-300 text-lg leading-relaxed max-w-xl mx-auto mb-8">
-            Quando não estou resolvendo problemas com tecnologia, estou explorando lugares novos, vivendo experiências diferentes ou assistindo boas histórias.
+          <p className="text-slate-400 text-sm font-mono tracking-widest uppercase mb-4">Governança técnica</p>
+          <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+            A operação é conduzida com responsabilidade técnica de Gabriel Bessa e foco em decisões que equilibram velocidade, qualidade de engenharia e impacto de negócio.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {interests.map(({ icon: Icon, label }) => (
+            {outcomes.map((label) => (
               <span
                 key={label}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-sm"
               >
-                <Icon className="w-4 h-4 text-blue-400" />
+                <ShieldCheck className="w-4 h-4 text-blue-400" />
                 {label}
               </span>
             ))}
