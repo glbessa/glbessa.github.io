@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AutomacaoDadosIA from './_AutomacaoDadosIA.jsx';
+
+const title = 'Automações Inteligentes, Engenharia de Dados e IA para Empresas | GL Bessa';
+const description = 'Elimine tarefas repetitivas e tome decisões guiadas por dados. Desenvolvemos pipelines de dados, integrações de APIs e soluções de inteligência artificial sob medida.';
+const url = '/servicos/automacao-dados-ia';
+---
+
+<BaseLayout title={title} description={description} url={url}>
+  <AutomacaoDadosIA client:load />
+</BaseLayout>

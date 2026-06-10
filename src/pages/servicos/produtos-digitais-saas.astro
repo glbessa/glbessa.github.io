@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProdutosSaaS from './_ProdutosSaaS.jsx';
+
+const title = "Desenvolvimento de Plataformas SaaS e Produtos Digitais sob Medida | GL Bessa";
+const description = "Construa sistemas web e SaaS escaláveis com arquitetura de alta performance. Da concepção técnica à implantação rápida com segurança e confiabilidade.";
+const url = "/servicos/produtos-digitais-saas";
+---
+
+<BaseLayout title={title} description={description} url={url}>
+  <ProdutosSaaS client:load />
+</BaseLayout>

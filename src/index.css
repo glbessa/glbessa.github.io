@@ -15,6 +15,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-bg text-text antialiased font-sans;
   }

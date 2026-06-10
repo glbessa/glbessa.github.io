@@ -93,13 +93,14 @@ const ServiceVisual = ({ type, title }) => {
   );
 };
 
-const Card = ({ title, description, icon: Icon, visual, className, delay, tags, featured }) => (
-  <motion.div 
+const Card = ({ title, description, icon: Icon, visual, className, delay, tags, featured, slug }) => (
+  <motion.a 
+    href={slug}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5 }}
-    className={`group relative overflow-hidden rounded-3xl border border-border bg-surface p-6 transition-all hover:border-accent/30 hover:shadow-2xl hover:shadow-brand/5 md:p-8 ${className}`}
+    className={`group relative overflow-hidden rounded-3xl border border-border bg-surface p-6 transition-all hover:border-accent/30 hover:shadow-2xl hover:shadow-brand/5 md:p-8 block ${className}`}
   >
     <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
       <ArrowUpRight className="w-6 h-6 text-text-muted" />
@@ -125,7 +126,7 @@ const Card = ({ title, description, icon: Icon, visual, className, delay, tags, 
         </div>
       </div>
     </div>
-  </motion.div>
+  </motion.a>
 );
 
 const MetricCard = ({ title, metric, description, company, delay }) => (
@@ -187,6 +188,7 @@ const ServicesBento = () => {
             delay={0.1}
             tags={servicesSection.services[0].tags}
             featured={true}
+            slug={servicesSection.services[0].slug}
           />
 
           {/* Card 2: Cloud Metric (col-span-1) */}
@@ -217,6 +219,7 @@ const ServicesBento = () => {
             delay={0.4}
             tags={servicesSection.services[1].tags}
             featured={false}
+            slug={servicesSection.services[1].slug}
           />
 
           {/* Card 5: Cloud & DevOps (col-span-1) */}
@@ -229,6 +232,7 @@ const ServicesBento = () => {
             delay={0.5}
             tags={servicesSection.services[2].tags}
             featured={false}
+            slug={servicesSection.services[2].slug}
           />
         </div>
       </div>

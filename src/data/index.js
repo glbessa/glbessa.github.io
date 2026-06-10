@@ -106,21 +106,24 @@ export const SITE_DATA = {
           "description": "Construímos produtos web e SaaS sob medida projetados para escalar. Criamos sistemas flexíveis e robustos prontos para o mercado, acelerando o lançamento operacional e preparando seu negócio para novos usuários.",
           "icon": "layout",
           "visual": "product",
-          "tags": ["SaaS", "Sistemas Web", "Aplicativos", "Integrações"]
+          "tags": ["SaaS", "Sistemas Web", "Aplicativos", "Integrações"],
+          "slug": "/servicos/produtos-digitais-saas"
         },
         {
           "title": "Automação, Dados e Inteligência Operacional",
           "description": "Elimine gargalos manuais e tarefas repetitivas. Desenvolvemos automações inteligentes com IA e conectamos ferramentas de dados para economizar horas de trabalho interno e apoiar tomadas de decisão rápidas.",
           "icon": "database",
           "visual": "data",
-          "tags": ["BI", "IA", "Pipelines", "Automações"]
+          "tags": ["BI", "IA", "Pipelines", "Automações"],
+          "slug": "/servicos/automacao-dados-ia"
         },
         {
           "title": "Cloud, DevOps e Confiabilidade",
           "description": "Garanta alta disponibilidade para seu sistema. Reduzimos riscos de indisponibilidade em produção, blindamos sua infraestrutura cloud contra picos de acessos e otimizamos custos operacionais de servidores.",
           "icon": "server",
           "visual": "cloud",
-          "tags": ["Cloud", "Docker", "CI/CD", "Observabilidade"]
+          "tags": ["Cloud", "Docker", "CI/CD", "Observabilidade"],
+          "slug": "/servicos/cloud-devops-confiabilidade"
         }
       ]
     },
@@ -210,16 +213,16 @@ export const SITE_DATA = {
     "footer": {
       "description": "Consultoria em engenharia de software para empresas que precisam transformar tecnologia em eficiência, confiabilidade e escala.",
       "services": [
-        { "label": "Produtos digitais", "url": "#services" },
-        { "label": "Automação e dados", "url": "#services" },
-        { "label": "Cloud e DevOps", "url": "#services" },
-        { "label": "IA aplicada", "url": "#services" }
+        { "label": "Produtos digitais", "url": "/servicos/produtos-digitais-saas" },
+        { "label": "Automação e dados", "url": "/servicos/automacao-dados-ia" },
+        { "label": "Cloud e DevOps", "url": "/servicos/cloud-devops-confiabilidade" },
+        { "label": "IA aplicada", "url": "/servicos/automacao-dados-ia" }
       ],
       "company": [
-        { "label": "Método", "url": "#about" },
-        { "label": "Projetos", "url": "#projects" },
-        { "label": "Stack", "url": "#stack" },
-        { "label": "Contato", "url": "#contact" }
+        { "label": "Método", "url": "/#about" },
+        { "label": "Projetos", "url": "/#projects" },
+        { "label": "Stack", "url": "/#stack" },
+        { "label": "Contato", "url": "/#contact" }
       ]
     }
   },

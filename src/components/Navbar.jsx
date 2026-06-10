@@ -18,10 +18,23 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Serviços', href: '#services' },
-    { name: 'Stack', href: '#stack' },
-    { name: 'Método', href: '#about' },
+    { name: 'Serviços', href: '/#services' },
+    { name: 'Stack', href: '/#stack' },
+    { name: 'Método', href: '/#about' },
   ];
+
+  const handleNavClick = (e, href) => {
+    const isHome = typeof window !== 'undefined' && (window.location.pathname === '/' || window.location.pathname === '');
+    if (isHome && href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 font-sans ${scrolled ? 'glass' : 'bg-transparent py-4'}`}>
@@ -43,6 +56,7 @@ const Navbar = () => {
                 <a 
                   key={link.name} 
                   href={link.href} 
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm font-medium text-text-muted hover:text-accent transition-colors"
                 >
                   {link.name}
@@ -92,8 +106,8 @@ const Navbar = () => {
                 <a 
                   key={link.name} 
                   href={link.href} 
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="block text-base font-medium text-text-muted hover:text-accent"
-                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </a>
