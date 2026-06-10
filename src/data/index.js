@@ -91,7 +91,7 @@ export const SITE_DATA = {
     ],
     "hero": {
       "badge": "Consultoria em Software, IA e Cloud para Empresas",
-      "title": "Transformando processos complexos em software inteligente.",
+      "title": "Transformando processos complexos em software inteligente",
       "subtitle": "Desenvolvimento de sistemas, automação e IA para empresas que precisam escalar.",
       "ctaPrimary": "Solicitar Diagnóstico",
       "ctaSecondary": "Ver Projetos"

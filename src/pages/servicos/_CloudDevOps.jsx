@@ -181,7 +181,7 @@ export default function CloudDevOps() {
                   [ SERVIÇO // CLOUD, DEVOPS E CONFIABILIDADE ]
                 </span>
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-text font-sora">
-                  Infraestrutura em nuvem projetada para suportar <span className="text-gradient">picos de acessos</span> e otimizar custos.
+                  Infraestrutura em nuvem projetada para suportar <span className="text-gradient">picos de acessos</span> e otimizar custos
                 </h1>
               </motion.div>
               

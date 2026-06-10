@@ -42,7 +42,7 @@ const Home = () => {
           <div className="container mx-auto px-6 max-w-4xl">
              <div className="text-center mb-16">
                <h2 className="text-3xl md:text-4xl font-bold text-text mb-4 font-sora">
-                 Vamos identificar onde tecnologia pode gerar mais <span className="text-accent">impacto na sua operação</span>.
+                 Vamos identificar onde tecnologia pode gerar mais <span className="text-accent">impacto na sua operação</span>
                </h2>
                <p className="text-text-muted text-lg max-w-2xl mx-auto">Agende um diagnóstico técnico para mapear oportunidades de automação, produto, dados ou infraestrutura e entender quais iniciativas devem ser priorizadas.</p>
              </div>

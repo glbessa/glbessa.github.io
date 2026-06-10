@@ -100,7 +100,7 @@ const _ProdutosSaaS = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold font-sora text-text tracking-tight max-w-4xl mx-auto leading-[1.1] mb-6"
           >
-            Plataformas SaaS robustas estruturadas para o mercado e <span className="text-gradient">preparadas para escala</span>.
+            Plataformas SaaS robustas estruturadas para o mercado e <span className="text-gradient">preparadas para escala</span>
           </motion.h1>
 
           <motion.p

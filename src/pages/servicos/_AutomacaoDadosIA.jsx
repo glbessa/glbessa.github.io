@@ -294,7 +294,7 @@ const AutomacaoDadosIA = () => {
                   [ SERVIÇO // AUTOMAÇÃO, DADOS E IA ]
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-text font-sora">
-                  Inteligência operacional para eliminar gargalos e <span className="text-gradient">automatizar decisões</span> complexas.
+                  Inteligência operacional para eliminar gargalos e <span className="text-gradient">automatizar decisões</span> complexas
                 </h1>
               </motion.div>
 

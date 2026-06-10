@@ -29,7 +29,7 @@ const Hero = () => {
                 {hero.badge}
               </span>
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-text font-sora">
-                Transformando processos complexos em <span className="text-gradient">software inteligente</span>.
+                Transformando processos complexos em <span className="text-gradient">software inteligente</span>
               </h1>
             </motion.div>
             
