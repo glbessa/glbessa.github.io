@@ -1,24 +1,18 @@
-import React from 'react';
-import PostDetailLayout from '../../components/PostDetailLayout';
+---
+title: "Funções Lambda"
+author: "Gabriel Leite Bessa"
+date: "2023-07-27T20:15:58-03:00"
+tags:
+  - "clp"
+  - "programação"
+  - "funções"
+categories:
+  - "programação"
+hero: "/posts/lambda_functions/img/lambda_function_card.png"
+description: "Postagem sobre funções anônimas em programação"
+---
 
-export const metadata = {
-  "title": "Funções Lambda",
-  "author": "Gabriel Leite Bessa",
-  "date": "2023-07-27T20:15:58-03:00",
-  "tags": [
-    "clp",
-    "programação",
-    "funções"
-  ],
-  "categories": [
-    "programação"
-  ],
-  "hero": "/posts/lambda_functions/img/lambda_function_card.png",
-  "description": "Postagem sobre funções anônimas em programação",
-  "slug": "lambda_functions"
-};
-
-export const content = `## Introdução
+## Introdução
 
 Funções lambda, também chamadas de funções anônimas, são funções que não possuem um nome atrelado em sua definição e são muito utilizadas para expressar operações simples nas quais não é necessário fazer a definição completa de uma função.
 
@@ -38,35 +32,35 @@ As funções anônimas possuem uma sintaxe concisa e direta, sendo boas por cons
 
 Exemplo de funções lambda em Lisp:
 
-\`\`\`
+```
 (print ((lambda (x y) (* x y)) 6 4))
-\`\`\`
+```
 
 Saída do exemplo acima:
 
-\`\`\`
+```
 24
-\`\`\`
+```
 
 ## Funções lambda em Rust
 
-As funções lambda em Rust são closures, que são funções anônimas que conseguem capturar as varíaveis no escopo aonde elas foram definidas. Elas são definidas por meio de \`\`\`|<PARAMETROS>| <IMPLEMENTAÇÃO>\`\`\`. Elas também podem ser usadas em conjunto com iteradores e serem aplicadas para elementos de estruturas de dados.
+As funções lambda em Rust são closures, que são funções anônimas que conseguem capturar as varíaveis no escopo aonde elas foram definidas. Elas são definidas por meio de ```|<PARAMETROS>| <IMPLEMENTAÇÃO>```. Elas também podem ser usadas em conjunto com iteradores e serem aplicadas para elementos de estruturas de dados.
 
 Exemplo de função lambda em Rust que faz a soma de 1 em todos os elementos de um vetor:
 
-\`\`\`
+```
 let v: Vec<usize> = vec![1, 2, 3, 4, 5];
     
 let v2: Vec<usize> = v.into_iter().map(|x| x + 1).collect();
     
 println!("{:?}", v2);
-\`\`\`
+```
 
 Saída do exemplo acima:
 
-\`\`\`
+```
 [2, 3, 4, 5, 6]
-\`\`\`
+```
 
 ## Funções lambda em Haskell
 
@@ -76,21 +70,21 @@ Elas são definidas utilizando o \ (contra-barra) seguido dos parâmetros da fun
 
 A seguir é apresentado a sintaxe:
 
-\`\`\`
+```
 ghci> (\\\\<PARAMETROS SEPARADOS POR ESPAÇO> -> <IMPLEMENTAÇÃO>) <PARAMENTROS A SEREM APLICADOS>
-\`\`\`
+```
 
 Exemplo de função lambda em Haskell:
 
-\`\`\`
+```
 ghci> (\\\\x y -> x * y) 2 6
-\`\`\`
+```
 
 Saída do comando acima:
 
-\`\`\`
+```
 12
-\`\`\`
+```
 
 ## Aspectos de expressividade
 
@@ -122,8 +116,4 @@ https://www.haskell.org/tutorial/functions.html
 
 https://wiki.haskell.org/Lambda_abstraction
 
-https://wiki.haskell.org/Beta_reduction`;
-
-export default function Post() {
-  return <PostDetailLayout data={{...metadata, content}} type="posts" />;
-}
+https://wiki.haskell.org/Beta_reduction

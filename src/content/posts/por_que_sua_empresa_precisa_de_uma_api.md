@@ -1,21 +1,16 @@
-import React from 'react';
-import PostDetailLayout from '../../components/PostDetailLayout';
+---
+title: "Por que sua empresa precisa de uma API? Desmistificando a Integração de Sistemas"
+date: "2026-02-06"
+author: "Gabriel Leite Bessa"
+tags:
+  - "Negócios"
+  - "API"
+  - "Estratégia"
+  - "Automação"
+description: "Descubra como as APIs podem transformar a eficiência da sua empresa, permitindo que sistemas conversem e automatizem processos críticos."
+---
 
-export const metadata = {
-  "title": "Por que sua empresa precisa de uma API? Desmistificando a Integração de Sistemas",
-  "date": "2026-02-06",
-  "author": "Gabriel Leite Bessa",
-  "tags": [
-    "Negócios",
-    "API",
-    "Estratégia",
-    "Automação"
-  ],
-  "description": "Descubra como as APIs podem transformar a eficiência da sua empresa, permitindo que sistemas conversem e automatizem processos críticos.",
-  "slug": "por_que_sua_empresa_precisa_de_uma_api"
-};
-
-export const content = `No mundo dos negócios moderno, a eficiência não é apenas um diferencial, é uma necessidade de sobrevivência. Muitas pequenas empresas e startups operam com sistemas isolados: o estoque não fala com o financeiro, e o site de vendas não se comunica com a logística. É aqui que entra a **API (Application Programming Interface)**.
+No mundo dos negócios moderno, a eficiência não é apenas um diferencial, é uma necessidade de sobrevivência. Muitas pequenas empresas e startups operam com sistemas isolados: o estoque não fala com o financeiro, e o site de vendas não se comunica com a logística. É aqui que entra a **API (Application Programming Interface)**.
 
 ### O que é uma API para quem não é da área técnica?
 
@@ -42,8 +37,3 @@ Se você sente que sua operação está travada por processos manuais ou sistema
 
 ---
 **Interessado em automatizar sua empresa?** [Entre em contato comigo](/contact) e vamos analisar seu cenário.
-`;
-
-export default function Post() {
-  return <PostDetailLayout data={{...metadata, content}} type="posts" />;
-}

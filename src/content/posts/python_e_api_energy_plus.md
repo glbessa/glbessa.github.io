@@ -1,23 +1,17 @@
-import React from 'react';
-import PostDetailLayout from '../../components/PostDetailLayout';
+---
+title: "Python e API Energy Plus"
+author: "Gabriel Leite Bessa"
+date: "2024-05-12T20:27:05-03:00"
+hero: ""
+tags:
+  - "energy_plus"
+  - "simulações"
+categories:
+  - "programação"
+  - "simulação"
+---
 
-export const metadata = {
-  "title": "Python e API Energy Plus",
-  "author": "Gabriel Leite Bessa",
-  "date": "2024-05-12T20:27:05-03:00",
-  "hero": "",
-  "tags": [
-    "energy_plus",
-    "simulações"
-  ],
-  "categories": [
-    "programação",
-    "simulação"
-  ],
-  "slug": "python_e_api_energy_plus"
-};
-
-export const content = `Olá a todos!
+Olá a todos!
 
 Nessa postagem vou estar elaborando um pouco sobre Python e Energy Plus que foram duas ferramentas que eu utilizei durante um projeto em colaboração com uma arquiteta para o mestrado dela. Essas ferramentas foram essenciais para que obtivessemos os resultados que necessitávamos e estarei demonstrando como fazer o uso delas, já que no início para mim foi um pouco difícil entender o funcionamento delas e assim poder ajudar outros que se encontram nessa situação.
 
@@ -95,8 +89,3 @@ Integrar Python com o EnergyPlus pode oferecer várias vantagens:
 
 
 
-`;
-
-export default function Post() {
-  return <PostDetailLayout data={{...metadata, content}} type="posts" />;
-}

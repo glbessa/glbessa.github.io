@@ -2,23 +2,15 @@ import React, { useEffect, useState } from 'react';
 import SEO from '../components/SEO';
 import { getData } from '../data';
 
-const Posts = () => {
+const Posts = ({ posts: initialPosts = [] }) => {
   const [posts, setPosts] = useState([]);
   const data = getData();
   const seo = data.site.pages.posts;
 
   useEffect(() => {
-    // Import all post metadata dynamically from the generated pages
-    const modules = import.meta.glob('./posts/_*.jsx', { eager: true });
-    
-    // Convert to array of { ...metadata }
-    const loadedPosts = Object.values(modules).map(module => module.metadata);
-    
-    // Sort by date desc
-    loadedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-    
-    setPosts(loadedPosts);
-  }, []);
+    const sorted = [...initialPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+    setPosts(sorted);
+  }, [initialPosts]);
 
   return (
     <div>

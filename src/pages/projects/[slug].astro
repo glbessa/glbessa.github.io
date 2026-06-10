@@ -1,35 +1,33 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostDetailLayout from '../../components/PostDetailLayout.astro';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const projectModules = import.meta.glob('./_*.jsx');
-  const entries = await Promise.all(
-    Object.entries(projectModules).map(async ([path, importer]) => {
-      const mod = await importer();
-      const slug = mod.metadata?.slug ?? path.split('/').pop().replace(/^_/, '').replace('.jsx', '');
-      return {
-        params: { slug },
-        props: { slug, metadata: mod.metadata },
-      };
-    })
-  );
-
-  return entries;
+  const projects = await getCollection('projects');
+  return projects.map(project => {
+    const slug = project.id.replace(/\.(md|mdx)$/, '');
+    return {
+      params: { slug },
+      props: { project, slug },
+    };
+  });
 }
 
-const { slug, metadata } = Astro.props;
-const projectModules = import.meta.glob('./_*.jsx');
-const ProjectPage = (await projectModules[`./_${slug}.jsx`]()).default;
+const { project, slug } = Astro.props;
+const { Content } = await render(project);
 ---
 
 <BaseLayout
-  title={metadata.title}
-  description={metadata.description}
-  image={metadata.hero}
+  title={project.data.title}
+  description={project.data.description}
+  image={project.data.hero}
   url={`/projects/${slug}`}
   type="article"
 >
   <section class="bg-slate-50 px-6 pb-24 pt-32 text-slate-900">
-    <ProjectPage />
+    <PostDetailLayout data={{ ...project.data, slug }} type="projects">
+      <Content />
+    </PostDetailLayout>
   </section>
 </BaseLayout>

@@ -2,15 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Posts from './_Posts.jsx';
 import { getData } from '../data';
+import { getCollection } from 'astro:content';
 
 const data = getData();
 const seo = data.site.pages.posts;
+
+const postsCollection = await getCollection('posts');
+const posts = postsCollection.map(post => ({
+  slug: post.id.replace(/\.(md|mdx)$/, ''),
+  ...post.data,
+}));
 ---
 
 <BaseLayout title={seo.title} description={seo.description} url="/posts">
   <section class="bg-slate-50 px-6 pb-24 pt-32 text-slate-900">
     <div class="container mx-auto">
-      <Posts client:load />
+      <Posts client:load posts={posts} />
     </div>
   </section>
 </BaseLayout>

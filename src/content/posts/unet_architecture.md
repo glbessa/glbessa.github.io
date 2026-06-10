@@ -1,22 +1,17 @@
-import React from 'react';
-import PostDetailLayout from '../../components/PostDetailLayout';
+---
+title: "Arquitetura U-Net"
+author: "Gabriel Leite Bessa"
+tags:
+  - "posts"
+  - "deep_learning"
+  - "computer_vision"
+  - "ai"
+date: "2023-07-21"
+hero: "/posts/unet_architecture/img/u-net-architecture.png"
+description: "Postagem sobre a arquitetura UNet"
+---
 
-export const metadata = {
-  "title": "Arquitetura U-Net",
-  "author": "Gabriel Leite Bessa",
-  "tags": [
-    "posts",
-    "deep_learning",
-    "computer_vision",
-    "ai"
-  ],
-  "date": "2023-07-21",
-  "hero": "/posts/unet_architecture/img/u-net-architecture.png",
-  "description": "Postagem sobre a arquitetura UNet",
-  "slug": "unet_architecture"
-};
-
-export const content = `## Introdução
+## Introdução
 
 O desenvolvimento de redes neurais profundas cresceu muito nos últimos anos graças ao aumento da quantidade de dados disponíveis, ao aumento do poder computacional e os obstáculos que as técnicas de machine learning clássica começaram a enfrentar, chegando a um limite no aprendizado com essas técnicas. Isso passou  a ter um papel essêncial em tarefas de visão computacional com a criação das redes neurais convolucionais, que diferente das feed-forward neural networks, fazem o uso de filtros convolucionais para o aprendizado de características em imagens. Com isso, redes totalmente convolucionais começaram a surgir também, nas quais todas as partes da rede são compostas por camadas de convolução, sendo a U-Net uma dessas redes.
 
@@ -52,7 +47,7 @@ Ao final da rede existe uma camada de convolução com filtro 1x1 e função de 
 
 A seguir é demostrada um exemplo de implementação da rede U-Net utilizando Tensorflow. No exemplo os block de contração e expansão foram definidos em duas funções, *downsample_block* e *upsample_block* respectivamente.
 
-\`\`\`python
+```python
 def downsample_block(x, n_filters, n_channels=1):
     x = layers.Conv2D(n_filters, n_channels, strides = 1, padding = "same", activation = "relu")(x)
     x = layers.Conv2D(n_filters, n_channels, strides = 1, padding = "same", activation = "relu")(x)
@@ -60,9 +55,9 @@ def downsample_block(x, n_filters, n_channels=1):
     p = layers.Dropout(0.3)(p)
 
     return f, p
-\`\`\`
+```
 
-\`\`\`python
+```python
 def upsample_block(x, conv_features, n_filters, n_channels=1):
     x = layers.Conv2DTranspose(n_filters, n_channels, strides=2, padding="same")(x)
     x = layers.concatenate([x, conv_features])
@@ -71,12 +66,12 @@ def upsample_block(x, conv_features, n_filters, n_channels=1):
     x = layers.Conv2D(n_filters, n_channels, strides = 1, padding = "same", activation = "relu")(x)
 
     return x
-\`\`\`
+```
 
 Ao final é feito o uso dessas funções e a construção da rede em si:
 
 
-\`\`\`python
+```python
 def build_unet_model(shape:tuple, n_classes:int):
     inputs = layers.Input(shape=shape)
     n_channels = shape[-1]
@@ -115,7 +110,7 @@ def build_unet_model(shape:tuple, n_classes:int):
     unet_model = tf.keras.Model(inputs, outputs, name="U-Net")
 
     return unet_model
-\`\`\`
+```
 
 ## Referências
 
@@ -151,8 +146,4 @@ Figura 5 por [U-Net creators](https://lmb.informatik.uni-freiburg.de/people/ronn
 
 [C4W2L04 Why ResNets Work](https://www.youtube.com/watch?v=RYth6EbBUqM)
 
-[Funções de ativação: definição, características, e quando usar cada uma](https://iaexpert.academy/2020/05/25/funcoes-de-ativacao-definicao-caracteristicas-e-quando-usar-cada-uma/?doing_wp_cron=1690209521.0830559730529785156250)`;
-
-export default function Post() {
-  return <PostDetailLayout data={{...metadata, content}} type="posts" />;
-}
+[Funções de ativação: definição, características, e quando usar cada uma](https://iaexpert.academy/2020/05/25/funcoes-de-ativacao-definicao-caracteristicas-e-quando-usar-cada-uma/?doing_wp_cron=1690209521.0830559730529785156250)

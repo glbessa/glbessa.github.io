@@ -10,21 +10,22 @@ Este projeto é uma **Landing Page de Alta Conversão** desenvolvida para aprese
     -   **Glassmorphism:** Estética Dark Mode com elementos de vidro e desfoque de fundo.
     -   **Micro-animações:** Feedback visual fluído e transições suaves utilizando Framer Motion.
 3.  **Foco em Conversão:** Layout otimizado para transformar visitantes em leads, com chamadas para ação (CTAs) estratégicas e seções de prova social (logotipos de empresas).
-4.  **Performance SPA:** Aplicação Single Page Application (SPA) ultra rápida com carregamento dinâmico de rotas para posts e projetos.
+4.  **Performance e SEO Estático:** Site estático ultra rápido usando a arquitetura de Ilhas do Astro com renderização de Markdown em build-time.
 
 ## Tecnologias
 
-- **Core:** React 18, Vite
+- **Core:** Astro 5, React 18
 - **CSS:** TailwindCSS
 - **Animações:** Framer Motion
 - **Ícones:** Lucide React
-- **Markdown:** React-markdown (para suporte a conteúdos estáticos)
-- **Roteamento:** React Router DOM
+- **Markdown:** Astro Content Collections (suporte nativo e tipado com Zod)
+- **Roteamento:** Roteamento baseado em arquivos do Astro
 
 ## Estrutura de Pastas
 
 - `src/components/`: Componentes modulares e reutilizáveis (Navbar, Bento Grids, Footer).
-- `src/data/`: Central de dados e configurações do site.
+- `src/content/`: Arquivos Markdown compilados de posts e projetos.
+- `src/data/`: Central de dados e configurações dinâmicas do site.
 - `src/pages/`: Páginas principais e templates de rotas dinâmicas.
 
 ## Comandos Disponíveis

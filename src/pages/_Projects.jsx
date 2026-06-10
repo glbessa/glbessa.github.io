@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SEO from '../components/SEO';
 import { getData } from '../data';
 
-const Projects = () => {
+const Projects = ({ projects: initialProjects = [] }) => {
   const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('Todos');
   const [categories, setCategories] = useState(['Todos']);
@@ -11,11 +11,7 @@ const Projects = () => {
   const seo = data.site.pages.projects;
 
   useEffect(() => {
-    // Import all project metadata dynamically from the generated pages
-    const modules = import.meta.glob('./projects/_*.jsx', { eager: true });
-    
-    // Convert to array of { ...metadata }
-    const loadedProjects = Object.values(modules).map(module => module.metadata);
+    const loadedProjects = [...initialProjects];
     
     // Sort by order asc
     loadedProjects.sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -23,7 +19,7 @@ const Projects = () => {
     setProjects(loadedProjects);
     const uniqueCategories = ['Todos', ...new Set(loadedProjects.map(p => p.category).filter(Boolean))];
     setCategories(uniqueCategories);
-  }, []);
+  }, [initialProjects]);
 
   const filteredProjects = filter === 'Todos' 
     ? projects 

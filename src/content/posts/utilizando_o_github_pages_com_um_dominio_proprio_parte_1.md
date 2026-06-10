@@ -1,24 +1,18 @@
-import React from 'react';
-import PostDetailLayout from '../../components/PostDetailLayout';
+---
+title: "Utilizando o Github Pages com um Domínio Próprio: Parte 1"
+author: "Gabriel Leite Bessa"
+date: "2024-05-12T20:32:10-03:00"
+tags:
+  - "web"
+  - "website"
+  - "github-pages"
+  - "tls"
+  - "ssl"
+categories:
+  - "web"
+---
 
-export const metadata = {
-  "title": "Utilizando o Github Pages com um Domínio Próprio: Parte 1",
-  "author": "Gabriel Leite Bessa",
-  "date": "2024-05-12T20:32:10-03:00",
-  "tags": [
-    "web",
-    "website",
-    "github-pages",
-    "tls",
-    "ssl"
-  ],
-  "categories": [
-    "web"
-  ],
-  "slug": "utilizando_o_github_pages_com_um_dominio_proprio_parte_1"
-};
-
-export const content = `Olá a todos!
+Olá a todos!
 
 Nesse post irei demonstrar como fazer deploy do site no Github Pages, comprar um domínio, transferir ele para a CloudFlare, configurar ele no Github Pages e utilizar o certificado TLS/SSL da CloudFlare.
 
@@ -46,8 +40,4 @@ Primeiramente precisamos criar um site que pode ser algo bem simples por enquant
 
 [https://gist.github.com/cvan/8630f847f579f90e0c014dc5199c337b](https://gist.github.com/cvan/8630f847f579f90e0c014dc5199c337b)
 
-[https://www.youtube.com/watch?v=f3X-hYRxBL8](https://www.youtube.com/watch?v=f3X-hYRxBL8)`;
-
-export default function Post() {
-  return <PostDetailLayout data={{...metadata, content}} type="posts" />;
-}
+[https://www.youtube.com/watch?v=f3X-hYRxBL8](https://www.youtube.com/watch?v=f3X-hYRxBL8)
