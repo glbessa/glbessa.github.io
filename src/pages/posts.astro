@@ -15,7 +15,7 @@ const posts = postsCollection.map(post => ({
 ---
 
 <BaseLayout title={seo.title} description={seo.description} url="/posts">
-  <section class="bg-slate-50 px-6 pb-24 pt-32 text-slate-900">
+  <section class="bg-bg px-6 pb-24 pt-32 text-text">
     <div class="container mx-auto">
       <Posts client:load posts={posts} />
     </div>

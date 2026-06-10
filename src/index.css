@@ -2,22 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg:            #090D16;
+  --surface:       #131B2E;
+  --surface-hi:    #1E293B;
+  --border:        #1E293B;
+  --border-accent: rgba(139, 92, 246, 0.18);
+  --text:          #F8FAFC;
+  --text-muted:    #94A3B8;
+  --brand:         #6D28D9;
+  --accent:        #8B5CF6;
+}
+
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30;
+    @apply bg-bg text-text antialiased font-sans;
+  }
+
+  ::selection {
+    background-color: rgba(139, 92, 246, 0.3);
+    color: #F8FAFC;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sora font-semibold;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-slate-950/70 backdrop-blur-lg border-b border-white/10;
+    background-color: rgba(9, 13, 22, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
   }
   
   .glass-card {
-    @apply bg-slate-900/50 backdrop-blur-md border border-white/5 hover:border-white/10 transition-colors;
+    background-color: rgba(19, 27, 46, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-accent;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    color: var(--text);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 15px -3px rgba(109, 40, 217, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-secondary:hover {
+    transform: scale(1.05);
+    background-color: rgba(139, 92, 246, 0.1);
   }
 }

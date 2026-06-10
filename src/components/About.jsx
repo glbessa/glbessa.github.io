@@ -73,12 +73,12 @@ const itemVariants = {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-slate-950 relative overflow-hidden">
+    <section id="about" className="py-24 bg-bg relative overflow-hidden font-sans">
       {/* Subtle background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(139,92,246,0.03) 0%, transparent 70%)',
         }}
       />
 
@@ -91,14 +91,14 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-20"
         >
-          <span className="inline-block text-xs font-mono tracking-widest text-blue-400 uppercase mb-4 px-3 py-1 rounded-full border border-blue-400/20 bg-blue-400/5">
+          <span className="inline-block text-xs font-mono tracking-widest text-accent uppercase mb-4 px-3 py-1 rounded-full border border-accent/20 bg-accent/5">
             Método de trabalho
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-100 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-text mb-6 font-sora">
             Execução técnica com{' '}
             <span className="text-gradient">visão de negócio</span>
           </h2>
-          <p className="text-slate-400 text-lg leading-relaxed">
+          <p className="text-text-muted text-lg leading-relaxed">
             Combinamos engenharia de software, entendimento de produto e critério operacional para entregar soluções que fazem sentido para o negócio, para o usuário e para a evolução futura do sistema.
           </p>
         </motion.div>
@@ -111,15 +111,15 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <h3 className="text-sm font-mono tracking-widest text-slate-500 uppercase text-center mb-12">
+          <h3 className="text-sm font-mono tracking-widest text-text-muted uppercase text-center mb-12">
             Da estratégia à operação
           </h3>
           <div className="relative">
             {/* Vertical line - continuous */}
             {/* Desktop: Center */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-slate-800 hidden md:block" />
+            <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-border hidden md:block" />
             {/* Mobile: Left aligned */}
-            <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-slate-800 md:hidden" />
+            <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-border md:hidden" />
 
             <div className="space-y-12 md:space-y-0">
               {deliverySteps.map((item, index) => {
@@ -135,27 +135,27 @@ const About = () => {
                   >
                     {/* Content card */}
                     <div className={`w-full md:w-5/12 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
-                      <div className="group relative p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all hover:shadow-xl hover:shadow-blue-900/10 z-10">
+                      <div className="group relative p-6 rounded-2xl bg-surface border border-border hover:border-accent/30 transition-all hover:shadow-xl hover:shadow-brand/5 z-10">
                         {/* Horizontal Connector Line for Desktop */}
                         <div
-                          className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-8 h-0.5 bg-slate-800 group-hover:bg-slate-600 transition-colors ${
+                          className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-8 h-0.5 bg-border group-hover:bg-accent/30 transition-colors ${
                             isLeft ? '-right-9' : '-left-9'
                           }`}
                         />
                         {/* Horizontal Connector Line for Mobile */}
                         <div
-                           className="md:hidden absolute top-8 -left-10 w-8 h-0.5 bg-slate-800 group-hover:bg-slate-600 transition-colors"
+                           className="md:hidden absolute top-8 -left-10 w-8 h-0.5 bg-border group-hover:bg-accent/30 transition-colors"
                         />
 
-                        <span className="text-xs font-mono text-blue-400 tracking-widest uppercase">{item.period}</span>
-                        <h4 className="text-lg font-bold text-slate-100 mt-1 mb-2">{item.title}</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                        <span className="text-xs font-mono text-accent tracking-widest uppercase">{item.period}</span>
+                        <h4 className="text-lg font-bold text-text mt-1 mb-2 font-sora">{item.title}</h4>
+                        <p className="text-text-muted text-sm leading-relaxed">{item.description}</p>
                       </div>
                     </div>
 
                     {/* Center icon / Node */}
                     <div className="absolute left-0 top-0 md:relative md:top-auto md:left-auto z-20 md:my-0 flex-shrink-0">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-950 border-4 border-slate-800 text-slate-400 group-hover:text-blue-400 group-hover:border-blue-500/50 transition-colors shadow-lg">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-bg border-4 border-border text-text-muted group-hover:text-accent group-hover:border-accent/50 transition-colors shadow-lg">
                         <Icon className="w-5 h-5" />
                       </div>
                     </div>
@@ -177,7 +177,7 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="text-sm font-mono tracking-widest text-slate-500 uppercase text-center mb-12">
+          <h3 className="text-sm font-mono tracking-widest text-text-muted uppercase text-center mb-12">
             Como estruturamos projetos
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -187,13 +187,13 @@ const About = () => {
                 <motion.div
                   key={pillar.title}
                   variants={itemVariants}
-                  className="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all hover:shadow-2xl hover:shadow-blue-900/10"
+                  className="group p-8 rounded-3xl bg-surface border border-border hover:border-accent/30 transition-all hover:shadow-2xl hover:shadow-brand/5"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-6 h-6 text-blue-400" />
+                  <div className="w-12 h-12 rounded-xl bg-bg border border-border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-100 mb-3">{pillar.title}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed">{pillar.description}</p>
+                  <h4 className="text-lg font-bold text-text mb-3 font-sora">{pillar.title}</h4>
+                  <p className="text-text-muted text-sm leading-relaxed">{pillar.description}</p>
                 </motion.div>
               );
             })}
@@ -206,19 +206,19 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 p-8 md:p-12 text-center"
+          className="rounded-3xl bg-gradient-to-br from-surface to-surface/50 border border-border p-8 md:p-12 text-center"
         >
-          <p className="text-slate-400 text-sm font-mono tracking-widest uppercase mb-4">Governança técnica</p>
-          <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="text-text-muted text-sm font-mono tracking-widest uppercase mb-4">Governança técnica</p>
+          <p className="text-text text-lg leading-relaxed max-w-2xl mx-auto mb-8 font-sora">
             A operação é conduzida com responsabilidade técnica de Gabriel Bessa e foco em decisões que equilibram velocidade, qualidade de engenharia e impacto de negócio.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {outcomes.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bg border border-border text-text-muted text-sm font-mono"
               >
-                <ShieldCheck className="w-4 h-4 text-blue-400" />
+                <ShieldCheck className="w-4 h-4 text-accent" />
                 {label}
               </span>
             ))}

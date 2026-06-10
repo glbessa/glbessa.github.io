@@ -18,9 +18,9 @@ const technologies = [
 
 const TechStackMarquee = () => {
   return (
-    <section id="stack" className="py-20 bg-slate-950 border-y border-white/5 relative z-10">
+    <section id="stack" className="py-20 bg-bg border-y border-border relative z-10 font-sans">
        <div className="container mx-auto px-6 mb-10 text-center">
-        <p className="text-sm font-semibold tracking-wider text-slate-500 uppercase">
+        <p className="text-sm font-semibold tracking-wider text-text-muted uppercase font-mono">
           Stack moderna para produtos escaláveis
         </p>
       </div>
@@ -38,15 +38,15 @@ const TechStackMarquee = () => {
           {/* Tripple the list to ensure filling the screen on large monitors */}
           {[...technologies, ...technologies, ...technologies].map((tech, index) => (
             <div key={`${tech.name}-${index}`} className="flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100 hover:scale-110 cursor-pointer">
-              <span className={`text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-400 to-slate-200 hover:from-blue-400 hover:to-emerald-400`}>
+              <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-400 to-slate-200 hover:from-brand hover:to-accent">
                 {tech.name}
               </span>
             </div>
           ))}
         </motion.div>
          {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10"></div>
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg to-transparent z-10"></div>
       </div>
     </section>
   )

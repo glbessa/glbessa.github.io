@@ -1,18 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal, Code, Cpu } from 'lucide-react';
+import { getData } from '../data';
 
 const Hero = () => {
+  const { hero } = getData();
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-bg">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-slate-950">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute inset-0 bg-bg">
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-brand rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-brand rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="container mx-auto px-6 z-10 relative">
+      <div className="container mx-auto px-6 z-10 relative font-sans">
         <div className="flex flex-col md:flex-row items-center gap-12">
           
           {/* Text Content */}
@@ -22,11 +25,11 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-                Consultoria em Software, IA e Cloud para Empresas
+              <span className="inline-block py-1 px-3 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4 font-mono">
+                {hero.badge}
               </span>
-              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-slate-100">
-                Engenharia de software para transformar operações em <span className="text-gradient">vantagem competitiva</span>.
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-text font-sora">
+                Transformando processos complexos em <span className="text-gradient">software inteligente</span>.
               </h1>
             </motion.div>
             
@@ -34,9 +37,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed"
+              className="text-lg text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed"
             >
-              Desenvolvemos produtos digitais, automações inteligentes e infraestrutura cloud para empresas que precisam ganhar eficiência, reduzir risco técnico e escalar com previsibilidade.
+              {hero.subtitle}
             </motion.p>
 
             <motion.div 
@@ -47,17 +50,17 @@ const Hero = () => {
             >
               <a 
                 href="#contact" 
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-blue-500/25"
+                className="btn-primary"
               >
-                Solicitar diagnóstico técnico
+                {hero.ctaPrimary}
                 <ArrowRight className="w-5 h-5" />
               </a>
 
               <a 
-                href="#services" 
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-xl font-bold transition-all hover:bg-slate-800/50"
+                href="#projects" 
+                className="btn-secondary"
               >
-                Conhecer soluções
+                {hero.ctaSecondary}
               </a>
             </motion.div>
           </div>
@@ -71,47 +74,47 @@ const Hero = () => {
               className="relative"
             >
               {/* Abstract Card "Window" */}
-              <div className="relative z-10 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden glass-card">
-                <div className="flex items-center px-4 py-3 bg-slate-950/50 border-b border-white/5">
+              <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden glass-card">
+                <div className="flex items-center px-4 py-3 bg-bg/50 border-b border-border">
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
                   </div>
-                  <div className="mx-auto text-xs font-mono text-slate-500">operational-engine.ts</div>
+                  <div className="mx-auto text-xs font-mono text-text-muted">operational-engine.ts</div>
                 </div>
                 <div className="p-6 font-mono text-sm space-y-4 overflow-hidden">
                   <div className="flex gap-2">
                     <span className="text-pink-500">const</span>
-                    <span className="text-blue-400">operation</span>
-                    <span className="text-slate-400">=</span>
+                    <span className="text-accent">operation</span>
+                    <span className="text-text-muted">=</span>
                     <span className="text-yellow-300">await</span>
-                    <span className="text-blue-400 sm:hidden">opsEngine</span>
-                    <span className="text-blue-400 hidden sm:inline">operationalEngine</span>
-                    <span className="text-slate-400">({'{'}</span>
+                    <span className="text-accent sm:hidden">opsEngine</span>
+                    <span className="text-accent hidden sm:inline">operationalEngine</span>
+                    <span className="text-text-muted">({'{'}</span>
                   </div>
                   <div className="pl-4 space-y-2">
                     <div className="flex gap-2">
-                      <span className="text-blue-300">processes</span>:
+                      <span className="text-text">processes</span>:
                       <span className="text-orange-400">'automated'</span>,
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-blue-300">cloud</span>:
+                      <span className="text-text">cloud</span>:
                       <span className="text-orange-400">'reliable'</span>,
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-blue-300">data</span>:
+                      <span className="text-text">data</span>:
                       <span className="text-orange-400">'actionable'</span>,
                     </div>
                   </div>
-                  <div className="text-slate-400">{'}'});</div>
+                  <div className="text-text-muted">{'}'});</div>
                   
-                  <div className="pt-4 flex gap-4 border-t border-white/5 mt-4">
-                     <div className="flex items-center gap-2 text-slate-500">
+                  <div className="pt-4 flex gap-4 border-t border-border mt-4">
+                     <div className="flex items-center gap-2 text-text-muted">
                         <Terminal className="w-4 h-4" />
                         <span>Risco técnico reduzido</span>
                      </div>
-                     <div className="flex items-center gap-2 text-emerald-500">
+                     <div className="flex items-center gap-2 text-accent">
                         <Cpu className="w-4 h-4" />
                         <span>Operação escalável</span>
                      </div>
@@ -123,17 +126,17 @@ const Hero = () => {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 p-4 bg-slate-800 rounded-xl border border-slate-700 shadow-xl"
+                className="absolute -top-6 -right-6 p-4 bg-surface-hi rounded-xl border border-border shadow-xl"
               >
-                <Code className="w-8 h-8 text-blue-400" />
+                <Code className="w-8 h-8 text-accent" />
               </motion.div>
               
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-8 -left-8 p-4 bg-slate-800 rounded-xl border border-slate-700 shadow-xl"
+                className="absolute -bottom-8 -left-8 p-4 bg-surface-hi rounded-xl border border-border shadow-xl"
               >
-                <Cpu className="w-8 h-8 text-emerald-400" />
+                <Cpu className="w-8 h-8 text-brand" />
               </motion.div>
 
             </motion.div>

@@ -36,6 +36,9 @@ const fullTitle = title.includes('|') ? title : `${title} | Gabriel Bessa`;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script is:inline define:vars={{ gtmId }}>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -44,7 +47,7 @@ const fullTitle = title.includes('|') ? title : `${title} | Gabriel Bessa`;
       })(window,document,'script','dataLayer',gtmId);
     </script>
   </head>
-  <body class="bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30">
+  <body class="bg-bg text-text antialiased">
     <noscript>
       <iframe
         src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}

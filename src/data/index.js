@@ -84,6 +84,13 @@ export const SITE_DATA = {
         "logo": "/img/companies/everleads.svg"
       }
     ],
+    "hero": {
+      "badge": "Consultoria em Software, IA e Cloud para Empresas",
+      "title": "Transformando processos complexos em software inteligente.",
+      "subtitle": "Desenvolvimento de sistemas, automação e IA para empresas que precisam escalar.",
+      "ctaPrimary": "Solicitar Diagnóstico",
+      "ctaSecondary": "Ver Projetos"
+    },
     "servicesSection": {
       "title": "Soluções técnicas para operações em crescimento",
       "highlight": "operações em crescimento",
