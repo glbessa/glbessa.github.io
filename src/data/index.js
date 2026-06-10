@@ -24,7 +24,7 @@ export const SITE_DATA = {
       "name": "Gabriel Leite Bessa",
       "nickname": "glbessa",
       "image": "img/profile.png",
-      "greeting": "Olá, eu sou",
+      "greeting": "Consultoria sob liderança técnica de",
       "contactInfo": {
         "email": "contato@glbessa.dev",
         "phone": "+55 53 984655136",
@@ -45,9 +45,9 @@ export const SITE_DATA = {
         }
       },
       "summary": [
-        "Desenvolvedor de software",
-        "Pythonista",
-        "Adoro projetos com IA e visão computacional"
+        "Engenheiro de Software Sênior",
+        "Especialista em Sistemas Distribuídos e IA",
+        "Arquitetura Cloud e Automação de Processos"
       ]
     },
     "about": [
@@ -91,21 +91,21 @@ export const SITE_DATA = {
       "services": [
         {
           "title": "Produtos Digitais e Plataformas SaaS",
-          "description": "Desenvolvimento de plataformas web, aplicativos e sistemas internos sob medida, com arquitetura preparada para evolução, integrações e crescimento de usuários.",
+          "description": "Construímos produtos web e SaaS sob medida projetados para escalar. Criamos sistemas flexíveis e robustos prontos para o mercado, acelerando o lançamento operacional e preparando seu negócio para novos usuários.",
           "icon": "layout",
           "visual": "product",
           "tags": ["SaaS", "Sistemas Web", "Aplicativos", "Integrações"]
         },
         {
           "title": "Automação, Dados e Inteligência Operacional",
-          "description": "Automatizamos fluxos, integramos ferramentas e estruturamos dashboards para transformar dados dispersos em decisões, alertas e processos acionáveis.",
+          "description": "Elimine gargalos manuais e tarefas repetitivas. Desenvolvemos automações inteligentes com IA e conectamos ferramentas de dados para economizar horas de trabalho interno e apoiar tomadas de decisão rápidas.",
           "icon": "database",
           "visual": "data",
           "tags": ["BI", "IA", "Pipelines", "Automações"]
         },
         {
           "title": "Cloud, DevOps e Confiabilidade",
-          "description": "Implantamos infraestrutura cloud, conteinerização, monitoramento e pipelines de deploy para reduzir indisponibilidade, retrabalho e risco técnico.",
+          "description": "Garanta alta disponibilidade para seu sistema. Reduzimos riscos de indisponibilidade em produção, blindamos sua infraestrutura cloud contra picos de acessos e otimizamos custos operacionais de servidores.",
           "icon": "server",
           "visual": "cloud",
           "tags": ["Cloud", "Docker", "CI/CD", "Observabilidade"]
@@ -128,77 +128,49 @@ export const SITE_DATA = {
       ],
       "projects": [
         {
-          "name": "DeepRAD",
-          "role": "Pesquisador Desenvolvedor de IA",
+          "name": "DeepRAD — IA para Diagnóstico por Imagem",
+          "role": "Engenheiro de IA & Pesquisador",
           "timeline": "Julho 2022 - Presente",
           "repo": "https://github.com/gaia-ufpel/DeepRAD",
-          "summary": "",
-          "tags": ["academic", "deep-learning", "radiology"]
+          "summary": "Desenvolvimento de plataforma baseada em Deep Learning para detecção e análise de patologias em exames radiológicos.",
+          "tags": ["academic", "deep-learning", "radiology", "python"]
         },
         {
-          "name": "Confortímetro Klimaa Simulações",
-          "role": "Desenvolvedor de Software",
-          "timeline": "Outubro 2023 - Março 2024",
-          "repo": "https://github.com/gaia-ufpel/confortimetro_klimaa_simulacoes",
-          "summary": "Aplicativo desenvolvido para realizar simulações personalizadas utilizando EnergyPlus e Python.",
-          "tags": ["academic", "python", "energyplus"]
+          "name": "Everleads — Engenharia de Pipelines de Big Data",
+          "role": "Arquiteto de Software & Cloud (PJ)",
+          "timeline": "Janeiro 2024 - Março 2024",
+          "summary": "Estruturação de fluxos de scraping escaláveis, enriquecimento de leads e otimização de bancos de dados relacionais e em nuvem.",
+          "tags": ["professional", "cloud", "scrapers", "databases"]
         },
         {
-          "name": "Confortímetro Klimaa",
+          "name": "Primeira Mesa — Escala de APIs e Infraestrutura",
+          "role": "Engenheiro DevOps & Cloud (PJ)",
+          "timeline": "Fevereiro 2024 - Presente",
+          "summary": "Migração de infraestrutura de servidores, otimização de concorrência e deploy contínuo em nuvem para sustentar milhares de requisições por segundo.",
+          "tags": ["professional", "cloud", "docker", "ci-cd"]
+        },
+        {
+          "name": "Cluster — Plataforma SaaS e Monitoramento",
+          "role": "Desenvolvedor de Software (PJ)",
+          "timeline": "Julho 2023 - Dezembro 2023",
+          "summary": "Arquitetura e desenvolvimento de plataforma web para processamento de faturamentos corporativos e monitoramento operacional em tempo real.",
+          "tags": ["professional", "saas", "react", "integrations"]
+        },
+        {
+          "name": "Klimaa — Sistemas IoT de Eficiência Térmica",
           "role": "Desenvolvedor Backend e Infraestrutura",
           "timeline": "Outubro 2023 - Presente",
           "repo": "https://github.com/gaia-ufpel/confortimetro_klimaa",
-          "summary": "Aplicação completa para acompanhamento de conforto térmico em ambientes internos da UFPel.",
-          "tags": ["academic", "python", "fastapi"]
+          "summary": "Plataforma de acompanhamento e simulações personalizadas de conforto térmico em tempo real utilizando Python, FastAPI e Docker.",
+          "tags": ["academic", "python", "fastapi", "docker"]
         },
         {
-          "name": "Transferência de Estilo IA",
-          "repo": "https://github.com/glbessa/NeuralStyleTransfer",
-          "summary": "Transferência de estilo utilizando redes neurais convolucionais implementado em PyTorch.",
-          "tags": ["hobby", "deep-learning", "computer-vision"]
-        },
-        {
-          "name": "Detecção de olhos fechados",
-          "repo": "https://github.com/glbessa/ClosedEyesDetection",
-          "summary": "Detecção de olhos fechados em tempo real com OpenCV e Dlib.",
-          "tags": ["hobby", "computer-vision", "machine-learning"]
-        },
-        {
-          "name": "Verificação Facial",
-          "repo": "https://github.com/glbessa/FacialVerification",
-          "summary": "Implementação de um algoritmo de verificação facial com redes siamesas.",
-          "tags": ["hobby", "deep-learning", "computer-vision"]
-        },
-        {
-          "name": "Relógio de Xadrez",
-          "repo": "https://github.com/glbessa/RelogioDeXadrez",
-          "summary": "Relógio de xadrez mobile.",
-          "tags": ["hobby", "flutter"]
-        },
-        {
-          "name": "ASCII Dungeon",
-          "repo": "https://github.com/glbessa/ascii_dungeon",
-          "summary": "Explore uma dungeon em ASCII com monstros e outras criaturas e obtenha armas melhores para enfrentar o boss final!",
-          "tags": ["hobby", "game", "ASCII", "C"]
-        },
-        {
-          "name": "Z808-Feijoada",
-          "repo": "https://github.com/RaideNnigth/Z808-Feijoada",
-          "summary": "Simulador e compilador da máquina hipotética Z808.",
-          "tags": ["academic", "simulator", "compiler", "Z808", "java"]
-        },
-        {
-          "name": "Word Guesser",
-          "repo": "https://github.com/glbessa/WordGuesser",
-          "url": "https://glbessa.github.io/WordGuesser",
-          "summary": "Adivinha as palavras e ganhe pontos!",
-          "tags": ["hobby", "game", "word game", "reactjs"]
-        },
-        {
-          "name": "Pesagens de Gado",
+          "name": "Pesagens de Gado — Automação Agropecuária",
+          "role": "Desenvolvedor Mobile e Hardware",
+          "timeline": "Março 2023 - Junho 2023",
           "repo": "https://github.com/glbessa/PesagensDeGado",
-          "summary": "Aplicativo para controle de pesagens de gado e integração com balança eletrônica.",
-          "tags": ["hobby", "flutter"]
+          "summary": "Aplicativo móvel integrado via Bluetooth com balanças eletrônicas industriais para automação e pesagem em tempo real de rebanhos bovinos.",
+          "tags": ["professional", "flutter", "bluetooth", "hardware"]
         }
       ]
     },
