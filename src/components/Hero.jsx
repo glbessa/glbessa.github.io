@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Code, Cpu } from 'lucide-react';
+import { ArrowRight, Code, Cpu } from 'lucide-react';
 import { getData } from '../data';
 
 const Hero = () => {
@@ -73,53 +73,14 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              {/* Abstract Card "Window" */}
-              <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden glass-card">
-                <div className="flex items-center px-4 py-3 bg-bg/50 border-b border-border">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
-                  </div>
-                  <div className="mx-auto text-xs font-mono text-text-muted">operational-engine.ts</div>
-                </div>
-                <div className="p-6 font-mono text-sm space-y-4 overflow-hidden">
-                  <div className="flex gap-2">
-                    <span className="text-pink-500">const</span>
-                    <span className="text-accent">operation</span>
-                    <span className="text-text-muted">=</span>
-                    <span className="text-yellow-300">await</span>
-                    <span className="text-accent sm:hidden">opsEngine</span>
-                    <span className="text-accent hidden sm:inline">operationalEngine</span>
-                    <span className="text-text-muted">({'{'}</span>
-                  </div>
-                  <div className="pl-4 space-y-2">
-                    <div className="flex gap-2">
-                      <span className="text-text">processes</span>:
-                      <span className="text-orange-400">'automated'</span>,
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-text">cloud</span>:
-                      <span className="text-orange-400">'reliable'</span>,
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-text">data</span>:
-                      <span className="text-orange-400">'actionable'</span>,
-                    </div>
-                  </div>
-                  <div className="text-text-muted">{'}'});</div>
-                  
-                  <div className="pt-4 flex gap-4 border-t border-border mt-4">
-                     <div className="flex items-center gap-2 text-text-muted">
-                        <Terminal className="w-4 h-4" />
-                        <span>Risco técnico reduzido</span>
-                     </div>
-                     <div className="flex items-center gap-2 text-accent">
-                        <Cpu className="w-4 h-4" />
-                        <span>Operação escalável</span>
-                     </div>
-                  </div>
-                </div>
+              {/* Premium 3D Tech Visual */}
+              <div className="relative z-10 rounded-3xl shadow-2xl overflow-hidden border border-border bg-surface/30 backdrop-blur-md p-2">
+                <img 
+                  src="/img/hero_tech_concept.png" 
+                  alt="Engenharia de Software e Infraestrutura Cloud Inteligente" 
+                  className="w-full h-auto object-cover rounded-2xl border border-border/50 shadow-inner"
+                  loading="eager"
+                />
               </div>
 
               {/* Decorative floating elements */}

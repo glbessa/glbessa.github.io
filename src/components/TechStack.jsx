@@ -2,54 +2,86 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const technologies = [
-  { name: 'JavaScript', color: 'text-yellow-400' },
-  { name: 'React', color: 'text-blue-400' },
-  { name: 'Node.js', color: 'text-green-500' },
-  { name: 'TypeScript', color: 'text-blue-500' },
-  { name: 'Python', color: 'text-yellow-500' },
-  { name: 'AWS', color: 'text-orange-500' },
-  { name: 'Docker', color: 'text-blue-500' },
-  { name: 'Kubernetes', color: 'text-blue-600' },
-  { name: 'PostgreSQL', color: 'text-blue-300' },
-  { name: 'Redis', color: 'text-red-500' },
-  { name: 'Terraform', color: 'text-purple-400' },
-  { name: 'Next.js', color: 'text-white' },
+  { name: 'JavaScript', slug: 'javascript' },
+  { name: 'TypeScript', slug: 'typescript' },
+  { name: 'React', slug: 'react' },
+  { name: 'Next.js', slug: 'nextdotjs/white' },
+  { name: 'Node.js', slug: 'nodedotjs' },
+  { name: 'Python', slug: 'python' },
+  { name: 'AWS', slug: 'amazonaws' },
+  { name: 'Docker', slug: 'docker' },
+  { name: 'Kubernetes', slug: 'kubernetes' },
+  { name: 'PostgreSQL', slug: 'postgresql' },
+  { name: 'Redis', slug: 'redis' },
+  { name: 'Terraform', slug: 'terraform' },
 ];
 
 const TechStackMarquee = () => {
+  // Duplicate list to ensure it covers wide screens and loops smoothly
+  const marqueeList = [...technologies, ...technologies, ...technologies];
+
   return (
-    <section id="stack" className="py-20 bg-bg border-y border-border relative z-10 font-sans">
+    <section id="stack" className="py-20 bg-bg border-y border-border relative z-10 font-sans overflow-hidden">
        <div className="container mx-auto px-6 mb-10 text-center">
         <p className="text-sm font-semibold tracking-wider text-text-muted uppercase font-mono">
           Stack moderna para produtos escaláveis
         </p>
       </div>
 
-      <div className="flex overflow-hidden relative">
+      <div className="relative flex w-full overflow-hidden">
+        {/* Fade edges */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none"></div>
+
         <motion.div 
-          className="flex gap-16 items-center whitespace-nowrap"
-          animate={{ x: [0, -1000] }} // Adjust based on width
+          className="flex items-center"
+          animate={{ x: ["0%", "-50%"] }} 
           transition={{ 
             repeat: Infinity, 
             ease: "linear", 
             duration: 25 
           }}
+          style={{ width: "fit-content" }}
         >
-          {/* Tripple the list to ensure filling the screen on large monitors */}
-          {[...technologies, ...technologies, ...technologies].map((tech, index) => (
-            <div key={`${tech.name}-${index}`} className="flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100 hover:scale-110 cursor-pointer">
-              <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-400 to-slate-200 hover:from-brand hover:to-accent">
-                {tech.name}
-              </span>
-            </div>
-          ))}
+          {/* Block 1 */}
+          <div className="flex items-center gap-16 md:gap-20 pr-16 md:pr-20 shrink-0">
+            {marqueeList.map((tech, index) => (
+              <div 
+                key={`a-${index}`} 
+                className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100 hover:scale-110 cursor-pointer h-12 w-12 shrink-0"
+                title={tech.name}
+              >
+                <img 
+                  src={`https://cdn.simpleicons.org/${tech.slug}`} 
+                  alt={tech.name} 
+                  className="h-10 w-10 object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Block 2 */}
+          <div className="flex items-center gap-16 md:gap-20 pr-16 md:pr-20 shrink-0">
+            {marqueeList.map((tech, index) => (
+              <div 
+                key={`b-${index}`} 
+                className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100 hover:scale-110 cursor-pointer h-12 w-12 shrink-0"
+                title={tech.name}
+              >
+                <img 
+                  src={`https://cdn.simpleicons.org/${tech.slug}`} 
+                  alt={tech.name} 
+                  className="h-10 w-10 object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
-         {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg to-transparent z-10"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg to-transparent z-10"></div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default TechStackMarquee;

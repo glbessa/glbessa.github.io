@@ -69,6 +69,11 @@ export const SITE_DATA = {
     ],
     "companies": [
       {
+        "name": "Vemcon",
+        "url": "https://vemcon.com.br",
+        "logo": "/img/companies/vemcon.svg"
+      },
+      {
         "name": "Primeira Mesa",
         "url": "https://site.primeiramesa.com.br/",
         "logo": "/img/companies/primeiramesa.png"
@@ -134,6 +139,13 @@ export const SITE_DATA = {
         { "name": "Hobby", "filter": "hobby" }
       ],
       "projects": [
+        {
+          "name": "Vemcon — APIs de Pagamento e Assinatura para Fintech",
+          "role": "Arquiteto de Software & Engenheiro Backend (PJ)",
+          "timeline": "Maio 2024 - Presente",
+          "summary": "Arquitetura e desenvolvimento de plataforma de consórcios integrada a APIs de pagamento e assinaturas recorrentes com alta segurança transacional e conciliação automática.",
+          "tags": ["professional", "fintech", "security", "apis"]
+        },
         {
           "name": "DeepRAD — IA para Diagnóstico por Imagem",
           "role": "Engenheiro de IA & Pesquisador",

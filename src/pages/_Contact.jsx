@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Mail, Linkedin, ChevronDown, Send, CheckCircle, AlertTriangle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle, AlertTriangle, Loader2 } from 'lucide-react';
 
 const Contact = () => {
-  const [openIndex, setOpenIndex] = useState(null);
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -19,8 +18,6 @@ const Contact = () => {
   const [sessionId, setSessionId] = useState('');
 
   const data = getData();
-  const { contactInfo } = data.author;
-  const { faqs } = data;
 
   useEffect(() => {
     // Generate a stable unique lead ID for the session
@@ -133,266 +130,165 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto font-sans">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        {/* Left Column: Interactive Form */}
-        <div className="lg:col-span-7 bg-surface/40 p-6 md:p-10 rounded-3xl border border-border backdrop-blur-md relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
-          
-          <h3 className="text-2xl font-bold text-text mb-2 font-sora">Solicitar Diagnóstico Técnico</h3>
-          <p className="text-text-muted text-sm mb-8">
-            Compartilhe brevemente seus desafios técnicos. Retornaremos com uma análise inicial e recomendações operacionais de arquitetura.
-          </p>
+    <div className="max-w-2xl mx-auto bg-surface/40 p-6 md:p-10 rounded-3xl border border-border backdrop-blur-md relative overflow-hidden font-sans">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
+      
+      <h3 className="text-2xl font-bold text-text mb-2 font-sora text-center">Solicitar Diagnóstico Técnico</h3>
+      <p className="text-text-muted text-sm mb-8 font-sans text-center max-w-md mx-auto">
+        Compartilhe brevemente seus desafios técnicos. Retornaremos com uma análise inicial e recomendações operacionais de arquitetura.
+      </p>
 
-          <AnimatePresence mode="wait">
-            {success ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                className="text-center py-12 space-y-6"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-2">
-                  <CheckCircle className="w-10 h-10" />
-                </div>
-                <h4 className="text-xl font-bold text-text font-sora">Solicitação Enviada com Sucesso!</h4>
-                <p className="text-text-muted max-w-md mx-auto text-sm">
-                  Obrigado pelo envio. Seus dados foram registrados e entraremos em contato nos próximos dias para apresentar seu diagnóstico operacional.
-                </p>
-                <button 
-                  onClick={() => setSuccess(false)}
-                  className="px-6 py-2.5 bg-surface-hi hover:opacity-90 text-text text-sm font-semibold rounded-xl border border-border transition-all"
-                >
-                  Enviar outra mensagem
-                </button>
-              </motion.div>
-            ) : (
-              <motion.form 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                onSubmit={handleSubmit} 
-                className="space-y-6"
-              >
-                {error && (
-                  <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-xl">
-                    <AlertTriangle className="w-5 h-5 flex-shrink-0" />
-                    <span>{error}</span>
-                  </div>
-                )}
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                      Seu Nome *
-                    </label>
-                    <input 
-                      type="text" 
-                      required
-                      placeholder="Ex: Gabriel Bessa"
-                      value={formData.nome}
-                      onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                      className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                      Seu E-mail Corporativo *
-                    </label>
-                    <input 
-                      type="email" 
-                      required
-                      placeholder="Ex: nome@empresa.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                      Telefone / WhatsApp *
-                    </label>
-                    <input 
-                      type="tel" 
-                      required
-                      placeholder="Ex: (53) 98465-5136"
-                      value={formData.telefone}
-                      onChange={handlePhoneChange}
-                      className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                      Empresa / Operação
-                    </label>
-                    <input 
-                      type="text" 
-                      placeholder="Ex: Minha Empresa Ltda"
-                      value={formData.empresa}
-                      onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-                      className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                    Qual seu perfil / cargo atual?
-                  </label>
-                  <select 
-                    value={formData.perfil}
-                    onChange={(e) => setFormData({ ...formData, perfil: e.target.value })}
-                    className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors text-sm appearance-none cursor-pointer"
-                  >
-                    <option value="" disabled>Selecione seu cargo...</option>
-                    <option value="Socio / CEO / Director">Sócio / CEO / Diretor</option>
-                    <option value="Product Owner / Gerente de Produto">Gerente de Produto (PO / PM)</option>
-                    <option value="CTO / Tech Lead / Dev">CTO / Tech Lead / Engenheiro</option>
-                    <option value="Coordenador de Operacoes">Coordenador de Operações</option>
-                    <option value="Outro">Outro cargo</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                    Descreva seu gargalo técnico ou ideia de projeto
-                  </label>
-                  <textarea 
-                    rows={4}
-                    placeholder="Ex: Preciso integrar um pipeline de IA no meu SaaS ou otimizar a infraestrutura cloud para reduzir custos e instabilidade..."
-                    value={formData.mensagem}
-                    onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                    className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm resize-none"
-                  />
-                </div>
-
-                <button 
-                  type="submit" 
-                  disabled={submitting}
-                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand to-accent hover:opacity-90 disabled:opacity-50 text-text rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-brand/15"
-                >
-                  {submitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Processando...
-                    </>
-                  ) : (
-                    <>
-                      Enviar e Solicitar Diagnóstico
-                      <Send className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              </motion.form>
+      <AnimatePresence mode="wait">
+        {success ? (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            className="text-center py-12 space-y-6"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-2">
+              <CheckCircle className="w-10 h-10" />
+            </div>
+            <h4 className="text-xl font-bold text-text font-sora">Solicitação Enviada com Sucesso!</h4>
+            <p className="text-text-muted max-w-md mx-auto text-sm font-sans">
+              Obrigado pelo envio. Seus dados foram registrados e entraremos em contato nos próximos dias para apresentar seu diagnóstico operacional.
+            </p>
+            <button 
+              onClick={() => setSuccess(false)}
+              className="px-6 py-2.5 bg-surface-hi hover:opacity-90 text-text text-sm font-semibold rounded-xl border border-border transition-all font-sans"
+            >
+              Enviar outra mensagem
+            </button>
+          </motion.div>
+        ) : (
+          <motion.form 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
+            {error && (
+              <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-xl">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0" />
+                <span>{error}</span>
+              </div>
             )}
-          </AnimatePresence>
-        </div>
 
-        {/* Right Column: Channels & FAQs */}
-        <div className="lg:col-span-5 space-y-8">
-          
-          {/* Quick Channels */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-mono tracking-widest text-text-muted uppercase border-l-2 border-accent pl-3">
-              Contato Direto
-            </h4>
-            
-            <div className="grid grid-cols-1 gap-4">
-              <a 
-                href={`https://wa.me/${contactInfo.whatsapp.number}?text=${encodeURIComponent(contactInfo.whatsapp.message)}`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center p-4 bg-surface/40 rounded-2xl border border-border hover:border-accent/30 hover:bg-surface/60 transition-all group"
-              >
-                <div className="w-10 h-10 bg-accent/10 text-accent rounded-xl flex items-center justify-center mr-4 group-hover:scale-105 transition-transform">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-mono text-text-muted uppercase tracking-wider">Falar no WhatsApp</p>
-                  <p className="text-sm font-bold text-text group-hover:text-accent transition-colors">Abrir chat imediato</p>
-                </div>
-              </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
+              <div>
+                <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                  Seu Nome *
+                </label>
+                <input 
+                  type="text" 
+                  required
+                  placeholder="Ex: Gabriel Bessa"
+                  value={formData.nome}
+                  onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                />
+              </div>
 
-              <a 
-                href={`mailto:${contactInfo.email}`} 
-                className="flex items-center p-4 bg-surface/40 rounded-2xl border border-border hover:border-accent/30 hover:bg-surface/60 transition-all group"
-              >
-                <div className="w-10 h-10 bg-accent/10 text-accent rounded-xl flex items-center justify-center mr-4 group-hover:scale-105 transition-transform">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-[10px] font-mono text-text-muted uppercase tracking-wider">Enviar E-mail</p>
-                  <p className="text-sm font-bold text-text group-hover:text-accent transition-colors truncate">{contactInfo.email}</p>
-                </div>
-              </a>
-
-              <a 
-                href={contactInfo.linkedin.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center p-4 bg-surface/40 rounded-2xl border border-border hover:border-accent/30 hover:bg-surface/60 transition-all group"
-              >
-                <div className="w-10 h-10 bg-surface-hi text-text-muted rounded-xl flex items-center justify-center mr-4 group-hover:scale-105 transition-transform border border-border">
-                  <Linkedin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-mono text-text-muted uppercase tracking-wider">Rede Profissional</p>
-                  <p className="text-sm font-bold text-text group-hover:text-accent transition-colors">Conectar no LinkedIn</p>
-                </div>
-              </a>
+              <div>
+                <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                  Seu E-mail Corporativo *
+                </label>
+                <input 
+                  type="email" 
+                  required
+                  placeholder="Ex: nome@empresa.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* FAQs */}
-          <div className="bg-surface/20 p-6 rounded-3xl border border-border">
-            <h4 className="text-sm font-mono tracking-widest text-text-muted uppercase mb-6">
-              Perguntas Frequentes
-            </h4>
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div 
-                  key={index} 
-                  className="border-b border-border last:border-0 pb-4 last:pb-0 cursor-pointer group"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans">
+              <div>
+                <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                  Telefone / WhatsApp *
+                </label>
+                <input 
+                  type="tel" 
+                  required
+                  placeholder="Ex: (53) 98465-5136"
+                  value={formData.telefone}
+                  onChange={handlePhoneChange}
+                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                  Empresa / Operação
+                </label>
+                <input 
+                  type="text" 
+                  placeholder="Ex: Minha Empresa Ltda"
+                  value={formData.empresa}
+                  onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                />
+              </div>
+            </div>
+
+            <div className="font-sans">
+              <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                Qual seu perfil / cargo atual?
+              </label>
+              <div className="relative">
+                <select 
+                  value={formData.perfil}
+                  onChange={(e) => setFormData({ ...formData, perfil: e.target.value })}
+                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors text-sm appearance-none cursor-pointer"
                 >
-                  <h5 className="text-sm font-bold text-text group-hover:text-accent transition-colors flex items-center gap-2 select-none justify-between font-sora">
-                    <span>{faq.question}</span>
-                    <motion.div
-                      animate={{ rotate: openIndex === index ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="flex-shrink-0"
-                    >
-                      <ChevronDown className="w-4 h-4 text-text-muted" />
-                    </motion.div>
-                  </h5>
-                  <AnimatePresence>
-                    {openIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-text-muted text-xs leading-relaxed mt-2 pl-2 border-l border-accent/40 font-sans">
-                          {faq.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <option value="" disabled>Selecione seu cargo...</option>
+                  <option value="Socio / CEO / Director">Sócio / CEO / Diretor</option>
+                  <option value="Product Owner / Gerente de Produto">Gerente de Produto (PO / PM)</option>
+                  <option value="CTO / Tech Lead / Dev">CTO / Tech Lead / Engenheiro</option>
+                  <option value="Coordenador de Operacoes">Coordenador de Operações</option>
+                  <option value="Outro">Outro cargo</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-text-muted">
+                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-        </div>
+            <div className="font-sans">
+              <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                Descreva seu gargalo técnico ou ideia de projeto
+              </label>
+              <textarea 
+                rows={4}
+                placeholder="Ex: Preciso integrar um pipeline de IA no meu SaaS ou otimizar a infraestrutura cloud para reduzir custos e instabilidade..."
+                value={formData.mensagem}
+                onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
+                className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm resize-none"
+              />
+            </div>
 
-      </div>
+            <button 
+              type="submit" 
+              disabled={submitting}
+              className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand to-accent hover:opacity-90 disabled:opacity-50 text-text rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-brand/15 font-sans"
+            >
+              {submitting ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  Processando...
+                </>
+              ) : (
+                <>
+                  Enviar e Solicitar Diagnóstico
+                  <Send className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </motion.form>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -4,6 +4,12 @@ import { getData } from '../data';
 
 const cases = [
   {
+    company: "Vemcon",
+    logo: "/img/companies/vemcon.svg",
+    title: "Integração de Pagamentos e Assinaturas",
+    description: "Desenho e desenvolvimento de motor de pagamentos e assinaturas recorrentes com alta segurança transacional, conformidade e conciliação de caixa automatizada."
+  },
+  {
     company: "Everleads",
     logo: "/img/companies/everleads.svg",
     title: "Pipelines de Big Data em Nuvem",
@@ -78,7 +84,7 @@ const CompanyMarquee = () => {
           </h4>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cases.map((item) => (
             <div 
               key={item.company} 
@@ -89,7 +95,7 @@ const CompanyMarquee = () => {
                 <img 
                   src={item.logo} 
                   alt={item.company} 
-                  className="h-7 w-auto object-contain brightness-0 invert opacity-40 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                  className="h-7 w-auto object-contain brightness-0 invert opacity-40 group-hover:opacity-100 transition-all duration-300"
                 />
                 <span className="text-[10px] font-mono tracking-wider text-accent bg-accent/5 border border-accent/10 px-2.5 py-1 rounded-full uppercase">Entrega</span>
               </div>
@@ -114,7 +120,7 @@ const CompanyItem = ({ company }) => (
     <img 
       src={company.logo} 
       alt={company.name} 
-      className="relative h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+      className="relative h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
     />
   </a>
 );
