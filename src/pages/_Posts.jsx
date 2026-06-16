@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SEO from '../components/SEO';
 import { getData } from '../data';
+import { Calendar, Tag, ArrowRight } from 'lucide-react';
 
 const Posts = ({ posts: initialPosts = [] }) => {
   const [posts, setPosts] = useState([]);
@@ -36,21 +37,24 @@ const Posts = ({ posts: initialPosts = [] }) => {
                   {post.title}
                 </a>
               </h3>
-              <div className="flex flex-wrap gap-2 mb-3">
+              <div className="flex flex-wrap gap-2 mb-3 items-center">
+                <Tag className="w-3.5 h-3.5 text-accent/70 mr-1" />
                 {post.tags && post.tags.map(tag => (
-                  <span key={tag} className="bg-bg text-text-muted text-xs px-2.5 py-1 rounded border border-border font-mono">
+                  <span key={tag} className="bg-bg text-text-muted text-[10px] px-2.5 py-1 rounded border border-border font-mono">
                     {tag}
                   </span>
                 ))}
               </div>
-              <p className="text-xs text-text-muted mb-3 font-mono">
+              <p className="text-xs text-text-muted mb-3 font-mono flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-accent/70" />
                 {new Date(post.date).toLocaleDateString()}
               </p>
               <p className="text-text-muted text-sm line-clamp-3 mb-4 flex-grow">
                 {post.description || post.summary}
               </p>
-              <a href={`/posts/${post.slug}`} className="text-accent font-medium text-sm hover:underline mt-auto flex items-center gap-1 font-mono">
-                Ler mais &rarr;
+              <a href={`/posts/${post.slug}`} className="text-accent font-medium text-sm hover:underline mt-auto flex items-center gap-1.5 font-mono">
+                Ler mais
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           </div>

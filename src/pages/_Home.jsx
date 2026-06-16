@@ -38,8 +38,18 @@ const Home = () => {
         <FAQ />
 
         {/* Contact Section Wrapper */}
-        <section id="contact" className="py-24 bg-gradient-to-b from-bg to-surface border-t border-border">
-          <div className="container mx-auto px-6 max-w-4xl">
+        <section id="contact" className="py-24 bg-gradient-to-b from-bg to-surface relative overflow-hidden">
+          {/* Laser border glow at the top */}
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent z-10" />
+          <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-accent/10 to-transparent blur-md pointer-events-none z-0" />
+
+          {/* Technical grid backdrop for deep conversion focus */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03] pointer-events-none z-0" />
+
+          {/* Ambient light source from the bottom */}
+          <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[600px] h-[300px] bg-brand/10 rounded-full blur-[100px] pointer-events-none z-0" />
+
+          <div className="container mx-auto px-6 max-w-4xl relative z-10">
              <div className="text-center mb-16">
                <h2 className="text-3xl md:text-4xl font-bold text-text mb-4 font-sora">
                  Vamos identificar onde tecnologia pode gerar mais <span className="text-accent">impacto na sua operação</span>

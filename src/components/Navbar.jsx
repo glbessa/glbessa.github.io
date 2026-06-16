@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../data';
-import { Menu, X, Code, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Code, Github, Linkedin, MessageSquareCode } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -76,8 +76,9 @@ const Navbar = () => {
               href={`https://wa.me/${contactInfo.whatsapp.number}?text=${encodeURIComponent(contactInfo.whatsapp.message)}`} 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-gradient-to-r from-brand to-accent hover:opacity-90 text-text text-sm font-semibold rounded-lg transition-all shadow-lg shadow-brand/20"
+              className="px-4 py-2 bg-gradient-to-r from-brand to-accent hover:opacity-90 text-text text-sm font-semibold rounded-lg transition-all shadow-lg shadow-brand/20 flex items-center gap-2"
             >
+              <MessageSquareCode className="w-4 h-4" />
               Solicitar diagnóstico
             </a>
           </div>
@@ -119,8 +120,9 @@ const Navbar = () => {
               </div>
               <a 
                 href={`https://wa.me/${contactInfo.whatsapp.number}?text=${encodeURIComponent(contactInfo.whatsapp.message)}`}
-                className="block w-full text-center py-3 bg-gradient-to-r from-brand to-accent rounded-lg font-semibold text-text"
+                className="w-full py-3 bg-gradient-to-r from-brand to-accent rounded-lg font-semibold text-text flex items-center justify-center gap-2"
               >
+                <MessageSquareCode className="w-5 h-5" />
                 Solicitar diagnóstico
               </a>
             </div>

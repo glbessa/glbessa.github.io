@@ -90,20 +90,20 @@ export const SITE_DATA = {
       }
     ],
     "hero": {
-      "badge": "Consultoria em Software, IA e Cloud para Empresas",
-      "title": "Transformando processos complexos em software inteligente",
-      "subtitle": "Desenvolvimento de sistemas, automação e IA para empresas que precisam escalar.",
+      "badge": "Consultoria de Engenharia de Software & Cloud",
+      "title": "Software de alta performance e arquitetura de nuvem resiliente",
+      "subtitle": "Desenvolvimento completo de plataformas SaaS, pipelines de dados e infraestrutura estável com responsabilidade técnica direta, sem intermediários.",
       "ctaPrimary": "Solicitar Diagnóstico",
       "ctaSecondary": "Ver Projetos"
     },
     "servicesSection": {
       "title": "Soluções técnicas para operações em crescimento",
       "highlight": "operações em crescimento",
-      "description": "Atuamos no desenho, desenvolvimento e sustentação de sistemas que conectam produto, dados e infraestrutura para gerar eficiência operacional e crescimento sustentável.",
+      "description": "Desenhamos, construímos e estabilizamos sistemas conectando produto, dados e nuvem para eliminar gargalos operacionais e viabilizar novos modelos de negócio.",
       "services": [
         {
           "title": "Produtos Digitais e Plataformas SaaS",
-          "description": "Construímos produtos web e SaaS sob medida projetados para escalar. Criamos sistemas flexíveis e robustos prontos para o mercado, acelerando o lançamento operacional e preparando seu negócio para novos usuários.",
+          "description": "Desenvolvimento completo de plataformas web e SaaS. Projetamos a arquitetura do banco de dados, APIs e painéis administrativos com código limpo, focando em segurança, facilidade de manutenção e tempo de resposta.",
           "icon": "layout",
           "visual": "product",
           "tags": ["SaaS", "Sistemas Web", "Aplicativos", "Integrações"],
@@ -111,7 +111,7 @@ export const SITE_DATA = {
         },
         {
           "title": "Automação, Dados e Inteligência Operacional",
-          "description": "Elimine gargalos manuais e tarefas repetitivas. Desenvolvemos automações inteligentes com IA e conectamos ferramentas de dados para economizar horas de trabalho interno e apoiar tomadas de decisão rápidas.",
+          "description": "Integração de sistemas, pipelines de dados de alto volume e automações pragmáticas com IA. Conectamos ferramentas, organizamos bancos de dados e criamos fluxos automáticos para reduzir tarefas manuais.",
           "icon": "database",
           "visual": "data",
           "tags": ["BI", "IA", "Pipelines", "Automações"],
@@ -119,7 +119,7 @@ export const SITE_DATA = {
         },
         {
           "title": "Cloud, DevOps e Confiabilidade",
-          "description": "Garanta alta disponibilidade para seu sistema. Reduzimos riscos de indisponibilidade em produção, blindamos sua infraestrutura cloud contra picos de acessos e otimizamos custos operacionais de servidores.",
+          "description": "Infraestrutura em nuvem, conteinerização e pipelines de deploy (CI/CD). Estruturamos servidores na AWS e Google Cloud, configuramos monitoramento de erros em tempo real e otimizamos custos operacionais.",
           "icon": "server",
           "visual": "cloud",
           "tags": ["Cloud", "Docker", "CI/CD", "Observabilidade"],

@@ -74,11 +74,20 @@ const itemVariants = {
 const About = () => {
   return (
     <section id="about" className="py-24 bg-bg relative overflow-hidden font-sans">
+      {/* Smooth transition from previous section background */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0e1424] to-transparent pointer-events-none z-0" />
+
+      {/* Glowing divider line at the top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent blur-[1px] z-10" />
+
+      {/* Technical Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] opacity-[0.05] pointer-events-none z-0" />
+
       {/* Subtle background glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none z-0"
         style={{
-          background: 'radial-gradient(circle, rgba(139,92,246,0.03) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%)',
         }}
       />
 

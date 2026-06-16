@@ -21,8 +21,12 @@ const TechStackMarquee = () => {
   const marqueeList = [...technologies, ...technologies, ...technologies];
 
   return (
-    <section id="stack" className="py-20 bg-bg border-y border-border relative z-10 font-sans overflow-hidden">
-       <div className="container mx-auto px-6 mb-10 text-center">
+    <section id="stack" className="py-16 bg-surface/20 backdrop-blur-sm relative z-10 font-sans overflow-hidden">
+      {/* Laser glow lines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
+
+      <div className="container mx-auto px-6 mb-8 text-center">
         <p className="text-sm font-semibold tracking-wider text-text-muted uppercase font-mono">
           Stack moderna para produtos escaláveis
         </p>

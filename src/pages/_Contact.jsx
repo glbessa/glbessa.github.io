@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle, AlertTriangle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle, AlertTriangle, Loader2, User, Mail, Phone, Building2, Briefcase, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -179,28 +179,34 @@ const Contact = () => {
                 <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
                   Seu Nome *
                 </label>
-                <input 
-                  type="text" 
-                  required
-                  placeholder="Ex: Gabriel Bessa"
-                  value={formData.nome}
-                  onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                />
+                <div className="relative">
+                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted/50" />
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="Ex: Gabriel Bessa"
+                    value={formData.nome}
+                    onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                    className="w-full bg-bg border border-border rounded-xl pl-10 pr-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                  />
+                </div>
               </div>
 
               <div>
                 <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
                   Seu E-mail Corporativo *
                 </label>
-                <input 
-                  type="email" 
-                  required
-                  placeholder="Ex: nome@empresa.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                />
+                <div className="relative">
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted/50" />
+                  <input 
+                    type="email" 
+                    required
+                    placeholder="Ex: nome@empresa.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-bg border border-border rounded-xl pl-10 pr-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                  />
+                </div>
               </div>
             </div>
 
@@ -209,27 +215,33 @@ const Contact = () => {
                 <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
                   Telefone / WhatsApp *
                 </label>
-                <input 
-                  type="tel" 
-                  required
-                  placeholder="Ex: (53) 98465-5136"
-                  value={formData.telefone}
-                  onChange={handlePhoneChange}
-                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                />
+                <div className="relative">
+                  <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted/50" />
+                  <input 
+                    type="tel" 
+                    required
+                    placeholder="Ex: (53) 98465-5136"
+                    value={formData.telefone}
+                    onChange={handlePhoneChange}
+                    className="w-full bg-bg border border-border rounded-xl pl-10 pr-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                  />
+                </div>
               </div>
 
               <div>
                 <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
                   Empresa / Operação
                 </label>
-                <input 
-                  type="text" 
-                  placeholder="Ex: Minha Empresa Ltda"
-                  value={formData.empresa}
-                  onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
-                />
+                <div className="relative">
+                  <Building2 className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted/50" />
+                  <input 
+                    type="text" 
+                    placeholder="Ex: Minha Empresa Ltda"
+                    value={formData.empresa}
+                    onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+                    className="w-full bg-bg border border-border rounded-xl pl-10 pr-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm"
+                  />
+                </div>
               </div>
             </div>
 
@@ -238,10 +250,11 @@ const Contact = () => {
                 Qual seu perfil / cargo atual?
               </label>
               <div className="relative">
+                <Briefcase className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted/50" />
                 <select 
                   value={formData.perfil}
                   onChange={(e) => setFormData({ ...formData, perfil: e.target.value })}
-                  className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text focus:outline-none focus:border-accent transition-colors text-sm appearance-none cursor-pointer"
+                  className="w-full bg-bg border border-border rounded-xl pl-10 pr-10 py-3 text-text focus:outline-none focus:border-accent transition-colors text-sm appearance-none cursor-pointer"
                 >
                   <option value="" disabled>Selecione seu cargo...</option>
                   <option value="Socio / CEO / Director">Sócio / CEO / Diretor</option>
@@ -260,13 +273,16 @@ const Contact = () => {
               <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
                 Descreva seu gargalo técnico ou ideia de projeto
               </label>
-              <textarea 
-                rows={4}
-                placeholder="Ex: Preciso integrar um pipeline de IA no meu SaaS ou otimizar a infraestrutura cloud para reduzir custos e instabilidade..."
-                value={formData.mensagem}
-                onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
-                className="w-full bg-bg border border-border rounded-xl px-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm resize-none"
-              />
+              <div className="relative">
+                <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-text-muted/50" />
+                <textarea 
+                  rows={4}
+                  placeholder="Ex: Preciso integrar um pipeline de IA no meu SaaS ou otimizar a infraestrutura cloud para reduzir custos e instabilidade..."
+                  value={formData.mensagem}
+                  onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
+                  className="w-full bg-bg border border-border rounded-xl pl-10 pr-4 py-3 text-text placeholder-slate-600 focus:outline-none focus:border-accent transition-colors text-sm resize-none"
+                />
+              </div>
             </div>
 
             <button 
