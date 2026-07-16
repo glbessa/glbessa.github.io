@@ -16,7 +16,7 @@ const fragmentShader = `
   varying vec2 vUv;
 
   void main() {
-    vec2 grid = vUv * vec2(38.0, 24.0);
+    vec2 grid = vUv * vec2(76.0, 48.0);
     vec2 cell = fract(grid) - .5;
     float dot = 1.0 - smoothstep(.06, .1, length(cell));
     float wave = sin(grid.x * .8 + grid.y * .55 - uTime * 1.2) * .5 + .5;
