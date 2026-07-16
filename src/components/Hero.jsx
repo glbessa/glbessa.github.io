@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Cpu, FolderKanban, Terminal } from 'lucide-react';
 import { getData } from '../data';
+import HeroCanvasReveal from './HeroCanvasReveal';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -144,6 +145,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-bg">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-bg">
+        <HeroCanvasReveal />
         {/* Soft, high-end organic ambient lights instead of busy bouncing neon blobs */}
         <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-brand/5 blur-[120px] pointer-events-none" />
         <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
